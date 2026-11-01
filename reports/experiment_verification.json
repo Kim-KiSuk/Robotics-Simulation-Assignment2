@@ -211,7 +211,6 @@
       "initial_frame_black": false
     }
   ],
-  "existing_final_model_sha256": "10669f7c24bd04e39a8ed6417721877c01527c7f1797f58481314b8e6e8268bc",
   "policy_reevaluation_performed": false,
   "policy_success_rates_confirmed": false,
   "merge_validation": {
@@ -222,54 +221,95 @@
     "sources_unchanged": true,
     "existing_output_protected": true
   },
-  "local_binary_checks": [
+  "publication_scope": "five_collected_original_datasets_and_one_rollout_epoch_2000_checkpoint_per_experiment",
+  "previous_selected_model_sha256": "10669f7c24bd04e39a8ed6417721877c01527c7f1797f58481314b8e6e8268bc",
+  "selected_final_model_sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e",
+  "checkpoint_cpu_load_verified": true,
+  "release_expected_assets": [
     {
-      "asset": "toy2box_baseline_n100_epoch2000.pth",
+      "name": "toy2box_baseline_n100_epoch2000.pth",
       "bytes": 7985670,
-      "sha256": "7c78338436d51f674f8dd7446fb7590b9f46f3521fd60a6ad5183b93fa16be91"
+      "sha256": "7c78338436d51f674f8dd7446fb7590b9f46f3521fd60a6ad5183b93fa16be91",
+      "github_digest": "sha256:7c78338436d51f674f8dd7446fb7590b9f46f3521fd60a6ad5183b93fa16be91",
+      "state": "uploaded"
     },
     {
-      "asset": "toy2box_multi_operator_100.hdf5",
-      "bytes": 49191989,
-      "sha256": "b03e6ef5367321b203eeaf98fafb04cf22ffcd62672fa4e99c189c475bd7bdbb"
+      "name": "SHA256SUMS",
+      "bytes": 975,
+      "sha256": "3bfcb0bb0e16e0ecfce077bcf10289b4e3dee6e0e66bb4d035a3e54d1fad37fa",
+      "github_digest": "sha256:3bfcb0bb0e16e0ecfce077bcf10289b4e3dee6e0e66bb4d035a3e54d1fad37fa",
+      "state": "uploaded"
     },
     {
-      "asset": "toy2box_multi_operator_100_epoch2000.pth",
+      "name": "toy2box_new_rule_100_epoch2000.pth",
       "bytes": 7985734,
-      "sha256": "43fe39004bcd9324bf66a313298032236b0dd1167aafc00372afd80587cb6aec"
+      "sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e",
+      "github_digest": "sha256:63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e",
+      "state": "uploaded"
     },
     {
-      "asset": "toy2box_new_rule_100.hdf5",
-      "bytes": 47739682,
-      "sha256": "5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785"
-    },
-    {
-      "asset": "toy2box_new_rule_100_epoch2000.pth",
+      "name": "toy2box_multi_operator_100_epoch2000.pth",
       "bytes": 7985734,
-      "sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e"
+      "sha256": "43fe39004bcd9324bf66a313298032236b0dd1167aafc00372afd80587cb6aec",
+      "github_digest": "sha256:43fe39004bcd9324bf66a313298032236b0dd1167aafc00372afd80587cb6aec",
+      "state": "uploaded"
     },
     {
-      "asset": "toy2box_new_rule_20.hdf5",
+      "name": "toy2box_xy_first_20_epoch2000.pth",
+      "bytes": 7985734,
+      "sha256": "6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9",
+      "github_digest": "sha256:6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9",
+      "state": "uploaded"
+    },
+    {
+      "name": "toy2box_baseline_n100.hdf5",
+      "bytes": 28845059,
+      "sha256": "676032701b5774fa76f3228d6ac2bcc18a19111e9dd3f8d920a2a82377402cd1",
+      "github_digest": "sha256:676032701b5774fa76f3228d6ac2bcc18a19111e9dd3f8d920a2a82377402cd1",
+      "state": "uploaded"
+    },
+    {
+      "name": "toy2box_new_rule_20.hdf5",
       "bytes": 9679789,
-      "sha256": "f609efd05fad98465d32d4a1bc14ad44738b46fb6853e5a79eab148afc4e4370"
+      "sha256": "f609efd05fad98465d32d4a1bc14ad44738b46fb6853e5a79eab148afc4e4370",
+      "github_digest": "sha256:f609efd05fad98465d32d4a1bc14ad44738b46fb6853e5a79eab148afc4e4370",
+      "state": "uploaded"
     },
     {
-      "asset": "toy2box_new_rule_20_epoch2000.pth",
-      "bytes": 7985734,
-      "sha256": "ac51a0c665a1edfacb72db69987746a60b96d5544a0b5504f93043f8b56c0c13"
+      "name": "toy2box_multi_operator_100.hdf5",
+      "bytes": 49191989,
+      "sha256": "b03e6ef5367321b203eeaf98fafb04cf22ffcd62672fa4e99c189c475bd7bdbb",
+      "github_digest": "sha256:b03e6ef5367321b203eeaf98fafb04cf22ffcd62672fa4e99c189c475bd7bdbb",
+      "state": "uploaded"
     },
     {
-      "asset": "toy2box_xy_first_20.hdf5",
+      "name": "toy2box_xy_first_20.hdf5",
       "bytes": 10521484,
-      "sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b"
+      "sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
+      "github_digest": "sha256:f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
+      "state": "uploaded"
     },
     {
-      "asset": "toy2box_xy_first_20_epoch2000.pth",
+      "name": "toy2box_new_rule_20_epoch2000.pth",
       "bytes": 7985734,
-      "sha256": "6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9"
+      "sha256": "ac51a0c665a1edfacb72db69987746a60b96d5544a0b5504f93043f8b56c0c13",
+      "github_digest": "sha256:ac51a0c665a1edfacb72db69987746a60b96d5544a0b5504f93043f8b56c0c13",
+      "state": "uploaded"
+    },
+    {
+      "name": "toy2box_new_rule_100.hdf5",
+      "bytes": 47739682,
+      "sha256": "5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785",
+      "github_digest": "sha256:5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785",
+      "state": "uploaded"
     }
   ],
-  "publication_scope": "documentation_code_representative_videos_and_existing_final_weight_only",
-  "additional_hdf5_published": false,
-  "experimental_weights_published": false
+  "selected_raw_episodes": 100,
+  "release_tag": "experiments-2026-11-01",
+  "release_upload_verified": true,
+  "release_assets_verified": 11,
+  "github_server_digests_verified": true,
+  "checkpoint_cpu_configs_checked": 5,
+  "raw_dataset_episode_counts_checked": 5,
+  "release_publication_phase": "draft_assets_verified"
 }

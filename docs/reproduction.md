@@ -42,13 +42,13 @@ LD_LIBRARY_PATH=/home/kisuk/miniforge3/envs/lerobot-arena/lib \
 
 ## 학습 코드
 
-선택 모델은 성공 생성 시범 499개로 학습했다. 해당 Mimic HDF5는 이 Release의 공개 원본 두 개에 포함되지 않으므로 재학습에는 별도 로컬 파일이 필요하다. 추론 평가에는 HDF5가 필요하지 않다.
+선택 모델은 new rule 원본 100개 → annotation 98개 → Mimic 성공 생성 1,000개로 학습했다. Release에는 증강 전 수집 원본을 제공하므로 재학습하려면 annotation과 Mimic 생성을 먼저 수행해야 한다. 추론 평가에는 HDF5가 필요하지 않다.
 
 ```bash
 ./isaaclab.sh -p "$REPO/isaaclab_project/scripts/imitation_learning/robomimic/train.py" \
   --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
   --algo bc \
-  --dataset /path/to/toy2box_agibot_mimic_n20_500.hdf5 \
+  --dataset /path/to/toy2box_agibot_mimic_new_rule_1000.hdf5 \
   --epochs 2000 --name final_bc_rnn
 ```
 
@@ -96,4 +96,4 @@ python tools/audit_videos.py
 - [보유 모델 평가와 결과 저장](evaluation.md)
 - [실험별 config](../configs/experiments), [추가 원본 데이터 정보](../data/README.md#동작-규칙혼합-수집-실험-원본)
 
-공개 가중치는 선택 모델 한 개다. 추가 원본 HDF5·annotation·Mimic과 비교 모델 가중치는 로컬에 보관하며, 구성과 해시·학습 이력을 제공한다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.
+Release에는 5개 실험의 수집 원본 HDF5와 rollout에 사용한 epoch 2000 모델을 각각 제공한다. 원본은 실제 수집한 20개 또는 100개 시범이며 annotation·Mimic 전체와 중간 가중치는 포함하지 않는다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.

@@ -12,7 +12,9 @@
       "sha256": "676032701b5774fa76f3228d6ac2bcc18a19111e9dd3f8d920a2a82377402cd1",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/collection-2026-10-28/toy2box_dataset_a.hdf5"
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100.hdf5",
+      "asset": "toy2box_baseline_n100.hdf5",
+      "publication_status": "release"
     },
     {
       "id": "new_rule_20",
@@ -25,8 +27,9 @@
       "sha256": "f609efd05fad98465d32d4a1bc14ad44738b46fb6853e5a79eab148afc4e4370",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20.hdf5",
+      "asset": "toy2box_new_rule_20.hdf5"
     },
     {
       "id": "new_rule_100",
@@ -39,8 +42,9 @@
       "sha256": "5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5",
+      "asset": "toy2box_new_rule_100.hdf5"
     },
     {
       "id": "multi_operator_100",
@@ -59,8 +63,9 @@
         "toy2box_vertical_sequence_20.hdf5": 20,
         "team08_inwoo_all20.hdf5": 20
       },
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100.hdf5",
+      "asset": "toy2box_multi_operator_100.hdf5"
     },
     {
       "id": "xy_first_20",
@@ -73,9 +78,12 @@
       "sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5",
+      "asset": "toy2box_xy_first_20.hdf5"
     }
   ],
-  "publication_scope": "metadata_only_for_additional_experiments; selected_weight_in_models/final_model.pth"
+  "publication_scope": "five_collected_original_datasets_and_one_rollout_epoch_2000_checkpoint_per_experiment",
+  "release_tag": "experiments-2026-11-01",
+  "selected_experiment": "new_rule_100"
 }

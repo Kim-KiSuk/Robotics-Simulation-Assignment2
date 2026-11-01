@@ -36,7 +36,7 @@
         }
     },
     "train": {
-        "data": "./datasets/toy2box_agibot_mimic_n20_500.hdf5",
+        "data": "./datasets/toy2box_agibot_mimic_new_rule_1000.hdf5",
         "output_dir": "/home/kisuk/IsaacLab_RS/logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
         "num_data_workers": 4,
         "hdf5_cache_mode": "all",

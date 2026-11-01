@@ -1,12 +1,15 @@
 {
   "model_file": "models/final_model.pth",
-  "sha256": "10669f7c24bd04e39a8ed6417721877c01527c7f1797f58481314b8e6e8268bc",
-  "bytes": 7985670,
-  "training_data": "toy2box_agibot_mimic_n20_500.hdf5",
-  "actual_generated_episodes": 499,
+  "sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e",
+  "bytes": 7985734,
+  "experiment": "new_rule_100",
+  "training_data": "toy2box_agibot_mimic_new_rule_1000.hdf5",
+  "actual_generated_episodes": 1000,
+  "original_episodes": 100,
+  "annotation_episodes": 98,
   "training_seed": 101,
   "checkpoint_epoch": 2000,
-  "selection_rule": "user_selected_fixed_epoch_2000",
+  "selection_rule": "user_selected_new_rule_100_rollout_checkpoint_fixed_epoch_2000",
   "algorithm": "bc",
   "observation_keys": [
     "eef_pos",
@@ -17,7 +20,11 @@
     "box_positions",
     "box_orientations"
   ],
-  "source_checkpoint": "model_epoch_2000.pth",
-  "source_run": "20261028105120",
-  "source_demonstrations_file": "toy2box_agibot_auto_n20.hdf5"
+  "source_checkpoint": "logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0/bc_rnn_low_dim_agibot_toy2box/20261101015656/models/model_epoch_2000.pth",
+  "source_run": "20261101015656",
+  "source_demonstrations_file": "toy2box_vertical_sequence_100.hdf5",
+  "original_dataset_download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5",
+  "original_dataset_sha256": "5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785",
+  "release_model_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100_epoch2000.pth",
+  "policy_success_rate": null
 }

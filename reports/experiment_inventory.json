@@ -13,7 +13,9 @@
       "sha256": "676032701b5774fa76f3228d6ac2bcc18a19111e9dd3f8d920a2a82377402cd1",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/collection-2026-10-28/toy2box_dataset_a.hdf5"
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100.hdf5",
+      "asset": "toy2box_baseline_n100.hdf5",
+      "publication_status": "release"
     },
     {
       "id": "new_rule_20",
@@ -26,8 +28,9 @@
       "sha256": "f609efd05fad98465d32d4a1bc14ad44738b46fb6853e5a79eab148afc4e4370",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20.hdf5",
+      "asset": "toy2box_new_rule_20.hdf5"
     },
     {
       "id": "new_rule_100",
@@ -40,8 +43,9 @@
       "sha256": "5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5",
+      "asset": "toy2box_new_rule_100.hdf5"
     },
     {
       "id": "multi_operator_100",
@@ -60,8 +64,9 @@
         "toy2box_vertical_sequence_20.hdf5": 20,
         "team08_inwoo_all20.hdf5": 20
       },
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100.hdf5",
+      "asset": "toy2box_multi_operator_100.hdf5"
     },
     {
       "id": "xy_first_20",
@@ -74,8 +79,9 @@
       "sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5",
+      "asset": "toy2box_xy_first_20.hdf5"
     }
   ],
   "training_runs": [
@@ -98,8 +104,9 @@
       "evaluation_status": "completed_success_log_not_found",
       "training_dataset_snapshot_status": "current_local_snapshot; original_at_training_hash_not_recorded",
       "training_dataset_sha256": "3dd840db6966d6824934440d7c6b9100f904ef7151661a9230a476aba85600f1",
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100_epoch2000.pth",
+      "asset": "toy2box_baseline_n100_epoch2000.pth"
     },
     {
       "id": "multi_operator_100",
@@ -120,8 +127,9 @@
       "evaluation_status": "completed_success_log_not_found",
       "training_dataset_snapshot_status": "current_local_snapshot; original_at_training_hash_not_recorded",
       "training_dataset_sha256": "bac5b6cba00b7b217c85aafadf1e56ddb4ed86224b60b583d228ebbc4527ebb7",
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100_epoch2000.pth",
+      "asset": "toy2box_multi_operator_100_epoch2000.pth"
     },
     {
       "id": "new_rule_20",
@@ -142,8 +150,9 @@
       "evaluation_status": "completed_success_log_not_found",
       "training_dataset_snapshot_status": "historical_file_replaced_by_new_rule_100_generation; original_hash_unavailable",
       "training_dataset_sha256": null,
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20_epoch2000.pth",
+      "asset": "toy2box_new_rule_20_epoch2000.pth"
     },
     {
       "id": "new_rule_100",
@@ -151,7 +160,7 @@
       "source_checkpoint": "logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0/bc_rnn_low_dim_agibot_toy2box/20261101015656/models/model_epoch_2000.pth",
       "checkpoint_sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e",
       "bytes": 7985734,
-      "default_checkpoint": "models/experiments/toy2box_new_rule_100_epoch2000.pth",
+      "default_checkpoint": "models/final_model.pth",
       "config": "configs/experiments/new_rule_100.json",
       "training_seed": 101,
       "epoch": 2000,
@@ -164,8 +173,9 @@
       "evaluation_status": "completed_success_log_not_found",
       "training_dataset_snapshot_status": "current_local_snapshot; original_at_training_hash_not_recorded",
       "training_dataset_sha256": "cc9a5e256ba8e5995d04cbfd6d6390857f5cc55955071e39011e47c13eb90f86",
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100_epoch2000.pth",
+      "asset": "toy2box_new_rule_100_epoch2000.pth"
     },
     {
       "id": "xy_first_20",
@@ -186,9 +196,12 @@
       "evaluation_status": "completed_success_log_not_found",
       "training_dataset_snapshot_status": "current_local_snapshot; original_at_training_hash_not_recorded",
       "training_dataset_sha256": "371927a7d027bab96b7878550c169d0d0e7af29760f91e6748de5e5698000083",
-      "publication_status": "local_only",
-      "download_url": null
+      "publication_status": "release",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20_epoch2000.pth",
+      "asset": "toy2box_xy_first_20_epoch2000.pth"
     }
   ],
-  "publication_scope": "metadata_only_for_additional_experiments; selected_weight_in_models/final_model.pth"
+  "publication_scope": "five_collected_original_datasets_and_one_rollout_epoch_2000_checkpoint_per_experiment",
+  "selected_experiment": "new_rule_100",
+  "release_tag": "experiments-2026-11-01"
 }

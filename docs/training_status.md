@@ -5,19 +5,19 @@
 | 항목 | 값 |
 |---|---|
 | 파일 | `models/final_model.pth` |
-| 데이터 계열 | annotation 20개 → Mimic 성공 생성 499개 |
-| source checkpoint | `20261028105120/models/model_epoch_2000.pth` |
+| 데이터 계열 | 수집 원본 100개 → annotation 98개 → Mimic 성공 생성 1,000개 |
+| source checkpoint | `20261101015656/models/model_epoch_2000.pth` |
 | 선택 기준 | 사용자 지정, 고정 epoch 2000 |
 | 학습 seed | 101 |
 | 정책 | BC-RNN, LSTM hidden 400·2 layers, GMM 5 modes |
 | batch / sequence length | 100 / 10 |
 | optimizer | Adam, 학습률 0.001 |
 | epoch당 학습 step 설정 | 100 |
-| 가중치 수 | 저장소에 선택 모델 1개만 포함 |
+| 배포 구성 | 저장소 기본 모델 1개, Release에 5개 실험의 최종 epoch 모델 각각 1개 |
 
-모델 내부 config가 `toy2box_agibot_mimic_n20_500.hdf5`를 학습 입력으로 사용했음을 확인했다. 실제 성공 episode는 499개다. [모델 manifest](../models/model_manifest.json)와 [학습 config](../configs/final_train_config.json)를 제공한다.
+모델 내부 config가 `toy2box_agibot_mimic_new_rule_1000.hdf5`를 학습 입력으로 사용했음을 확인했다. 학습 시범은 1,000개다. 원본 HDF5 100개와 증강 학습 데이터 1,000개를 구분한다. [모델 manifest](../models/model_manifest.json)와 [학습 config](../configs/final_train_config.json)를 제공한다.
 
-Dataset A 계열 config는 [참고 설정](../configs/dataset_a_reference_train_config.json)으로 보관하며 가중치는 추가하지 않았다. Dataset B은 선택 모델의 학습 원본이 아니다.
+기본 선택 모델은 `new_rule_100`이다. Release의 동일 실험 모델과 SHA256이 같다. 이전 n20 모델의 선택 정보와 7회 부분 실행은 [이력 폴더](../reports/history)에 보관하며 현재 선택 모델의 평가 결과로 사용하지 않는다.
 
 ## 실제 입력
 
@@ -36,7 +36,7 @@ HDF5 전체 관측과 실제 policy 입력을 구분한다. 저장된 관절 상
 
 ## 평가와 분석
 
-선택 모델로 로드·추론을 실행한 [부분 확인 기록](../submission/model_smoke_check.json)을 제공한다. 실행을 마친 일부 rollout만 포함하므로 100회 정식 성공률이나 학습 seed 2개의 평균·표준편차로 사용하지 않는다.
+선택 모델의 CPU 로드·내부 config·파일 해시를 확인했다. 기존 rollout 명령 이력과 영상 100개를 [근거 기록](../submission/model_smoke_check.json)으로 연결했다. 정확한 성공 여부 출력은 확보되지 않아 정식 100회 성공률이나 학습 seed 2개의 평균·표준편차로 사용하지 않는다. 이번 배포 수정에서 시뮬레이터 재평가는 실행하지 않았다.
 
 [평가 명령어](../submission/evaluate.txt)는 `--num_rollouts 100 --horizon 800 --seed 42`를 따른다. 이 검증 seed와 조교의 비공개 평가 seed를 구분한다.
 
@@ -44,7 +44,7 @@ HDF5 전체 관측과 실제 policy 입력을 구분한다. 저장된 관절 상
 
 ## 비교 실험 모델
 
-제출용 선택 모델과 별도로 아래 학습 실행을 보존했다. 모두 seed 101, epoch 2000이며, 비교 모델 가중치는 로컬에 보관하고 학습 이력·해시만 제공한다.
+아래 5개 실험은 모두 seed 101, epoch 2000이며, 각각 수집 원본 HDF5와 rollout 모델을 한 쌍씩 Release에 제공한다. `new_rule_100`은 기본 선택 모델과 같은 가중치다.
 
 | 실험 ID | 학습 run | 학습 시범 수 |
 |---|---|---:|

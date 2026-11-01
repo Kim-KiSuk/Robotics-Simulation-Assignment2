@@ -4,7 +4,7 @@
 
 시범의 양, 동작 순서와 수집 구성에 따라 Toy2Box 정책 성능이 어떻게 달라지는지 비교한다. 조작자 수의 영향을 연구하려면 한 명과 여러 명의 데이터를 같은 조건으로 비교해야 한다. 현재 `multi_operator_100`은 서로 다른 시범 파일 5개를 합친 실험 이름이며, 파일 수만으로 서로 다른 사람 5명의 시범이라고 판단하지 않는다.
 
-이 문서의 수치는 2026-11-01에 확인한 로컬 파일·학습 로그·영상에서 가져왔다. 다른 실험자의 3%, 27%, 39.5%, 73% 결과는 포함하지 않는다.
+이 문서의 수치는 2026-11-01에 확인한 로컬 파일·학습 로그·영상에서 가져왔다.
 
 ## 데이터와 학습 구성
 
@@ -80,4 +80,4 @@
 - 같은 평가 seed와 horizon에서 성공 여부를 rollout별로 저장한다.
 - 학습 seed 101·111을 각각 평가하고 접근·파지·운반·배치 실패를 구분한다.
 
-공개 가중치는 기존 선택 모델 `models/final_model.pth` 한 개다. 추가 원본 4종과 비교 모델 5종은 로컬에 보관하며 개수·해시·학습 이력만 제공한다. annotation·Mimic HDF5 전체도 추가 배포에 포함하지 않는다.
+[Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)에 5개 실험의 수집 원본 HDF5와 rollout에 사용한 epoch 2000 모델을 한 쌍씩 제공한다. `new_rule_20`과 vertical은 원본 20개, `new_rule_100`·n100·multi operator는 원본 100개다. annotation·Mimic HDF5와 중간 epoch 가중치는 포함하지 않는다. 기본 선택 모델 `models/final_model.pth`는 `new_rule_100`의 Release 가중치와 같다.

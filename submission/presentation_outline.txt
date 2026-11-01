@@ -1,3 +1,7 @@
+이력 자료: 아래 내용은 이전 n20 → Mimic 499개 모델의 발표 초안이다.
+현재 선택 모델은 new rule 원본 100개 → annotation 98개 → Mimic 1000개, run 20261101015656의 epoch 2000이다.
+현재 모델과 평가 상태는 docs/training_status.md 및 submission/evaluate.txt를 따른다.
+
 Agibot Toy2Box
 BC 정책 재현과 평가 · 5분 발표 초안
 - 고정 질문: Toy2Box에서 BC 정책은 왜 실패하는가?

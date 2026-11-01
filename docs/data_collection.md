@@ -55,7 +55,7 @@ Agibot 오른팔로 트럭을 집어 박스 안에 놓는다. 상대 이동 3축
 
 ## 모델 학습 입력과 증강 기록
 
-선택 모델의 실제 학습 입력은 `toy2box_agibot_mimic_n20_500.hdf5`이며 성공 episode는 499개다. 학습 입력은 공개 원본 두 파일과 구분해 관리한다. 실제 파일명·원본 관계는 [모델 manifest](../models/model_manifest.json)와 [내용 해시 연결 기록](../reports/dataset_lineage.json)에 보관한다.
+선택 모델의 실제 학습 입력은 `toy2box_agibot_mimic_new_rule_1000.hdf5`이며 학습 episode는 1,000개다. 수집 원본 100개 → annotation 98개 → Mimic 1,000개를 구분한다. 실제 파일명·원본 관계는 [모델 manifest](../models/model_manifest.json)와 [원본/모델 대응](../reports/original_rollout_pairs.json)에 보관한다. 이전 n20 모델의 499개 학습 기록은 [이력 폴더](../reports/history)에 있다.
 
 참고 annotation 파일 `annotated_100`의 실제 개수는 99개이며 원본 `demo_39`가 포함되지 않는다. 생성 파일명의 숫자만으로 실제 episode 수나 생성 성공률을 판단하지 않는다. 실패 생성 파일은 학습용에 포함하지 않았다.
 

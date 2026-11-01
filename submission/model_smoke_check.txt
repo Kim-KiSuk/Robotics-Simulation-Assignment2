@@ -1,7 +1,5 @@
-trial 0: success=False
-trial 1: success=False
-trial 2: success=True
-trial 3: success=True
-trial 4: success=True
-trial 5: success=False
-trial 6: success=True
+Selected model: new_rule_100 / run 20261101015656 / epoch 2000
+Raw demos: 100; annotation: 98; Mimic training demos: 1000
+Existing rollout videos: 100; exact success log: unavailable
+No simulation reevaluation was performed in this update.
+Historical n20 partial result: reports/history/n20_model_smoke_check.json

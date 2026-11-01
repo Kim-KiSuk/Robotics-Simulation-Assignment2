@@ -4,9 +4,10 @@
 |---|---|
 | 환경·로봇·controller·학습·평가 코드 | `isaaclab_project/` |
 | 최종 모델 1개 | `models/final_model.pth` |
+| 최종 수집 원본 | Release의 `toy2box_new_rule_100.hdf5` (100개) |
 | 모델 해시·학습 입력 정보 | `models/model_manifest.json` |
 | 평가 명령어 | `submission/evaluate.txt` |
-| 발표 자료 | `submission/toy2box_presentation_draft.pptx` |
+| 이전 n20 실험 발표 초안 | `submission/toy2box_presentation_draft.pptx` (현재 선택 모델과 구분) |
 | 설치·재현 방법 | `docs/reproduction.md` |
 
 ## 실행 확인
@@ -18,4 +19,4 @@
 
 ## 결과 정리
 
-선택한 모델의 로드·추론 실행을 확인했다. 부분 실행 확인은 정식 100회 평가 결과와 구분한다. 발표 자료에는 정식 평가, 실패 단계 분석, 통제 실험 결과와 조원별 역할을 반영해야 한다.
+선택 모델은 new rule 100개 실험의 run 20261101015656, epoch 2000이다. 모델 로드·config·해시와 기존 rollout 영상 이력을 확인했으며 정식 100회 성공률은 미확정이다. 이전 n20 부분 실행 기록을 현재 모델 결과로 사용하지 않는다. 발표 자료에는 현재 선택 모델, 정식 평가, 실패 단계 분석과 통제 실험 결과를 반영해야 한다.
