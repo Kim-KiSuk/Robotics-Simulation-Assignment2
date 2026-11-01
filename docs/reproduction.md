@@ -93,7 +93,7 @@ python tools/audit_videos.py
 ## 비교 실험 재현
 
 - [수집·병합 명령과 동작 규칙](collection_rules.md)
-- [모델 5종 다운로드와 결과 저장 평가](evaluation.md)
+- [보유 모델 평가와 결과 저장](evaluation.md)
 - [실험별 config](../configs/experiments), [원본 데이터 다운로드](../data/README.md#동작-규칙혼합-수집-실험-원본)
 
-실험 Release는 원본 HDF5와 보존된 모델을 제공한다. annotation·Mimic 전체 파일을 제공하는 묶음은 아니다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.
+추가 원본 HDF5와 실험 모델은 별도 배포 준비 중이다. annotation·Mimic 전체 파일은 배포 묶음에 포함하지 않는다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.

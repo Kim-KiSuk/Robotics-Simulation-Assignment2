@@ -1,17 +1,10 @@
 # 정책 평가와 결과 저장
 
-## 실험 모델 다운로드
+## 실험 모델 준비
 
 체크포인트의 실험 ID·SHA256·학습 조건은 [모델 manifest](../models/experiment_manifest.json)에 있다. 모델 경로 이름은 학습 당시 로그 폴더가 바뀌더라도 실험 ID와 해시로 구분한다.
 
-저장소 루트에서 실행한다. GitHub CLI가 없는 경우 Release 화면에서 같은 파일을 내려받아 `models/experiments/`에 넣는다.
-
-```bash
-mkdir -p models/experiments
-gh release download experiments-2026-11-01 \
-  --repo Kim-KiSuk/Robotics-Simulation-Assignmnet2 \
-  --pattern '*.pth' --dir models/experiments
-```
+실험 모델 5종은 **별도 배포 준비 중**으로 아직 다운로드용 Release에 게시하지 않았다. 보유한 checkpoint를 `--checkpoint`로 지정하면 로컬에서 평가할 수 있다. 파일 경로는 manifest의 `source_checkpoint`와 비교한다.
 
 ## 모델 하나당 100회 평가
 
@@ -23,18 +16,22 @@ cd /path/to/Robotics-Simulation-Assignmnet2
 
 python tools/evaluate_experiment.py \
   --isaaclab_root /home/kisuk/IsaacLab_RS \
+  --checkpoint /home/kisuk/IsaacLab_RS/logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-new-rule/bc_rnn_low_dim_agibot_toy2box/20261029111434/models/model_epoch_2000.pth \
   --experiment new_rule_20 --headless
 
 python tools/evaluate_experiment.py \
   --isaaclab_root /home/kisuk/IsaacLab_RS \
+  --checkpoint /home/kisuk/IsaacLab_RS/logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-multi-operator/bc_rnn_low_dim_agibot_toy2box/20261031151706/models/model_epoch_2000.pth \
   --experiment multi_operator_100 --headless
 
 python tools/evaluate_experiment.py \
   --isaaclab_root /home/kisuk/IsaacLab_RS \
+  --checkpoint /home/kisuk/IsaacLab_RS/logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-auto/bc_rnn_low_dim_agibot_toy2box/20261027100809/models/model_epoch_2000.pth \
   --experiment baseline_n100 --headless
 
 python tools/evaluate_experiment.py \
   --isaaclab_root /home/kisuk/IsaacLab_RS \
+  --checkpoint /home/kisuk/IsaacLab_RS/logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0/bc_rnn_low_dim_agibot_toy2box/20261101015656/models/model_epoch_2000.pth \
   --experiment new_rule_100 --headless
 ```
 

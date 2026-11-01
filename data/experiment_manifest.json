@@ -27,7 +27,9 @@
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
       "asset": "toy2box_new_rule_20.hdf5",
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20.hdf5"
+      "publication_status": "prepared_not_published",
+      "planned_download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20.hdf5",
+      "download_url": null
     },
     {
       "id": "new_rule_100",
@@ -41,7 +43,9 @@
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
       "asset": "toy2box_new_rule_100.hdf5",
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5"
+      "publication_status": "prepared_not_published",
+      "planned_download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5",
+      "download_url": null
     },
     {
       "id": "multi_operator_100",
@@ -61,7 +65,9 @@
         "team08_inwoo_all20.hdf5": 20
       },
       "asset": "toy2box_multi_operator_100.hdf5",
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100.hdf5"
+      "publication_status": "prepared_not_published",
+      "planned_download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100.hdf5",
+      "download_url": null
     },
     {
       "id": "xy_first_20",
@@ -75,7 +81,10 @@
       "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
       "merge_source_episode_counts": {},
       "asset": "toy2box_xy_first_20.hdf5",
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5"
+      "publication_status": "prepared_not_published",
+      "planned_download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5",
+      "download_url": null
     }
-  ]
+  ],
+  "release_status": "prepared_not_published"
 }

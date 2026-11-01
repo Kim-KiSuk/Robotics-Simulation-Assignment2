@@ -80,4 +80,4 @@
 - 같은 평가 seed와 horizon에서 성공 여부를 rollout별로 저장한다.
 - 학습 seed 101·111을 각각 평가하고 접근·파지·운반·배치 실패를 구분한다.
 
-원본 파일과 실험 가중치는 [실험 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)에 제공한다. annotation·Mimic HDF5 전체는 이 Release에 포함하지 않으며, 개수와 현재 확인 가능한 해시·학습 입력 경로를 manifest로 보관한다.
+원본 파일 4종과 실험 가중치 5종은 파일·해시 준비가 끝났으며 별도 배포 준비 중이다. 아직 다운로드용 Release에 게시하지 않았다. annotation·Mimic HDF5 전체는 배포 묶음에 포함하지 않으며, 개수와 현재 확인 가능한 해시·학습 입력 경로를 manifest로 보관한다.

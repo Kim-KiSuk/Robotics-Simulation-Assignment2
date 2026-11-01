@@ -16,7 +16,7 @@
 **정확한 정책 성공률은 평가 결과 로그 확인 전까지 미확정이다.** 영상 100개 중 800프레임 미만인 파일은 `new_rule_20` 56개, `new_rule_100` 68개, `multi_operator_100` 32개지만, 조기 종료에는 실패도 포함될 수 있어 성공 횟수로 사용하지 않는다. 기존 공용 영상 폴더는 다른 모델 평가에도 재사용되어 n100의 결과로 연결하지 않는다.
 
 - [실험 구성·비교·해석](docs/experiments.md) · [원본/학습 데이터와 체크포인트 근거](reports/experiment_inventory.json)
-- [원본 HDF5 4종·실험 체크포인트 5종 다운로드](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)
+- 원본 HDF5 4종·실험 체크포인트 5종: 파일·해시 준비 완료, **별도 배포 준비**. [데이터 manifest](data/experiment_manifest.json) · [모델 manifest](models/experiment_manifest.json)
 - [동작 규칙·수집 및 병합 방법](docs/collection_rules.md) · [평가 실행과 결과 저장](docs/evaluation.md)
 - [실험별 정책 영상·시범 재생 영상](docs/videos.md#실험별-영상)
 
@@ -72,7 +72,7 @@ REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
 
 ## 평가 상태
 
-제출용 선택 모델은 기존 `models/final_model.pth`다. 실험용 가중치 5종은 별도 Release로 제공하며 성능 순위로 최종 모델을 교체하지 않았다. [부분 실행 기록](submission/model_smoke_check.json)은 100회 정식 평가 결과가 아니다. 실험 모델의 정책 성공률, 학습 seed 101·111 비교, 실패 단계 분류와 단일 요인 통제 실험은 [실험 보고서](docs/experiments.md)에 확인 범위를 구분했다.
+제출용 선택 모델은 기존 `models/final_model.pth`다. 실험용 가중치 5종은 별도 배포 준비 중이며 성능 순위로 최종 모델을 교체하지 않았다. [부분 실행 기록](submission/model_smoke_check.json)은 100회 정식 평가 결과가 아니다. 실험 모델의 정책 성공률, 학습 seed 101·111 비교, 실패 단계 분류와 단일 요인 통제 실험은 [실험 보고서](docs/experiments.md)에 확인 범위를 구분했다.
 
 ## 폴더
 

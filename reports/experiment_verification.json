@@ -268,5 +268,6 @@
     "merged_steps": 200,
     "sources_unchanged": true,
     "existing_output_protected": true
-  }
+  },
+  "release_publication_status": "prepared_not_published"
 }
