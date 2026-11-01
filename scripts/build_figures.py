@@ -12,8 +12,8 @@ import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ORDER = ['baseline_n100', 'new_rule_20', 'new_rule_100', 'xy_first_20', 'multi_operator_100']
-LABELS = ['N100', 'New rule 20', 'New rule 100', 'Vertical 20', 'Multi 100']
+ORDER = ['baseline_n100', 'new_rule_20', 'new_rule_100', 'multi_operator_100']
+LABELS = ['Script test\n(n100)', 'New rule 20', 'New rule 100', 'Multi 100']
 
 
 def main():
@@ -25,6 +25,10 @@ def main():
         dataset, model, replay = data[ident], models[ident], replays.get(ident, {})
         rows.append({
             'experiment': ident,
+            'role': model['role'],
+            'display_name': model['display_name'],
+            'operator_comparison_group': model['operator_comparison_group'],
+            'source_composition': '; '.join(model.get('display_sources', [])),
             'original_demos': dataset['episodes'],
             'annotated_demos': model['annotation_episodes'],
             'training_demos': model['training_episodes'],
@@ -51,7 +55,7 @@ def main():
         'rows': rows,
     }, ensure_ascii=False, indent=2) + '\n')
 
-    colors = ['#8a99ae', '#5376aa', '#168a83', '#8e6db2', '#c18b4d']
+    colors = ['#8a99ae', '#5376aa', '#168a83', '#c18b4d']
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 10, 'axes.spines.top': False,
                          'axes.spines.right': False, 'axes.titleweight': 'bold'})
     fig, axes = plt.subplots(1, 3, figsize=(14, 4.7), constrained_layout=True)

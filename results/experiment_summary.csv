@@ -1,6 +1,5 @@
-experiment,original_demos,annotated_demos,training_demos,mean_original_seconds,mean_original_idle_percent,training_seed,checkpoint_epoch,evaluation_seed,requested_evaluation_rollouts,evaluation_horizon,confirmed_policy_success_rate,recorded_action_replay_successes,recorded_action_replay_episodes
-baseline_n100,100,99,500,14.6145,0.6969,101,2000,42,100,800,,,
-new_rule_20,20,19,1000,32.805,20.2275,101,2000,42,100,800,,20,20
-new_rule_100,100,98,1000,32.203,20.0833,101,2000,42,100,800,,100,100
-xy_first_20,20,20,1000,35.6275,20.3278,101,2000,42,100,800,,20,20
-multi_operator_100,100,93,1000,34.1635,27.4129,101,2000,42,100,800,,91,100
+experiment,role,display_name,operator_comparison_group,source_composition,original_demos,annotated_demos,training_demos,mean_original_seconds,mean_original_idle_percent,training_seed,checkpoint_epoch,evaluation_seed,requested_evaluation_rollouts,evaluation_horizon,confirmed_policy_success_rate,recorded_action_replay_successes,recorded_action_replay_episodes
+baseline_n100,script_test,n100 (스크립트 테스트용),스크립트 테스트용,,100,99,500,14.6145,0.6969,101,2000,42,100,800,,,
+new_rule_20,research,New rule 20,단일 구성 보조 조건,,20,19,1000,32.805,20.2275,101,2000,42,100,800,,20,20
+new_rule_100,research,New rule 100,단일 구성 비교 기준,,100,98,1000,32.203,20.0833,101,2000,42,100,800,,100,100
+multi_operator_100,research,Multi operator,다수 출처 혼합 조건,new_rule; vertical; 팀원 1; 팀원 2; 조교님 데이터,100,93,1000,34.1635,27.4129,101,2000,42,100,800,,91,100

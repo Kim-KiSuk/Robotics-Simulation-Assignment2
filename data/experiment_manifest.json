@@ -14,7 +14,10 @@
       "merge_source_episode_counts": {},
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100.hdf5",
       "asset": "toy2box_baseline_n100.hdf5",
-      "publication_status": "release"
+      "publication_status": "release",
+      "role": "script_test",
+      "display_name": "n100 (스크립트 테스트용)",
+      "operator_comparison_group": "스크립트 테스트용"
     },
     {
       "id": "new_rule_20",
@@ -29,7 +32,10 @@
       "merge_source_episode_counts": {},
       "publication_status": "release",
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20.hdf5",
-      "asset": "toy2box_new_rule_20.hdf5"
+      "asset": "toy2box_new_rule_20.hdf5",
+      "role": "research",
+      "display_name": "New rule 20",
+      "operator_comparison_group": "단일 구성 보조 조건"
     },
     {
       "id": "new_rule_100",
@@ -44,7 +50,10 @@
       "merge_source_episode_counts": {},
       "publication_status": "release",
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5",
-      "asset": "toy2box_new_rule_100.hdf5"
+      "asset": "toy2box_new_rule_100.hdf5",
+      "role": "research",
+      "display_name": "New rule 100",
+      "operator_comparison_group": "단일 구성 비교 기준"
     },
     {
       "id": "multi_operator_100",
@@ -65,25 +74,29 @@
       },
       "publication_status": "release",
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100.hdf5",
-      "asset": "toy2box_multi_operator_100.hdf5"
-    },
-    {
-      "id": "xy_first_20",
-      "source_path": "datasets/toy2box_vertical_xy_rotate_z_20.hdf5",
-      "episodes": 20,
-      "total_steps": 14251,
-      "mean_seconds": 35.627500000000005,
-      "mean_episode_idle_fraction": 0.2032778310352304,
-      "bytes": 10521484,
-      "sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
-      "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
-      "merge_source_episode_counts": {},
-      "publication_status": "release",
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5",
-      "asset": "toy2box_xy_first_20.hdf5"
+      "asset": "toy2box_multi_operator_100.hdf5",
+      "role": "research",
+      "display_name": "Multi operator",
+      "operator_comparison_group": "다수 출처 혼합 조건",
+      "display_sources": [
+        "new_rule",
+        "vertical",
+        "팀원 1",
+        "팀원 2",
+        "조교님 데이터"
+      ],
+      "display_source_episode_counts": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "source_label_basis": "user_provided_text_labels; not an assertion of five distinct operators"
     }
   ],
-  "publication_scope": "five_collected_original_datasets_and_one_rollout_epoch_2000_checkpoint_per_experiment",
+  "publication_scope": "active_research_profiles_and_script_test_reference",
   "release_tag": "experiments-2026-11-01",
-  "selected_experiment": "new_rule_100"
+  "selected_experiment": "new_rule_100",
+  "research_axis": "조작자 1명 vs 다수"
 }

@@ -1,6 +1,6 @@
 # Agibot Toy2Box 모방학습
 
-**Agibot 오른팔로 트럭을 집어 상자 안에 놓는 정책**을 학습한다. 시범의 동작 순서, 원본 개수, 여러 수집 파일의 혼합이 BC 정책에 어떤 영향을 주는지 비교했다. 수집 원본을 Mimic으로 증강하고, 같은 BC-RNN/GMM 구조로 다섯 실험을 학습했다.
+**Agibot 오른팔로 트럭을 집어 상자 안에 놓는 정책**을 학습한다. 연구 축은 **조작자 1명 vs 다수**이며, New rule의 단일 수집 구성과 여러 출처의 자료를 혼합한 Multi operator를 비교한다. New rule 20개·100개 조건으로 원본 개수 차이도 함께 살펴본다. n100은 스크립트 테스트용으로 구분한다.
 
 기본 선택 모델은 **new rule 원본 100개 → annotation 98개 → Mimic 1,000개 → epoch 2000**이다. 각 실험의 원본 HDF5와 rollout 모델을 공개했다. **정확한 정책 성공률은 기존 평가 출력 미확보로 아직 미확정**이며, 영상 길이를 성공률로 사용하지 않는다.
 
@@ -15,24 +15,27 @@
 | [![New rule 20 정책 동작](artifacts/media/new_rule_20_preview.gif)](videos/experiments/new_rule_20/rollout-episode-0.mp4) | [![New rule 100 정책 동작](artifacts/media/new_rule_100_preview.gif)](videos/experiments/new_rule_100/rollout-episode-0.mp4) |
 | **회전 → XY → 하강 · Mimic 1,000개** | **회전 → XY → 하강 · Mimic 1,000개** |
 
-| Vertical · 원본 20개 | Multi operator · 원본 100개 |
-| --- | --- |
-| [![Vertical 20 정책 동작](artifacts/media/xy_first_20_preview.gif)](videos/experiments/xy_first_20/rollout-episode-0.mp4) | [![Multi operator 정책 동작](artifacts/media/multi_operator_100_preview.gif)](videos/experiments/multi_operator_100/rollout-episode-0.mp4) |
-| **XY → 회전 → 하강 · Mimic 1,000개** | **수집 파일 5개 병합 · Mimic 1,000개** |
+| Multi operator · 원본 100개 |
+| --- |
+| [![Multi operator 정책 동작](artifacts/media/multi_operator_100_preview.gif)](videos/experiments/multi_operator_100/rollout-episode-0.mp4) |
+| **수집 파일 5개 병합 · Mimic 1,000개** |
 
-n100의 원본과 모델도 아래 Release에 제공한다. 영상과 checkpoint의 연결 근거, 원본 action 재생 영상은 [영상 안내](docs/MEDIA.md)에 정리했다.
+n100은 수집·증강·학습·rollout 파이프라인의 동작을 확인하는 스크립트 테스트용이다. 원본과 모델은 아래 Release에 제공한다. 영상과 checkpoint의 연결 근거, 원본 action 재생 영상은 [영상 안내](docs/MEDIA.md)에 정리했다.
 
-## 1. 무엇을 확인하려 했는가?
+## 1. 연구 축: 조작자 1명 vs 다수
 
-같은 물체를 옮기는 시범도 회전 시점, 접근 경로, 정지 시간이 다를 수 있다. 우리는 **동작 순서의 일관성, 원본 시범의 양, 수집 구성의 다양성**을 비교 대상으로 삼았다.
+**연구 질문:** 한 명의 조작자에 해당하는 단일 조건과 여러 조작자의 자료를 혼합한 조건으로 학습했을 때 정책 성능이 달라지는가?
+
+현재는 New rule을 단일 수집 구성의 비교 기준으로, Multi operator를 다수 출처의 혼합 조건으로 둔다. 두 조건의 원본 100개·Mimic 1,000개를 맞춰 비교하고, New rule 20개는 원본 개수에 대한 보조 조건으로 사용한다.
+
+**다수 조건에 사용한 데이터:** new_rule, vertical, 팀원 1, 팀원 2, 조교님 데이터. 각각 20개씩, 총 100개로 구성했다. 여기서 vertical은 혼합 자료의 구성 이름으로만 남기며 독립 비교 항목에는 포함하지 않는다.
 
 | 가설 | 비교한 조건 | 해석할 때 맞춰야 할 조건 |
 | --- | --- | --- |
-| 접근 순서가 일정하면 행동을 학습하기 쉬울 수 있다 | New rule과 Vertical | 원본 수·증강 수·학습 설정을 함께 확인 |
 | 같은 규칙에서 원본 시범을 늘리면 더 다양한 상태를 다룰 수 있다 | New rule 20과 100 | 두 조건 모두 Mimic 1,000개; 원본의 궤적 중복 확인 |
 | 여러 수집 파일을 섞으면 다양성과 일관성이 함께 달라진다 | New rule 100과 Multi operator | 실제 수집자 정보, 접근 순서, idle 차이를 구분 |
 
-학습 seed 101 한 개를 사용한 비교다. n100은 Mimic 500개, 나머지는 1,000개이므로 규칙 하나의 효과로 결과를 해석할 수 없다. 파일 5개가 서로 다른 사람 5명을 의미하는지도 별도로 확인해야 한다. [통제 조건과 검증 범위](docs/METHOD.md)
+학습 seed 101 한 개를 사용한 비교다. 연구 조건은 각각 Mimic 1,000개를 사용한다. n100은 Mimic 500개를 사용한 스크립트 테스트 조건이며 연구 결과 비교와 구분한다. 혼합 자료의 동작 규칙과 정지 구성 차이도 함께 고려한다. [통제 조건과 검증 범위](docs/METHOD.md)
 
 ## 2. 수집 원본에서 학습 정책까지
 
@@ -44,13 +47,12 @@ flowchart LR
     D --> E["정책 rollout<br/>seed 42 · 100회 · 800 step"]
 ```
 
-| 실험 | 수집 원본 | Annotation | Mimic 학습 시범 | 학습 run |
-| --- | ---: | ---: | ---: | --- |
-| n100 | 100 | 99 | 500 | `20261027100809` |
-| New rule 20 | 20 | 19 | 1,000 | `20261029111434` |
-| New rule 100 | 100 | 98 | 1,000 | `20261101015656` |
-| Vertical | 20 | 20 | 1,000 | `20261029203527` |
-| Multi operator | 100 | 93 | 1,000 | `20261031151706` |
+| 조건 | 용도 | 수집 원본 | Annotation | Mimic 학습 시범 |
+| --- | --- | ---: | ---: | ---: |
+| New rule 20 | 연구 비교 | 20 | 19 | 1,000 |
+| New rule 100 | 연구 비교 | 100 | 98 | 1,000 |
+| Multi operator | 연구 비교 | 100 | 93 | 1,000 |
+| n100 (스크립트 테스트용) | 파이프라인 동작 확인 | 100 | 99 | 500 |
 
 원본은 실제 수집한 개수를 유지했다. **원본 20개는 20개로, 원본 100개는 100개로 공개**하며 annotation·Mimic 파일이나 중간 epoch 가중치는 배포에 포함하지 않는다. [원본/모델 대응](reports/original_rollout_pairs.json)
 
@@ -59,8 +61,7 @@ flowchart LR
 | 구성 | 접근 순서 | 공통 후속 동작 |
 | --- | --- | --- |
 | New rule | 회전으로 수직 파지 자세 맞추기 → XY 이동 → 수직 하강 | 그립 → 충분히 상승 → 박스 이동 → 릴리즈 |
-| Vertical | XY 이동 → 회전 → 수직 하강 | 그립 → 충분히 상승 → 박스 이동 → 릴리즈 |
-| Multi operator | 서로 다른 수집 원본 파일 5개를 병합 | 원본별 경로·정지 구성 유지 |
+| Multi operator | new_rule·vertical·팀원 1·팀원 2·조교님 데이터 혼합 | 각 20개, 원본별 경로·정지 구성 유지 |
 
 수집기는 물체를 실제로 들어 올렸는지와 박스 입구 정렬·릴리즈를 확인한다. 성공·실패 후에는 장면과 기록 버퍼를 리셋한다. 속도 변화와 분산 멈춤을 사용한 조건의 목표 idle은 21%다.
 
@@ -74,10 +75,9 @@ flowchart LR
 
 | 실험 | 원본 평균 길이 | 원본 idle 평균 | 저장 action 재생 검증 | 정확한 정책 성공률 |
 | --- | ---: | ---: | ---: | --- |
-| n100 | 14.61초 | 0.70% | 전체 집계 없음 | 미확정 |
+| n100 (스크립트 테스트용) | 14.61초 | 0.70% | 전체 집계 없음 | 미확정 |
 | New rule 20 | 32.81초 | 20.23% | 20 / 20 | 미확정 |
 | New rule 100 | 32.20초 | 20.08% | 100 / 100 | 미확정 |
-| Vertical | 35.63초 | 20.33% | 20 / 20 | 미확정 |
 | Multi operator | 34.16초 | 27.41% | 91 / 100 | 미확정 |
 
 재생 검증은 저장한 초기 상태와 action을 그대로 실행해 성공 조건을 10 step 연속 충족한 횟수다. 정책이 관측을 보고 행동을 새로 결정하는 독립 평가와 다르다. 현재 자료로 모델의 성능 순위나 조작자 수의 인과 효과를 확정하지 않는다.
@@ -90,10 +90,9 @@ New rule 20의 20개 궤적은 100개 원본에서도 action·EE 위치 지문�
 
 | 실험 | 원본 HDF5 | Rollout 모델 |
 | --- | --- | --- |
-| n100 | [100개 원본](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100.hdf5) | [epoch 2000](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100_epoch2000.pth) |
+| n100 (스크립트 테스트용) | [100개 원본](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100.hdf5) | [epoch 2000](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_baseline_n100_epoch2000.pth) |
 | New rule 20 | [20개 원본](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20.hdf5) | [epoch 2000](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20_epoch2000.pth) |
 | New rule 100 | [100개 원본](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5) | [epoch 2000](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100_epoch2000.pth) |
-| Vertical | [20개 원본](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5) | [epoch 2000](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20_epoch2000.pth) |
 | Multi operator | [100개 원본](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100.hdf5) | [epoch 2000](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100_epoch2000.pth) |
 
 [Release 전체·SHA256SUMS](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01) · [데이터 안내](artifacts/datasets/README.md) · [모델 안내](artifacts/checkpoints/README.md)
@@ -142,7 +141,7 @@ python tools/evaluate_experiment.py \
 <details>
 <summary>기준 수집 Dataset A/B와 이전 n20 모델 기록</summary>
 
-[기존 원본 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/collection-2026-10-28), [수집 기록](docs/data_collection.md), [이전 모델 이력](reports/history), [이전 README](docs/archive/README_20261101.md)를 보존했다. 이전 n20 모델의 7회 부분 평가는 현재 기본 모델의 성공률로 사용하지 않는다.
+[기존 원본 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/collection-2026-10-28), [수집 기록](docs/data_collection.md), [이전 모델 이력](reports/history)을 보존했다. 이전 n20 모델의 7회 부분 평가는 현재 기본 모델의 성공률로 사용하지 않는다.
 
 </details>
 

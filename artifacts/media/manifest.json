@@ -37,24 +37,6 @@
       "policy_success": null
     },
     {
-      "experiment": "xy_first_20",
-      "trial": 0,
-      "source_video": "videos/experiments/xy_first_20/rollout-episode-0.mp4",
-      "source_video_sha256": "3d20a2d0c868fd1a8865d193316210e97b4dd4703af16c933f33cd141ffa9096",
-      "preview": "artifacts/media/xy_first_20_preview.gif",
-      "preview_sha256": "f8d9b2e20f4323515e4c2998f5024b2e0cb46145c6458b9957bcfb246bff4dc9",
-      "poster": "artifacts/media/xy_first_20_poster.png",
-      "clip_start_seconds": 8,
-      "clip_duration_seconds": 6,
-      "preview_fps": 10,
-      "playback_speed": 1,
-      "source_fps": 20.0,
-      "checkpoint_sha256": "6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9",
-      "checkpoint_association": "execution history; source MP4 has no embedded checkpoint digest",
-      "selection": "trial 0 and fixed 8–14 second interval; independent of success outcome",
-      "policy_success": null
-    },
-    {
       "experiment": "multi_operator_100",
       "trial": 0,
       "source_video": "videos/experiments/multi_operator_100/rollout-episode-0.mp4",

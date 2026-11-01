@@ -68,4 +68,4 @@ Agibot 오른팔로 트럭을 집어 박스 안에 놓는다. 상대 이동 3축
 
 ## 동작 순서와 혼합 원본 비교
 
-수직 파지 순서를 통일한 원본 20개·100개, XY 이동을 먼저 한 원본 20개, 여러 시범 파일을 합친 원본 100개를 추가로 관리한다. 구성·통계·실제 원본별 개수는 [실험 보고서](experiments.md)와 [데이터 manifest](../data/experiment_manifest.json)에 정리했다. [동작 규칙과 병합 명령](collection_rules.md), [대표 재생 영상](videos.md#실험별-영상)을 제공한다.
+수직 파지 순서를 통일한 원본 20개·100개, 여러 시범 파일을 합친 원본 100개를 추가로 관리한다. 구성·통계·실제 원본별 개수는 [실험 보고서](experiments.md)와 [데이터 manifest](../data/experiment_manifest.json)에 정리했다. [동작 규칙과 병합 명령](collection_rules.md), [대표 재생 영상](videos.md#실험별-영상)을 제공한다.

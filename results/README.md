@@ -2,7 +2,7 @@
 
 | 파일 | 내용 |
 | --- | --- |
-| [experiment_summary.csv](experiment_summary.csv) | 5개 실험의 원본·annotation·학습 수, 시간, idle, 재생 판정 |
+| [experiment_summary.csv](experiment_summary.csv) | 4개 공개 조건의 원본·annotation·학습 수, 시간, idle, 재생 판정 |
 | [experiment_summary.json](experiment_summary.json) | 같은 표와 근거 파일 경로 |
 | [data_overlap.json](data_overlap.json) | New rule 20과 100의 action·EE 궤적 지문 비교 |
 | [publication_validation.json](publication_validation.json) | 링크·모델·과업 코드·실제 영상 GIF의 로컬 검증 |

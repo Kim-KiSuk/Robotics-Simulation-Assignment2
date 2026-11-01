@@ -9,7 +9,7 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPERIMENTS = ['new_rule_20', 'new_rule_100', 'xy_first_20', 'multi_operator_100']
+EXPERIMENTS = ['new_rule_20', 'new_rule_100', 'multi_operator_100']
 
 
 def main():
@@ -67,7 +67,7 @@ def main():
             'policy_success': None,
         })
     (output / 'manifest.json').write_text(json.dumps({'previews': records}, ensure_ascii=False, indent=2) + '\n')
-    print('Built four 6-second, real-time GIF previews and their provenance manifest.')
+    print('Built three 6-second, real-time GIF previews and their provenance manifest.')
 
 
 if __name__ == '__main__':

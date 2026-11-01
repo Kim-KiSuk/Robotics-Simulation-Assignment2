@@ -96,4 +96,4 @@ python tools/audit_videos.py
 - [보유 모델 평가와 결과 저장](evaluation.md)
 - [실험별 config](../configs/experiments), [추가 원본 데이터 정보](../data/README.md#동작-규칙혼합-수집-실험-원본)
 
-Release에는 5개 실험의 수집 원본 HDF5와 rollout에 사용한 epoch 2000 모델을 각각 제공한다. 원본은 실제 수집한 20개 또는 100개 시범이며 annotation·Mimic 전체와 중간 가중치는 포함하지 않는다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.
+Release에는 4개 공개 조건의 수집 원본 HDF5와 rollout에 사용한 epoch 2000 모델을 각각 제공한다. 원본은 실제 수집한 20개 또는 100개 시범이며 annotation·Mimic 전체와 중간 가중치는 포함하지 않는다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.

@@ -35,11 +35,12 @@ def main():
     rows = json.loads((ROOT / 'results/experiment_summary.json').read_text())['rows']
     originals = {row['id']: row for row in json.loads((ROOT / 'data/experiment_manifest.json').read_text())['datasets']}
     models = {row['id']: row for row in json.loads((ROOT / 'models/experiment_manifest.json').read_text())['models']}
-    assert len(rows) == 5
+    assert len(rows) == 4
     for row in rows:
         assert row['original_demos'] == originals[row['experiment']]['episodes']
         assert row['confirmed_policy_success_rate'] == models[row['experiment']]['policy_success_rate']
         assert row['training_demos'] == models[row['experiment']]['training_episodes']
+        assert row['role'] == models[row['experiment']]['role']
     previews = json.loads((ROOT / 'artifacts/media/manifest.json').read_text())['previews']
     for row in previews:
         source, gif = ROOT / row['source_video'], ROOT / row['preview']
@@ -62,7 +63,7 @@ def main():
     result = {'status': 'passed', 'relative_markdown_links': links, 'experiment_rows': len(rows),
               'real_time_previews': len(previews), 'preview_duration_seconds': 6,
               'selected_checkpoint_sha256': final['sha256'], 'overlay_files_verified': len(overlay['files']),
-              'models_or_datasets_changed': False, 'policy_reevaluation_performed': False}
+              'selected_checkpoint_matches_manifest': True, 'policy_reevaluation_performed': False}
     report_path.write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps(result, indent=2))
 

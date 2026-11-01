@@ -10,7 +10,9 @@
       "checkpoint_association": "execution_history; not embedded in MP4",
       "success": null,
       "frames": 656,
-      "fps": 20.0
+      "fps": 20.0,
+      "role": "research",
+      "display_name": "New rule 20"
     },
     {
       "kind": "policy_reference",
@@ -21,7 +23,9 @@
       "checkpoint_association": "execution_history; not embedded in MP4",
       "success": null,
       "frames": 800,
-      "fps": 20.0
+      "fps": 20.0,
+      "role": "research",
+      "display_name": "New rule 20"
     },
     {
       "kind": "policy_reference",
@@ -32,7 +36,9 @@
       "checkpoint_association": "execution_history; not embedded in MP4",
       "success": null,
       "frames": 777,
-      "fps": 20.0
+      "fps": 20.0,
+      "role": "research",
+      "display_name": "Multi operator"
     },
     {
       "kind": "policy_reference",
@@ -43,7 +49,9 @@
       "checkpoint_association": "execution_history; not embedded in MP4",
       "success": null,
       "frames": 769,
-      "fps": 20.0
+      "fps": 20.0,
+      "role": "research",
+      "display_name": "Multi operator"
     },
     {
       "kind": "policy_reference",
@@ -54,7 +62,9 @@
       "checkpoint_association": "execution_history; not embedded in MP4",
       "success": null,
       "frames": 729,
-      "fps": 20.0
+      "fps": 20.0,
+      "role": "research",
+      "display_name": "New rule 100"
     },
     {
       "kind": "policy_reference",
@@ -65,7 +75,9 @@
       "checkpoint_association": "execution_history; not embedded in MP4",
       "success": null,
       "frames": 380,
-      "fps": 20.0
+      "fps": 20.0,
+      "role": "research",
+      "display_name": "New rule 100"
     },
     {
       "kind": "dataset_replay",
@@ -75,7 +87,9 @@
       "sha256": "fbb39141624eb95e440dfc0e3b56b767089f46443e423f3aa078fb633c9a3b4e",
       "episode": "demo_0",
       "frames": 593,
-      "replay_task_success_10_steps": true
+      "replay_task_success_10_steps": true,
+      "role": "research",
+      "display_name": "New rule 20"
     },
     {
       "kind": "dataset_replay",
@@ -85,7 +99,9 @@
       "sha256": "807fe61453d24358b7011e31564edf8d790356b23ce29f0079ecd2cb9c220744",
       "episode": "demo_19",
       "frames": 615,
-      "replay_task_success_10_steps": true
+      "replay_task_success_10_steps": true,
+      "role": "research",
+      "display_name": "New rule 20"
     },
     {
       "kind": "dataset_replay",
@@ -95,7 +111,9 @@
       "sha256": "1b86695a25287559e9aae83a060c052403c5e466ad0edb36880082a909031fae",
       "episode": "demo_0",
       "frames": 593,
-      "replay_task_success_10_steps": true
+      "replay_task_success_10_steps": true,
+      "role": "research",
+      "display_name": "New rule 100"
     },
     {
       "kind": "dataset_replay",
@@ -105,7 +123,9 @@
       "sha256": "d95d4ab4033436c6330e7421fb45b23fc06b0a15b162cb737102dfa93c266850",
       "episode": "demo_99",
       "frames": 572,
-      "replay_task_success_10_steps": true
+      "replay_task_success_10_steps": true,
+      "role": "research",
+      "display_name": "New rule 100"
     },
     {
       "kind": "dataset_replay",
@@ -115,7 +135,9 @@
       "sha256": "59e1d71b413ecf6fa4afa98788ed35bd45ec4eefbbc2c9238cbfb810665af202",
       "episode": "demo_0",
       "frames": 439,
-      "replay_task_success_10_steps": true
+      "replay_task_success_10_steps": true,
+      "role": "research",
+      "display_name": "Multi operator"
     },
     {
       "kind": "dataset_replay",
@@ -125,49 +147,9 @@
       "sha256": "40ff8d7719e17c9d0e118ae45f2a3b91c25ef4fc2fffaca27b50b3a89f7b9fa1",
       "episode": "demo_99",
       "frames": 647,
-      "replay_task_success_10_steps": true
-    },
-    {
-      "kind": "dataset_replay",
-      "experiment": "xy_first_20",
-      "file": "videos/experiments/xy_first_20_replay/demo_0.mp4",
-      "source_folder": "videos/agibot_demos_vertical_xy_rotate_z_20",
-      "sha256": "ab9e5b8b66b00a069bd65431931bfaede21d29a58c7eeb1c7863b2c981a152b3",
-      "episode": "demo_0",
-      "frames": 560,
-      "replay_task_success_10_steps": true
-    },
-    {
-      "kind": "dataset_replay",
-      "experiment": "xy_first_20",
-      "file": "videos/experiments/xy_first_20_replay/demo_19.mp4",
-      "source_folder": "videos/agibot_demos_vertical_xy_rotate_z_20",
-      "sha256": "5a5a9ec94ee8c75a6d673770372c2ca62baac5d304820a849c96bb8e6ec524cc",
-      "episode": "demo_19",
-      "frames": 898,
-      "replay_task_success_10_steps": true
-    },
-    {
-      "kind": "policy_reference",
-      "experiment": "xy_first_20",
-      "file": "videos/experiments/xy_first_20/rollout-episode-0.mp4",
-      "source_folder": "videos/agibot_bc_mimic_vertical_xy_rotate_z_20",
-      "sha256": "3d20a2d0c868fd1a8865d193316210e97b4dd4703af16c933f33cd141ffa9096",
-      "frames": 617,
-      "fps": 20.0,
-      "success": null,
-      "checkpoint_association": "execution_history; not embedded in MP4"
-    },
-    {
-      "kind": "policy_reference",
-      "experiment": "xy_first_20",
-      "file": "videos/experiments/xy_first_20/rollout-episode-1.mp4",
-      "source_folder": "videos/agibot_bc_mimic_vertical_xy_rotate_z_20",
-      "sha256": "1624d3a8fcf6cd114960b0438295ffd0991d5adf7b3b00c121c9f8bcc2427da6",
-      "frames": 800,
-      "fps": 20.0,
-      "success": null,
-      "checkpoint_association": "execution_history; not embedded in MP4"
+      "replay_task_success_10_steps": true,
+      "role": "research",
+      "display_name": "Multi operator"
     }
   ]
 }

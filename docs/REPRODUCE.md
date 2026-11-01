@@ -44,7 +44,7 @@ gh release download experiments-2026-11-01 \
   --pattern '*.pth' --dir models/experiments
 ```
 
-원본은 n100 100개, New rule 20개·100개, Vertical 20개, Multi operator 100개다. annotation·Mimic 파일은 포함하지 않는다. [데이터 안내](../artifacts/datasets/README.md) · [모델 안내](../artifacts/checkpoints/README.md)
+원본은 n100 (스크립트 테스트용) 100개, New rule 20개·100개, Multi operator 100개다. annotation·Mimic 파일은 포함하지 않는다. [데이터 안내](../artifacts/datasets/README.md) · [모델 안내](../artifacts/checkpoints/README.md)
 
 ## 모델별 평가
 
@@ -57,7 +57,7 @@ python tools/evaluate_experiment.py \
   --output_root ./results/evaluations --headless
 ```
 
-`--experiment`는 `baseline_n100`, `new_rule_20`, `new_rule_100`, `xy_first_20`, `multi_operator_100` 중 하나다. `xy_first_20`이 문서의 Vertical이다. 보유한 checkpoint를 지정하려면 `--checkpoint /absolute/path/model_epoch_2000.pth`를 추가한다. 해당 실험의 해시와 일치해야 한다.
+`--experiment`는 `baseline_n100`, `new_rule_20`, `new_rule_100`, `multi_operator_100` 중 하나다. 보유한 checkpoint를 지정하려면 `--checkpoint /absolute/path/model_epoch_2000.pth`를 추가한다. 해당 실험의 해시와 일치해야 한다.
 
 `results/evaluations/<실험ID>_<시각>/`에 `metadata.json`, `evaluation.log`, `results.json`과 선택한 경우 영상이 저장된다. `complete: true`인 검증 결과만 최종 성공률로 사용한다. 기존 로그 분석과 중단 처리 상세는 [평가 도구 안내](evaluation.md)에 있다.
 

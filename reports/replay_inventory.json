@@ -227,7 +227,9 @@
           "replay_final_task_success": true,
           "method": "initial_state_restore_then_recorded_action_replay"
         }
-      ]
+      ],
+      "role": "research",
+      "display_name": "New rule 20"
     },
     {
       "id": "new_rule_100",
@@ -1335,7 +1337,9 @@
           "replay_final_task_success": true,
           "method": "initial_state_restore_then_recorded_action_replay"
         }
-      ]
+      ],
+      "role": "research",
+      "display_name": "New rule 100"
     },
     {
       "id": "multi_operator_100",
@@ -2443,235 +2447,9 @@
           "replay_final_task_success": true,
           "method": "initial_state_restore_then_recorded_action_replay"
         }
-      ]
-    },
-    {
-      "id": "xy_first_20",
-      "replayed_episodes": 20,
-      "success_10_consecutive_steps": 20,
-      "method": "stored_initial_state_and_recorded_actions; not policy evaluation",
-      "episodes": [
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_0",
-          "video": "demo_0.mp4",
-          "frames": 560,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_1",
-          "video": "demo_1.mp4",
-          "frames": 754,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_2",
-          "video": "demo_2.mp4",
-          "frames": 746,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_3",
-          "video": "demo_3.mp4",
-          "frames": 761,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_4",
-          "video": "demo_4.mp4",
-          "frames": 805,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_5",
-          "video": "demo_5.mp4",
-          "frames": 735,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_6",
-          "video": "demo_6.mp4",
-          "frames": 731,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_7",
-          "video": "demo_7.mp4",
-          "frames": 605,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_8",
-          "video": "demo_8.mp4",
-          "frames": 715,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_9",
-          "video": "demo_9.mp4",
-          "frames": 855,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_10",
-          "video": "demo_10.mp4",
-          "frames": 577,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_11",
-          "video": "demo_11.mp4",
-          "frames": 604,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_12",
-          "video": "demo_12.mp4",
-          "frames": 561,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_13",
-          "video": "demo_13.mp4",
-          "frames": 650,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_14",
-          "video": "demo_14.mp4",
-          "frames": 806,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_15",
-          "video": "demo_15.mp4",
-          "frames": 826,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_16",
-          "video": "demo_16.mp4",
-          "frames": 678,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_17",
-          "video": "demo_17.mp4",
-          "frames": 614,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_18",
-          "video": "demo_18.mp4",
-          "frames": 770,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        },
-        {
-          "dataset": "toy2box_vertical_xy_rotate_z_20.hdf5",
-          "episode": "demo_19",
-          "video": "demo_19.mp4",
-          "frames": 898,
-          "fps": 20.0,
-          "replay_task_success_10_steps": true,
-          "peak_consecutive_success_steps": 10,
-          "replay_final_task_success": true,
-          "method": "initial_state_restore_then_recorded_action_replay"
-        }
-      ]
+      ],
+      "role": "research",
+      "display_name": "Multi operator"
     }
   ]
 }

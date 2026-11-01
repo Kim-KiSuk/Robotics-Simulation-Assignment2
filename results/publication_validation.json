@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "relative_markdown_links": 231,
-  "experiment_rows": 5,
-  "real_time_previews": 4,
+  "relative_markdown_links": 189,
+  "experiment_rows": 4,
+  "real_time_previews": 3,
   "preview_duration_seconds": 6,
   "selected_checkpoint_sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e",
   "overlay_files_verified": 14,
-  "models_or_datasets_changed": false,
+  "selected_checkpoint_matches_manifest": true,
   "policy_reevaluation_performed": false
 }

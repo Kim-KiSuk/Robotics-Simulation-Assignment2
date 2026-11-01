@@ -511,7 +511,9 @@
           "fps": 20.0
         }
       ],
-      "checkpoint_association": "execution_history; not embedded in MP4"
+      "checkpoint_association": "execution_history; not embedded in MP4",
+      "role": "research",
+      "display_name": "New rule 20"
     },
     {
       "id": "new_rule_20_retest",
@@ -1533,7 +1535,9 @@
           "fps": 20.0
         }
       ],
-      "checkpoint_association": "execution_history; not embedded in MP4"
+      "checkpoint_association": "execution_history; not embedded in MP4",
+      "role": "research",
+      "display_name": "Multi operator"
     },
     {
       "id": "new_rule_100",
@@ -2044,7 +2048,9 @@
           "fps": 20.0
         }
       ],
-      "checkpoint_association": "execution_history; not embedded in MP4"
+      "checkpoint_association": "execution_history; not embedded in MP4",
+      "role": "research",
+      "display_name": "New rule 100"
     },
     {
       "id": "unattributed_reused_folder",

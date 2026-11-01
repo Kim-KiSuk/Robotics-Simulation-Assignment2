@@ -11,5 +11,31 @@
   "project_overlay_manifest": "isaaclab_project/source_manifest.json",
   "release_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01",
   "results": "results/experiment_summary.json",
-  "policy_success_rate": null
+  "policy_success_rate": null,
+  "active_experiments": [
+    "new_rule_20",
+    "new_rule_100",
+    "multi_operator_100",
+    "baseline_n100"
+  ],
+  "research_experiments": [
+    "new_rule_20",
+    "new_rule_100",
+    "multi_operator_100"
+  ],
+  "script_test_experiments": [
+    "baseline_n100"
+  ],
+  "research_axis": "조작자 1명 vs 다수",
+  "main_comparison": [
+    "new_rule_100",
+    "multi_operator_100"
+  ],
+  "multiple_source_composition": [
+    "new_rule",
+    "vertical",
+    "팀원 1",
+    "팀원 2",
+    "조교님 데이터"
+  ]
 }

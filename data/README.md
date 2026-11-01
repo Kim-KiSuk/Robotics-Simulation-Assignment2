@@ -17,15 +17,16 @@ annotation·Mimic 관련 파일은 [통계·연결 관계](../docs/data_collecti
 
 ## 동작 규칙·혼합 수집 실험 원본
 
-아래 5개 실험의 수집 원본은 [실험 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)에서 제공한다. 각 파일은 실제 수집한 20개 또는 100개 시범이며 Mimic 증강 데이터가 아니다. `tools/download_data.py`의 기존 기본 다운로드는 Dataset A/B만 받는다.
+주 연구 축은 **조작자 1명 vs 다수**다. Multi operator에 사용한 데이터는 new_rule, vertical, 팀원 1, 팀원 2, 조교님 데이터이며 각 20개씩 총 100개다. n100은 스크립트 테스트용으로 구분한다.
+
+아래 4개 공개 조건의 수집 원본은 [실험 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)에서 제공한다. 각 파일은 실제 수집한 20개 또는 100개 시범이며 Mimic 증강 데이터가 아니다. `tools/download_data.py`의 기존 기본 다운로드는 Dataset A/B만 받는다.
 
 | 실험 ID | 원본 파일명 | 시범 수 |
 |---|---|---:|
-| `baseline_n100` | `toy2box_baseline_n100.hdf5` | 100 |
+| `baseline_n100` (스크립트 테스트용) | `toy2box_baseline_n100.hdf5` | 100 |
 | `new_rule_20` | `toy2box_new_rule_20.hdf5` | 20 |
 | `new_rule_100` | `toy2box_new_rule_100.hdf5` | 100 |
 | `multi_operator_100` | `toy2box_multi_operator_100.hdf5` | 100 |
-| `xy_first_20` (vertical) | `toy2box_xy_first_20.hdf5` | 20 |
 
 ```bash
 gh release download experiments-2026-11-01 \

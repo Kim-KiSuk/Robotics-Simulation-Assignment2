@@ -4,14 +4,14 @@
   "published_at": "2026-11-01T01:32:59Z",
   "target_commit": "e6d9ad1ec0dfc1a027ab902f19001aa4c94c98b1",
   "draft": false,
-  "original_hdf5_files": 5,
-  "rollout_model_files": 5,
+  "original_hdf5_files": 4,
+  "rollout_model_files": 4,
   "checksum_file_download_verified": true,
   "assets": [
     {
       "name": "SHA256SUMS",
-      "bytes": 975,
-      "github_digest": "sha256:3bfcb0bb0e16e0ecfce077bcf10289b4e3dee6e0e66bb4d035a3e54d1fad37fa",
+      "bytes": 784,
+      "github_digest": "sha256:2a7edb8a3105cb7e29f88ab751531cf6b57ad820b3ebe8934f6f29512e7fc29a",
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/SHA256SUMS"
     },
     {
@@ -61,18 +61,21 @@
       "bytes": 7985734,
       "github_digest": "sha256:ac51a0c665a1edfacb72db69987746a60b96d5544a0b5504f93043f8b56c0c13",
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20_epoch2000.pth"
-    },
-    {
-      "name": "toy2box_xy_first_20.hdf5",
-      "bytes": 10521484,
-      "github_digest": "sha256:f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5"
-    },
-    {
-      "name": "toy2box_xy_first_20_epoch2000.pth",
-      "bytes": 7985734,
-      "github_digest": "sha256:6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9",
-      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20_epoch2000.pth"
     }
-  ]
+  ],
+  "updated_at": "2026-11-01T02:44:47Z",
+  "research_axis": "조작자 1명 vs 다수",
+  "multiple_source_composition": [
+    "new_rule",
+    "vertical",
+    "팀원 1",
+    "팀원 2",
+    "조교님 데이터"
+  ],
+  "research_conditions": [
+    "new_rule_20",
+    "new_rule_100",
+    "multi_operator_100"
+  ],
+  "script_test_condition": "baseline_n100"
 }

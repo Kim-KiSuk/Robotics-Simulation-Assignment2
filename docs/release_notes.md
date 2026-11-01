@@ -1,6 +1,6 @@
 # Toy2Box datasets — Dataset A / Dataset B
 
-이 문서는 `collection-2026-10-28` Release 당시의 기록이다. 현재 원본/rollout 모델 5개 실험은 [실험 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01), 현재 기본 모델은 [학습 기록](training_status.md)을 따른다. 아래 Mimic 499개 모델 설명은 이전 n20 조건이다.
+이 문서는 `collection-2026-10-28` Release 당시의 기록이다. 현재 원본/rollout 모델 4개 공개 조건은 [실험 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01), 현재 기본 모델은 [학습 기록](training_status.md)을 따른다. 아래 Mimic 499개 모델 설명은 이전 n20 조건이다.
 
 두 데이터 세트를 고정된 실험 이름으로 제공한다. 파일명만 정리했으며 HDF5 내부 데이터와 SHA256은 수집 원본과 동일하다.
 

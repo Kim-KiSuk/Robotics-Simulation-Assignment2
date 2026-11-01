@@ -11,7 +11,9 @@
       "fingerprint": "SHA256(float32 actions + float32 eef_pos)",
       "checkpoint": "logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-auto/bc_rnn_low_dim_agibot_toy2box/20261027100809/models/model_epoch_2000.pth",
       "checkpoint_sha256": "7c78338436d51f674f8dd7446fb7590b9f46f3521fd60a6ad5183b93fa16be91",
-      "payload_bytes": 36830729
+      "payload_bytes": 36830729,
+      "role": "script_test",
+      "display_name": "n100 (스크립트 테스트용)"
     },
     {
       "experiment": "new_rule_20",
@@ -23,7 +25,9 @@
       "fingerprint": "SHA256(float32 actions + float32 eef_pos)",
       "checkpoint": "logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-new-rule/bc_rnn_low_dim_agibot_toy2box/20261029111434/models/model_epoch_2000.pth",
       "checkpoint_sha256": "ac51a0c665a1edfacb72db69987746a60b96d5544a0b5504f93043f8b56c0c13",
-      "payload_bytes": 17665523
+      "payload_bytes": 17665523,
+      "role": "research",
+      "display_name": "New rule 20"
     },
     {
       "experiment": "new_rule_100",
@@ -35,7 +39,9 @@
       "fingerprint": "SHA256(float32 actions + float32 eef_pos)",
       "checkpoint": "logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0/bc_rnn_low_dim_agibot_toy2box/20261101015656/models/model_epoch_2000.pth",
       "checkpoint_sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e",
-      "payload_bytes": 55725416
+      "payload_bytes": 55725416,
+      "role": "research",
+      "display_name": "New rule 100"
     },
     {
       "experiment": "multi_operator_100",
@@ -50,19 +56,9 @@
       "payload_bytes": 57177723,
       "matched_action_episodes": 93,
       "matched_actions_and_eef_episodes": 59,
-      "annotation_method": "simulation action replay; source actions match all 93 annotated episodes"
-    },
-    {
-      "experiment": "xy_first_20",
-      "raw_source": "datasets/toy2box_vertical_xy_rotate_z_20.hdf5",
-      "raw_episodes": 20,
-      "raw_sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
-      "annotation_episodes": 20,
-      "matched_raw_annotation_episodes": 20,
-      "fingerprint": "SHA256(float32 actions + float32 eef_pos)",
-      "checkpoint": "logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-vertial_xy_rotate_z_20/bc_rnn_low_dim_agibot_toy2box/20261029203527/models/model_epoch_2000.pth",
-      "checkpoint_sha256": "6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9",
-      "payload_bytes": 18507218
+      "annotation_method": "simulation action replay; source actions match all 93 annotated episodes",
+      "role": "research",
+      "display_name": "Multi operator"
     }
   ]
 }

@@ -4,7 +4,7 @@
 
 체크포인트의 실험 ID·SHA256·학습 조건은 [모델 manifest](../models/experiment_manifest.json)에 있다. 모델 경로 이름은 학습 당시 로그 폴더가 바뀌더라도 실험 ID와 해시로 구분한다.
 
-기본 선택 모델은 new rule 100개 실험의 `models/final_model.pth`다. 비교 실험 5종은 각각 rollout에 사용한 epoch 2000 가중치 하나를 [Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)로 제공한다. 중간 epoch 가중치는 포함하지 않는다.
+기본 선택 모델은 new rule 100개 실험의 `models/final_model.pth`다. 연구 조건 3종과 스크립트 테스트용 n100은 각각 rollout에 사용한 epoch 2000 가중치 하나를 [Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)로 제공한다. 중간 epoch 가중치는 포함하지 않는다.
 
 저장소 루트에서 다음을 실행한다. GitHub CLI가 없으면 Release 화면에서 같은 파일을 내려받아 `models/experiments/`에 넣는다.
 
@@ -41,9 +41,6 @@ python tools/evaluate_experiment.py \
   --isaaclab_root /home/kisuk/IsaacLab_RS \
   --experiment new_rule_100 --headless
 
-python tools/evaluate_experiment.py \
-  --isaaclab_root /home/kisuk/IsaacLab_RS \
-  --experiment xy_first_20 --headless
 ```
 
 기본값은 평가 seed 42, rollout 100회, horizon 800이다. `--headless`를 빼면 화면을 보며 평가한다. `--video`를 추가하면 해당 실행 폴더 안에 영상을 저장한다. 설치된 로컬 checkpoint를 쓰려면 `--checkpoint /absolute/path/model_epoch_2000.pth`를 추가한다. 선택한 실험 manifest와 해시가 일치해야 한다.
