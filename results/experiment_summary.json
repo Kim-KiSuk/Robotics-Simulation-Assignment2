@@ -1,0 +1,90 @@
+{
+  "sources": [
+    "data/experiment_manifest.json",
+    "models/experiment_manifest.json",
+    "reports/replay_inventory.json"
+  ],
+  "policy_success_status": "unconfirmed_until_complete_evaluation_log_is_available",
+  "rows": [
+    {
+      "experiment": "baseline_n100",
+      "original_demos": 100,
+      "annotated_demos": 99,
+      "training_demos": 500,
+      "mean_original_seconds": 14.6145,
+      "mean_original_idle_percent": 0.6969,
+      "training_seed": 101,
+      "checkpoint_epoch": 2000,
+      "evaluation_seed": 42,
+      "requested_evaluation_rollouts": 100,
+      "evaluation_horizon": 800,
+      "confirmed_policy_success_rate": null,
+      "recorded_action_replay_successes": null,
+      "recorded_action_replay_episodes": null
+    },
+    {
+      "experiment": "new_rule_20",
+      "original_demos": 20,
+      "annotated_demos": 19,
+      "training_demos": 1000,
+      "mean_original_seconds": 32.805,
+      "mean_original_idle_percent": 20.2275,
+      "training_seed": 101,
+      "checkpoint_epoch": 2000,
+      "evaluation_seed": 42,
+      "requested_evaluation_rollouts": 100,
+      "evaluation_horizon": 800,
+      "confirmed_policy_success_rate": null,
+      "recorded_action_replay_successes": 20,
+      "recorded_action_replay_episodes": 20
+    },
+    {
+      "experiment": "new_rule_100",
+      "original_demos": 100,
+      "annotated_demos": 98,
+      "training_demos": 1000,
+      "mean_original_seconds": 32.203,
+      "mean_original_idle_percent": 20.0833,
+      "training_seed": 101,
+      "checkpoint_epoch": 2000,
+      "evaluation_seed": 42,
+      "requested_evaluation_rollouts": 100,
+      "evaluation_horizon": 800,
+      "confirmed_policy_success_rate": null,
+      "recorded_action_replay_successes": 100,
+      "recorded_action_replay_episodes": 100
+    },
+    {
+      "experiment": "xy_first_20",
+      "original_demos": 20,
+      "annotated_demos": 20,
+      "training_demos": 1000,
+      "mean_original_seconds": 35.6275,
+      "mean_original_idle_percent": 20.3278,
+      "training_seed": 101,
+      "checkpoint_epoch": 2000,
+      "evaluation_seed": 42,
+      "requested_evaluation_rollouts": 100,
+      "evaluation_horizon": 800,
+      "confirmed_policy_success_rate": null,
+      "recorded_action_replay_successes": 20,
+      "recorded_action_replay_episodes": 20
+    },
+    {
+      "experiment": "multi_operator_100",
+      "original_demos": 100,
+      "annotated_demos": 93,
+      "training_demos": 1000,
+      "mean_original_seconds": 34.1635,
+      "mean_original_idle_percent": 27.4129,
+      "training_seed": 101,
+      "checkpoint_epoch": 2000,
+      "evaluation_seed": 42,
+      "requested_evaluation_rollouts": 100,
+      "evaluation_horizon": 800,
+      "confirmed_policy_success_rate": null,
+      "recorded_action_replay_successes": 91,
+      "recorded_action_replay_episodes": 100
+    }
+  ]
+}

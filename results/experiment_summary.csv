@@ -1,0 +1,6 @@
+experiment,original_demos,annotated_demos,training_demos,mean_original_seconds,mean_original_idle_percent,training_seed,checkpoint_epoch,evaluation_seed,requested_evaluation_rollouts,evaluation_horizon,confirmed_policy_success_rate,recorded_action_replay_successes,recorded_action_replay_episodes
+baseline_n100,100,99,500,14.6145,0.6969,101,2000,42,100,800,,,
+new_rule_20,20,19,1000,32.805,20.2275,101,2000,42,100,800,,20,20
+new_rule_100,100,98,1000,32.203,20.0833,101,2000,42,100,800,,100,100
+xy_first_20,20,20,1000,35.6275,20.3278,101,2000,42,100,800,,20,20
+multi_operator_100,100,93,1000,34.1635,27.4129,101,2000,42,100,800,,91,100

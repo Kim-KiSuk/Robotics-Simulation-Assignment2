@@ -6,9 +6,9 @@
 | 최종 모델 1개 | `models/final_model.pth` |
 | 최종 수집 원본 | Release의 `toy2box_new_rule_100.hdf5` (100개) |
 | 모델 해시·학습 입력 정보 | `models/model_manifest.json` |
-| 평가 명령어 | `submission/evaluate.txt` |
+| 평가 명령어 | `submission/evaluation_command.txt` (`evaluate.txt`에도 같은 내용 보존) |
 | 이전 n20 실험 발표 초안 | `submission/toy2box_presentation_draft.pptx` (현재 선택 모델과 구분) |
-| 설치·재현 방법 | `docs/reproduction.md` |
+| 설치·재현 방법 | `docs/REPRODUCE.md` |
 
 ## 실행 확인
 

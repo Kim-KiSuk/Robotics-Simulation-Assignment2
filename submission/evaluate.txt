@@ -1,21 +1,24 @@
-Agibot Toy2Box — 선택 모델 평가 명령어
+Agibot Toy2Box — 기본 모델 평가 명령어
 
-모델: new rule 원본 100개 → annotation 98개 → Mimic 학습 1,000개 → BC-RNN/GMM
-학습 seed 101, epoch 2000, run 20261101015656
-가중치: models/final_model.pth
-검증 조건: seed 42, rollout 100회, horizon 800
+선택 모델: new_rule_100 / run 20261101015656 / epoch 2000
+수집 원본 100개 → annotation 98개 → Mimic 학습 1000개
+정책: BC-RNN/GMM / 학습 seed 101 / 상태 23차원 / action 7차원
+평가: seed 42 / rollout 100회 / horizon 800
 
-기존 IsaacLab_RS 환경에서 실행한다. REPO는 저장소 절대 경로로 수정한다.
+Isaac Sim·Toy2Box 자산·IsaacLab_RS가 설치된 환경에서 실행한다.
+설치 경로와 TOY2BOX_REPO를 실제 위치로 바꾼다.
+과업 코드 최초 적용은 docs/REPRODUCE.md를 따른다.
 
 conda activate lerobot-arena
-cd /home/kisuk/IsaacLab_RS
-REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
+TOY2BOX_REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
+cd "$TOY2BOX_REPO"
 
-./isaaclab.sh -p "$REPO/isaaclab_project/scripts/imitation_learning/robomimic/play.py" \
-  --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
-  --checkpoint "$REPO/models/final_model.pth" \
-  --num_rollouts 100 --horizon 800 --seed 42 --headless
+python tools/evaluate_experiment.py \
+  --isaaclab_root /home/kisuk/IsaacLab_RS \
+  --experiment new_rule_100 \
+  --num_rollouts 100 --horizon 800 --seed 42 \
+  --output_root "$TOY2BOX_REPO/results/evaluations" \
+  --headless --video
 
-새 설치에는 docs/reproduction.md의 기반 코드·환경 적용 절차를 먼저 따른다.
-조교 평가에는 조교가 지정한 seed를 사용한다.
-기존 rollout 영상과 100회 정식 성공률은 구분한다. 정확한 성공률은 저장된 평가 결과로 확인한다.
+results/evaluations/<실험ID>_<시각>/에 명령·모델 해시·평가 로그·판정 JSON·영상을 저장한다.
+complete=true인 결과에서만 정확한 성공률을 확인한다.

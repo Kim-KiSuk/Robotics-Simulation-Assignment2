@@ -146,6 +146,28 @@
       "episode": "demo_19",
       "frames": 898,
       "replay_task_success_10_steps": true
+    },
+    {
+      "kind": "policy_reference",
+      "experiment": "xy_first_20",
+      "file": "videos/experiments/xy_first_20/rollout-episode-0.mp4",
+      "source_folder": "videos/agibot_bc_mimic_vertical_xy_rotate_z_20",
+      "sha256": "3d20a2d0c868fd1a8865d193316210e97b4dd4703af16c933f33cd141ffa9096",
+      "frames": 617,
+      "fps": 20.0,
+      "success": null,
+      "checkpoint_association": "execution_history; not embedded in MP4"
+    },
+    {
+      "kind": "policy_reference",
+      "experiment": "xy_first_20",
+      "file": "videos/experiments/xy_first_20/rollout-episode-1.mp4",
+      "source_folder": "videos/agibot_bc_mimic_vertical_xy_rotate_z_20",
+      "sha256": "1624d3a8fcf6cd114960b0438295ffd0991d5adf7b3b00c121c9f8bcc2427da6",
+      "frames": 800,
+      "fps": 20.0,
+      "success": null,
+      "checkpoint_association": "execution_history; not embedded in MP4"
     }
   ]
 }

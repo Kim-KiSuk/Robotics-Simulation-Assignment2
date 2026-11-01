@@ -1,0 +1,15 @@
+{
+  "project": "Agibot Toy2Box imitation learning",
+  "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
+  "selected_experiment": "new_rule_100",
+  "selected_checkpoint": "models/final_model.pth",
+  "selected_model_manifest": "models/model_manifest.json",
+  "training_config": "configs/final_train_config.json",
+  "dataset_manifest": "data/experiment_manifest.json",
+  "checkpoint_manifest": "models/experiment_manifest.json",
+  "media_manifest": "artifacts/media/manifest.json",
+  "project_overlay_manifest": "isaaclab_project/source_manifest.json",
+  "release_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01",
+  "results": "results/experiment_summary.json",
+  "policy_success_rate": null
+}
