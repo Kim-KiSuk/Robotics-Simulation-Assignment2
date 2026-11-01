@@ -5,7 +5,7 @@
 - 연구 조건 세 개와 스크립트 테스트 조건의 증강 전 수집 원본 HDF5: 20개 조건은 20개, 100개 조건은 100개.
 - 각 실험에서 rollout에 사용한 epoch 2000 모델 하나씩.
 - 기본 선택 모델 New rule 100의 `models/final_model.pth`와 실제 학습 config.
-- 과업 코드 overlay, 수집·병합·평가 도구, 대표 MP4와 실제 영상 GIF.
+- 과업 코드 overlay, 데이터 병합·학습·평가·재생 도구, 대표 MP4와 실제 영상 GIF.
 - 데이터·모델 해시, 학습 로그 발췌, 원본 재생 판정, 공개 파일 검증 기록.
 
 annotation·Mimic 전체 파일, 중간 epoch 가중치, Isaac Sim 엔진과 외부 USD 자산은 배포에 포함하지 않는다. [Release 검증 기록](../reports/release_publication.json)에서 파일 크기와 GitHub 서버의 SHA256을 확인할 수 있다.

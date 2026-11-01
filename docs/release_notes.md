@@ -1,16 +1,10 @@
-# Toy2Box datasets — Dataset A / Dataset B
+# 기준 데이터 보관 자료
 
-이 문서는 `collection-2026-10-28` Release 당시의 기록이다. 현재 원본/rollout 모델 4개 공개 조건은 [실험 Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01), 현재 기본 모델은 [학습 기록](training_status.md)을 따른다. 아래 Mimic 499개 모델 설명은 이전 n20 조건이다.
+이 문서는 기존 기준 데이터 두 종류의 공개 파일 정보를 보존한다. 현재 연구 조건과 모델은 [실험 안내](experiments.md)를 따른다.
 
-두 데이터 세트를 고정된 실험 이름으로 제공한다. 파일명만 정리했으며 HDF5 내부 데이터와 SHA256은 수집 원본과 동일하다.
-
-| 실험 | 다운로드 파일 | 성공 시범 | 프레임 | idle 평균 |
-|---|---|---:|---:|---:|
+| 자료 | 파일 | 원본 시범 | 프레임 | 평균 idle |
+| --- | --- | ---: | ---: | ---: |
 | Dataset A | `toy2box_dataset_a.hdf5` | 100 | 29,229 | 0.70% |
 | Dataset B | `toy2box_dataset_b.hdf5` | 20 | 8,406 | 19.79% |
 
-수집 방식은 자동 피드백 제어다. Dataset B에는 속도 변화·작은 수정·분산 멈춤이 포함된다. [파일명 대응과 SHA256](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/blob/main/data/manifest.json)을 확인할 수 있다.
-
-저장소에는 환경·학습 코드, Mimic499로 학습한 선택 모델 가중치 1개, 평가 명령어, 발표 초안과 재생 영상을 제공한다. 학습 참조·annotation·Mimic 원본 5개는 이 Release에 포함하지 않으며 통계와 연결 관계만 보관한다.
-
-Dataset A·Dataset B의 대표 시범 재생 6개는 기존 성공 조건을 10 step 연속 충족했다. 이 결과는 학습 정책의 100회 평가 성공률이 아니다.
+파일 바이트는 원본과 같으며 [파일 크기·SHA256](../data/manifest.json)으로 검증한다. 대표 시범의 초기 상태와 저장 action을 실제 시뮬레이터에서 재생한 영상은 [영상 안내](videos.md)에 있다. 원본 action 재생과 학습 정책의 독립 평가는 구분한다.

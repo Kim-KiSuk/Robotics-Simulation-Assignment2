@@ -61,9 +61,9 @@ python tools/evaluate_experiment.py \
 
 `results/evaluations/<실험ID>_<시각>/`에 `metadata.json`, `evaluation.log`, `results.json`과 선택한 경우 영상이 저장된다. `complete: true`인 검증 결과만 최종 성공률로 사용한다. 기존 로그 분석과 중단 처리 상세는 [평가 도구 안내](evaluation.md)에 있다.
 
-## 수집·annotation·Mimic·학습
+## 데이터 준비·학습
 
-[동작 규칙별 수집 명령과 원본 병합](collection_rules.md)을 따른다. 병합에는 Python과 h5py만 필요하며, 수집·annotation·생성에는 시뮬레이터가 필요하다.
+기존 원본을 합치는 방법은 [데이터 병합](dataset_merge.md)을 따른다. 병합에는 Python과 h5py가 필요하다. annotation·Mimic 생성과 학습에는 해당 IsaacLab_RS 환경을 사용한다.
 
 공개 원본을 그대로 학습한 모델이 아니라 annotation 후 Mimic 성공 시범으로 학습한 모델이다. New rule 100은 100 → 98 → 1,000개를 사용했다. 학습 명령과 실제 config는 [기존 재현 상세](reproduction.md#학습-코드)에 있다. 재생성한 Mimic이 과거 학습 파일과 바이트 단위로 같다고 보장하지 않는다.
 

@@ -9,7 +9,6 @@ Agibot 오른팔로 트럭을 집어 박스 입구까지 옮기고 그리퍼를 
 | `isaaclab_project/source/isaaclab_tasks/.../place/` | Toy2Box 환경 등록·관측·종료 조건·BC 설정 |
 | `isaaclab_project/source/isaaclab_assets/.../robots/agibot.py` | 로봇 초기화와 actuator 설정 |
 | `isaaclab_project/scripts/imitation_learning/robomimic/` | BC 학습과 stock 정책 평가 |
-| `tools/collection/` | 수집 피드백 제어·가이드·정지 구성·간격 검사 |
 | `tools/merge_hdf5_datasets.py` | 원본 episode 병합과 출처 속성 보존 |
 | `tools/evaluate_experiment.py` | 모델 해시 확인, 평가 실행, 로그·결과 저장 |
 
@@ -31,14 +30,6 @@ Agibot 오른팔로 트럭을 집어 박스 입구까지 옮기고 그리퍼를 
 | 합계 | 23 |
 
 출력 action은 상대 이동 3축·회전 3축·그리퍼 1개의 7차원이다. 팔 명령은 RMPFlow 기반 제어에 전달한다. 원본 HDF5에 추가 관절 상태가 있어도 위 정책의 입력 목록에 모두 포함되는 것은 아니다.
-
-## 수집 순서와 리셋
-
-New rule은 회전 → XY 접근 → 수직 하강 → 그립 → 수직 상승 → 박스 이동 → 릴리즈 순서다.
-
-수집기는 그립 후 실제 물체 상승, 운반 높이, 박스 입구 정렬과 릴리즈를 확인한다. 성공한 episode만 저장하고 성공·실패 모두 리셋한다. 정체와 시간 제한으로 끝난 시도는 성공 시범으로 저장하지 않는다.
-
-속도 변화·작은 보정·분산 정지를 지원한다. 목표 idle은 팔 action 6개가 모두 정확히 0인 프레임의 비율로 관리하며, 정지 중 그리퍼 명령은 유지한다. 보조 top/left 뷰는 조작 화면이고 해당 RGB를 원본 데이터에 저장한 조건은 아니다. 자동 수집과 직접 조작 가이드는 별도 실행 모드다. 실제 수집 모드는 보존된 `.run.json`을 따른다.
 
 ## Mimic과 BC-RNN
 

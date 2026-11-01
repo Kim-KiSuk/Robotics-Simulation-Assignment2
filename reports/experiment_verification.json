@@ -3,8 +3,9 @@
   "local_markdown_links": "passed",
   "json_parsing": "passed",
   "offline_tests": {
-    "command": "python -m pytest -q tools/collection/test tools/test",
-    "passed": 229
+    "command": "python -m pytest -q tools/test",
+    "passed": 16,
+    "scope": "evaluation_and_replay_tools"
   },
   "new_media_checked": 12,
   "media_checks": [
