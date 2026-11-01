@@ -36,7 +36,7 @@ def main():
     checkpoint = (args.checkpoint or REPO / model['default_checkpoint']).resolve()
     root = args.isaaclab_root.resolve()
     if not checkpoint.is_file():
-        parser.error(f'Checkpoint missing: {checkpoint}. Download the experiment Release or use --checkpoint.')
+        parser.error(f'Checkpoint missing: {checkpoint}. Use --checkpoint with the matching local model path.')
     if not (root / 'isaaclab.sh').is_file():
         parser.error(f'IsaacLab launcher missing: {root / "isaaclab.sh"}')
     actual_hash = sha256(checkpoint.read_bytes()).hexdigest()

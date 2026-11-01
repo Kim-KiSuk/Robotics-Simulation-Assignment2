@@ -211,7 +211,18 @@
       "initial_frame_black": false
     }
   ],
-  "release_assets": [
+  "existing_final_model_sha256": "10669f7c24bd04e39a8ed6417721877c01527c7f1797f58481314b8e6e8268bc",
+  "policy_reevaluation_performed": false,
+  "policy_success_rates_confirmed": false,
+  "merge_validation": {
+    "synthetic_inputs": 5,
+    "episodes_per_input": 20,
+    "merged_episodes": 100,
+    "merged_steps": 200,
+    "sources_unchanged": true,
+    "existing_output_protected": true
+  },
+  "local_binary_checks": [
     {
       "asset": "toy2box_baseline_n100_epoch2000.pth",
       "bytes": 7985670,
@@ -258,16 +269,7 @@
       "sha256": "6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9"
     }
   ],
-  "existing_final_model_sha256": "10669f7c24bd04e39a8ed6417721877c01527c7f1797f58481314b8e6e8268bc",
-  "policy_reevaluation_performed": false,
-  "policy_success_rates_confirmed": false,
-  "merge_validation": {
-    "synthetic_inputs": 5,
-    "episodes_per_input": 20,
-    "merged_episodes": 100,
-    "merged_steps": 200,
-    "sources_unchanged": true,
-    "existing_output_protected": true
-  },
-  "release_publication_status": "prepared_not_published"
+  "publication_scope": "documentation_code_representative_videos_and_existing_final_weight_only",
+  "additional_hdf5_published": false,
+  "experimental_weights_published": false
 }

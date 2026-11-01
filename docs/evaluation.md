@@ -4,7 +4,7 @@
 
 체크포인트의 실험 ID·SHA256·학습 조건은 [모델 manifest](../models/experiment_manifest.json)에 있다. 모델 경로 이름은 학습 당시 로그 폴더가 바뀌더라도 실험 ID와 해시로 구분한다.
 
-실험 모델 5종은 **별도 배포 준비 중**으로 아직 다운로드용 Release에 게시하지 않았다. 보유한 checkpoint를 `--checkpoint`로 지정하면 로컬에서 평가할 수 있다. 파일 경로는 manifest의 `source_checkpoint`와 비교한다.
+공개 가중치는 `models/final_model.pth` 한 개다. 추가 비교 모델 5종은 로컬에 보관하고 학습 조건·해시를 manifest로 제공한다. 보유한 checkpoint를 `--checkpoint`로 지정하면 로컬에서 평가할 수 있다. 파일 경로는 manifest의 `source_checkpoint`와 비교한다.
 
 ## 모델 하나당 100회 평가
 

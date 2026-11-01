@@ -94,6 +94,6 @@ python tools/audit_videos.py
 
 - [수집·병합 명령과 동작 규칙](collection_rules.md)
 - [보유 모델 평가와 결과 저장](evaluation.md)
-- [실험별 config](../configs/experiments), [원본 데이터 다운로드](../data/README.md#동작-규칙혼합-수집-실험-원본)
+- [실험별 config](../configs/experiments), [추가 원본 데이터 정보](../data/README.md#동작-규칙혼합-수집-실험-원본)
 
-추가 원본 HDF5와 실험 모델은 별도 배포 준비 중이다. annotation·Mimic 전체 파일은 배포 묶음에 포함하지 않는다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.
+공개 가중치는 선택 모델 한 개다. 추가 원본 HDF5·annotation·Mimic과 비교 모델 가중치는 로컬에 보관하며, 구성과 해시·학습 이력을 제공한다. 원본으로 다시 생성한 Mimic이 과거 학습 입력과 바이트 단위로 같다고 보장하지 않으며, 같은 경로를 재사용한 이력은 [학습 기록](training_status.md)에 구분했다.
