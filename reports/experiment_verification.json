@@ -311,5 +311,8 @@
   "github_server_digests_verified": true,
   "checkpoint_cpu_configs_checked": 5,
   "raw_dataset_episode_counts_checked": 5,
-  "release_publication_phase": "draft_assets_verified"
+  "release_publication_phase": "published",
+  "release_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01",
+  "release_published_at": "2026-11-01T01:32:59Z",
+  "release_download_checksum_file_verified": true
 }
