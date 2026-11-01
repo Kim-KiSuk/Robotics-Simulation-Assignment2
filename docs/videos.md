@@ -29,3 +29,18 @@
 두 파일은 로컬 정책 영상에서 보관한 참고 자료다. 정확한 체크포인트·평가 seed를 연결하는 로그가 확인되지 않아 선택한 최종 모델의 결과라고 표기하지 않는다. 정량 성공률의 근거로도 사용하지 않는다.
 
 GitHub에서 영상 파일을 열거나 Download raw로 내려받아 재생한다. 다시 렌더링하는 명령은 [재현 방법](reproduction.md)에 있다.
+
+## 실험별 영상
+
+실험 정책은 trial 0·1, 원본 데이터는 첫 번째·마지막 episode를 선택했다. 성공 여부에 따라 골라낸 영상이 아니다. MP4 자체에 checkpoint 해시나 성공 판정이 내장돼 있지 않아, 정책 영상은 실행 명령 이력으로 연결한 동작 참고 자료다.
+
+일부 정책 영상에는 검은 시작 프레임이 포함돼 있다. 파일을 편집하지 않고 보존했으며, 추가한 14개 영상의 중간·마지막 프레임이 정상 렌더링되는 것을 확인했다. 검사 결과는 [검증 기록](../reports/experiment_verification.json)에 있다.
+
+| 실험 | 학습 정책 동작 참고 | 저장 시범 action 재생 |
+|---|---|---|
+| `new_rule_20` | [trial 0](../videos/experiments/new_rule_20/rollout-episode-0.mp4) · [trial 1](../videos/experiments/new_rule_20/rollout-episode-1.mp4) | [demo 0](../videos/experiments/new_rule_20_replay/demo_0.mp4) · [demo 19](../videos/experiments/new_rule_20_replay/demo_19.mp4) |
+| `new_rule_100` | [trial 0](../videos/experiments/new_rule_100/rollout-episode-0.mp4) · [trial 1](../videos/experiments/new_rule_100/rollout-episode-1.mp4) | [demo 0](../videos/experiments/new_rule_100_replay/demo_0.mp4) · [demo 99](../videos/experiments/new_rule_100_replay/demo_99.mp4) |
+| `multi_operator_100` | [trial 0](../videos/experiments/multi_operator_100/rollout-episode-0.mp4) · [trial 1](../videos/experiments/multi_operator_100/rollout-episode-1.mp4) | [demo 0](../videos/experiments/multi_operator_100_replay/demo_0.mp4) · [demo 99](../videos/experiments/multi_operator_100_replay/demo_99.mp4) |
+| `xy_first_20` | — | [demo 0](../videos/experiments/xy_first_20_replay/demo_0.mp4) · [demo 19](../videos/experiments/xy_first_20_replay/demo_19.mp4) |
+
+원본 재생 전체의 성공 조건 10 step 연속 충족 수는 new rule 20/20·100/100, 혼합 91/100, XY 우선 20/20이다. 이 수치는 정책 성공률이 아니다. 전체 프레임 정보와 재생 판정은 [실험 보고서](experiments.md), [영상 manifest](../reports/experiment_media.json), [재생 inventory](../reports/replay_inventory.json)에 있다.

@@ -1,6 +1,26 @@
 # Agibot Toy2Box — Robotics Simulation Assignment 2
 
-**연구 질문:** 사람 시범으로 학습한 BC 정책은 Toy2Box에서 왜 성공률이 저조한가? 원인 하나를 진단하고 그 원인을 겨냥해 성공률을 높인다.
+**연구 질문:** 시범의 동작 순서와 수집 데이터 구성이 Agibot Toy2Box 모방학습 정책의 성능에 어떤 영향을 주는가?
+
+## 실험 비교
+
+| 실험 | 원본 시범 | annotation | Mimic 학습 시범 | 평균 원본 길이 | 원본 idle 평균 |
+|---|---:|---:|---:|---:|---:|
+| 기준 수집 `baseline_n100` | 100 | 99 | 500 | 14.61초 | 0.70% |
+| 수직 파지 순서 통일 `new_rule_20` | 20 | 19 | 1,000 | 32.81초 | 20.23% |
+| 수직 파지 순서 통일 `new_rule_100` | 100 | 98 | 1,000 | 32.20초 | 20.08% |
+| 혼합 수집 `multi_operator_100` | 100 | 93 | 1,000 | 34.16초 | 27.41% |
+
+`new rule`은 **회전 → XY 이동 → 수직 하강 → 그립 → 수직 상승 → 박스 이동 → 릴리즈** 순서다. `new_rule_20`과 `new_rule_100`을 별도 실험으로 관리한다. 학습은 BC-RNN/GMM, seed 101, epoch 2000이며, 정책 평가 명령의 조건은 seed 42, 100회, horizon 800이다.
+
+**정확한 정책 성공률은 평가 결과 로그 확인 전까지 미확정이다.** 영상 100개 중 800프레임 미만인 파일은 `new_rule_20` 56개, `new_rule_100` 68개, `multi_operator_100` 32개지만, 조기 종료에는 실패도 포함될 수 있어 성공 횟수로 사용하지 않는다. 기존 공용 영상 폴더는 다른 모델 평가에도 재사용되어 n100의 결과로 연결하지 않는다.
+
+- [실험 구성·비교·해석](docs/experiments.md) · [원본/학습 데이터와 체크포인트 근거](reports/experiment_inventory.json)
+- [원본 HDF5 4종·실험 체크포인트 5종 다운로드](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)
+- [동작 규칙·수집 및 병합 방법](docs/collection_rules.md) · [평가 실행과 결과 저장](docs/evaluation.md)
+- [실험별 정책 영상·시범 재생 영상](docs/videos.md#실험별-영상)
+
+학습 입력 파일명이 같더라도 동일한 데이터라고 간주하지 않는다. `new_rule_20` 학습 때 사용한 Mimic 경로가 `new_rule_100` 생성에 재사용되어, 모델별 config·학습 로그 발췌·체크포인트 해시를 따로 보관한다.
 
 
 ## 제출 파일
@@ -12,7 +32,7 @@
 | 제출 파일 확인 | [submission/checklist.md](submission/checklist.md) | 실행 파일·모델·명령어 확인 |
 
 
-## 데이터 세트
+## 공개 기준 데이터
 
 | 실험 이름 | 시범 수 | 평균 길이 | idle 평균 | 용도 |
 |---|---:|---:|---:|---|
@@ -52,7 +72,7 @@ REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
 
 ## 평가 상태
 
-선택 모델의 로드·추론 실행을 확인했다. [부분 실행 기록](submission/model_smoke_check.json)은 100회 정식 평가 결과가 아니다. 학습 seed 101·111의 공정 비교, 실패 단계 정량 분류와 단일 요인 통제 실험은 별도 보완 항목이다. 발표 PPT에서도 미완료 항목을 결과와 구분했다.
+제출용 선택 모델은 기존 `models/final_model.pth`다. 실험용 가중치 5종은 별도 Release로 제공하며 성능 순위로 최종 모델을 교체하지 않았다. [부분 실행 기록](submission/model_smoke_check.json)은 100회 정식 평가 결과가 아니다. 실험 모델의 정책 성공률, 학습 seed 101·111 비교, 실패 단계 분류와 단일 요인 통제 실험은 [실험 보고서](docs/experiments.md)에 확인 범위를 구분했다.
 
 ## 폴더
 

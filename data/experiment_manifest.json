@@ -1,0 +1,81 @@
+{
+  "snapshot_date": "2026-11-01",
+  "release_tag": "experiments-2026-11-01",
+  "datasets": [
+    {
+      "id": "baseline_n100",
+      "source_path": "datasets/toy2box_agibot_auto_100.hdf5",
+      "episodes": 100,
+      "total_steps": 29229,
+      "mean_seconds": 14.6145,
+      "mean_episode_idle_fraction": 0.006969146258638906,
+      "bytes": 28845059,
+      "sha256": "676032701b5774fa76f3228d6ac2bcc18a19111e9dd3f8d920a2a82377402cd1",
+      "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
+      "merge_source_episode_counts": {},
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/collection-2026-10-28/toy2box_dataset_a.hdf5"
+    },
+    {
+      "id": "new_rule_20",
+      "source_path": "datasets/multi_operator/toy2box_vertical_sequence_20.hdf5",
+      "episodes": 20,
+      "total_steps": 13122,
+      "mean_seconds": 32.805,
+      "mean_episode_idle_fraction": 0.20227535067816063,
+      "bytes": 9679789,
+      "sha256": "f609efd05fad98465d32d4a1bc14ad44738b46fb6853e5a79eab148afc4e4370",
+      "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
+      "merge_source_episode_counts": {},
+      "asset": "toy2box_new_rule_20.hdf5",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_20.hdf5"
+    },
+    {
+      "id": "new_rule_100",
+      "source_path": "datasets/toy2box_vertical_sequence_100.hdf5",
+      "episodes": 100,
+      "total_steps": 64406,
+      "mean_seconds": 32.203,
+      "mean_episode_idle_fraction": 0.20083303792481277,
+      "bytes": 47739682,
+      "sha256": "5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785",
+      "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
+      "merge_source_episode_counts": {},
+      "asset": "toy2box_new_rule_100.hdf5",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_new_rule_100.hdf5"
+    },
+    {
+      "id": "multi_operator_100",
+      "source_path": "datasets/multi_operator_100.hdf5",
+      "episodes": 100,
+      "total_steps": 68327,
+      "mean_seconds": 34.16349999999999,
+      "mean_episode_idle_fraction": 0.2741289706189133,
+      "bytes": 49191989,
+      "sha256": "b03e6ef5367321b203eeaf98fafb04cf22ffcd62672fa4e99c189c475bd7bdbb",
+      "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
+      "merge_source_episode_counts": {
+        "toy2box_agibot_idle21_n20.hdf5": 20,
+        "toy2box_agibot.hdf5": 20,
+        "toy2box_vertical_xy_rotate_z_20.hdf5": 20,
+        "toy2box_vertical_sequence_20.hdf5": 20,
+        "team08_inwoo_all20.hdf5": 20
+      },
+      "asset": "toy2box_multi_operator_100.hdf5",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_multi_operator_100.hdf5"
+    },
+    {
+      "id": "xy_first_20",
+      "source_path": "datasets/toy2box_vertical_xy_rotate_z_20.hdf5",
+      "episodes": 20,
+      "total_steps": 14251,
+      "mean_seconds": 35.627500000000005,
+      "mean_episode_idle_fraction": 0.2032778310352304,
+      "bytes": 10521484,
+      "sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b",
+      "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
+      "merge_source_episode_counts": {},
+      "asset": "toy2box_xy_first_20.hdf5",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/experiments-2026-11-01/toy2box_xy_first_20.hdf5"
+    }
+  ]
+}

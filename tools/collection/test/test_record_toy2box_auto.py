@@ -50,6 +50,52 @@ def controller():
     return auto.Toy2BoxController([example()], auto.ControllerConfig())
 
 
+@pytest.mark.parametrize("headless,exit_on_finish", [(True, False), (False, True)])
+def test_result_review_exits_without_gui_when_requested(monkeypatch, headless, exit_on_finish):
+    def unexpected_gui(*args):
+        pytest.fail("Headless/exit-on-finish must not open a review window")
+
+    monkeypatch.setattr(auto, "CollectionResultDisplay", unexpected_gui)
+    auto.review_collection_result(None, None, {}, Path("run.json"), 1,
+                                  headless=headless, exit_on_finish=exit_on_finish)
+
+
+@pytest.mark.parametrize("interrupt", [False, True])
+def test_gui_result_review_renders_without_stepping_and_closes_on_exit(monkeypatch, interrupt):
+    rendered, closed = [], []
+
+    class Display:
+        def __init__(self, *args):
+            pass
+
+        @property
+        def visible(self):
+            return len(rendered) < 3
+
+        def close(self):
+            closed.append(True)
+
+    def render():
+        rendered.append(True)
+        if interrupt:
+            raise KeyboardInterrupt
+
+    monkeypatch.setattr(auto, "CollectionResultDisplay", Display)
+    monkeypatch.setattr(auto.time, "sleep", lambda seconds: None)
+    env = SimpleNamespace(sim=SimpleNamespace(render=render))
+    app = SimpleNamespace(is_running=lambda: True)
+    report = {"successful_demos": 0}
+    if interrupt:
+        with pytest.raises(KeyboardInterrupt):
+            auto.review_collection_result(env, app, report, Path("run.json"), 1,
+                                          headless=False, exit_on_finish=False)
+    else:
+        auto.review_collection_result(env, app, report, Path("run.json"), 1,
+                                      headless=False, exit_on_finish=False)
+        assert len(rendered) == 3
+    assert closed == [True]
+
+
 def make_reference(path):
     with h5py.File(path, "w") as f:
         data = f.create_group("data")
@@ -269,11 +315,11 @@ def test_geometry_height_limits_include_rotation_and_bottom_offset():
     assert high == pytest.approx(0.7)
 
 
-@pytest.mark.parametrize("succeeded", [True, False])
+@pytest.mark.parametrize("succeeded,failure_kind", [(True, None), (False, None), (False, "unreachable_grasp")])
 @pytest.mark.parametrize("release_phase", ["release", "retreat", "wait"])
 @pytest.mark.parametrize("manual_mode", ["automatic", "automatic_varied", "manual_guidance", "manual_sequence"])
 def test_collection_resets_immediately_even_after_last_attempt(
-    monkeypatch, tmp_path, succeeded, release_phase, manual_mode
+    monkeypatch, tmp_path, succeeded, failure_kind, release_phase, manual_mode
 ):
     """Run the real collection loop with fake simulator services, including export/reset order."""
     import torch
@@ -357,6 +403,7 @@ def test_collection_resets_immediately_even_after_last_attempt(
         monkeypatch.setitem(sys.modules, name, module)
     stub_controller = SimpleNamespace(
         phase=release_phase, failure=None if succeeded else "truck did not lift with the gripper",
+        failure_kind=failure_kind,
         released=succeeded,
         lifted=succeeded, reference=None, elapsed=0.1, transport_z=0.8, target_pos=np.zeros(3),
         target_rot=Rotation.identity(),
@@ -388,9 +435,12 @@ def test_collection_resets_immediately_even_after_last_attempt(
     args = auto.create_parser().parse_args([
         "--reference_dataset", str(tmp_path / "reference.hdf5"),
         "--dataset_file", str(tmp_path / "output.hdf5"),
-        "--num_demos", "2", "--max_attempts", "2", "--num_success_steps", "1",
+        "--num_demos", "2", "--max_attempts", "1000" if failure_kind else "2", "--num_success_steps", "1",
     ])
     args.device, args.headless = "cpu", not manual_guidance
+    # This test isolates export/reset ordering; review-window lifetime is
+    # exercised by the dedicated GUI-result tests above.
+    args.exit_on_finish = True
     args.manual_guidance = manual_guidance
     args.full_sequence = manual_mode == "manual_sequence"
     args.multi_view = args.full_sequence
@@ -398,7 +448,8 @@ def test_collection_resets_immediately_even_after_last_attempt(
         args.motion_style = "varied"
     code = auto.collect(args, [example()], SimpleNamespace(is_running=lambda: True))
     assert code == (0 if succeeded else 2)
-    assert events.count("scene reset") == 3  # Initial reset and reset after both attempts.
+    expected_attempts = 1 if failure_kind else 2
+    assert events.count("scene reset") == expected_attempts + 1
     if succeeded:
         assert events.index("export") < len(events) - 1 - events[::-1].index("scene reset")
     else:
@@ -406,7 +457,13 @@ def test_collection_resets_immediately_even_after_last_attempt(
     report = json.loads(args.dataset_file.with_suffix(".run.json").read_text())
     assert report["attempts"][0]["reset_completed"] is True
     assert report["attempts"][0]["success"] is succeeded
-    assert report["attempts"][1]["reset_completed"] is True
+    assert len(report["attempts"]) == expected_attempts
+    assert all(row["reset_completed"] for row in report["attempts"])
+    if failure_kind:
+        assert report["attempts"][0]["failure_kind"] == "unreachable_grasp"
+        assert "outside arm reach" in report["stop_reason"]
+    else:
+        assert report["stop_reason"] is None
     assert report["successful_demos"] == (2 if succeeded else 0)
     assert events.count("export") == (2 if succeeded else 0)
     if succeeded and manual_guidance:
@@ -416,12 +473,18 @@ def test_collection_resets_immediately_even_after_last_attempt(
     assert report["mode"] == ("automatic" if varied else manual_mode)
     if varied:
         assert report["motion_style"] == "varied"
-        assert [row["motion_variation"]["seed"] for row in report["attempts"]] == [args.seed, args.seed + 1]
+        assert [row["motion_variation"]["seed"] for row in report["attempts"]] == list(
+            range(args.seed, args.seed + expected_attempts)
+        )
         assert all(option["motion"].cfg.strength == args.motion_variation_strength for option in controller_options)
         assert report["target_idle_fraction"] == 0.21
         assert [row["motion_variation"]["applied_steps"] for row in report["attempts"]] == (
-            [1, 1] if succeeded else [0, 0]
+            [1 if succeeded else 0] * expected_attempts
         )
+        if args.collection_strategy == "vertical_first":
+            assert all(option["motion"].cfg.position_offset == 0 for option in controller_options)
+            assert all(option["motion"].cfg.rotation_offset == 0 for option in controller_options)
+            assert all(option["motion"].cfg.idle_tail_seconds >= args.release_seconds for option in controller_options)
     if args.full_sequence:
         assert report["operator_views"] == ["top", "robot_left"]
         assert report["attempts"][0]["full_sequence"] == []

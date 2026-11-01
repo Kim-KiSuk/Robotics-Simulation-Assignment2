@@ -1,0 +1,2561 @@
+{
+  "snapshot_date": "2026-11-01",
+  "metric": "video frame counts, not task success",
+  "folders": [
+    {
+      "id": "new_rule_20",
+      "source_folder": "videos/agibot_bc_mimic_new_rule",
+      "video_count": 100,
+      "shorter_than_800_frames": 56,
+      "exactly_800_frames": 44,
+      "policy_success_rate": null,
+      "videos": [
+        {
+          "file": "rollout-episode-0.mp4",
+          "frames": 656,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-1.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-2.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-3.mp4",
+          "frames": 608,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-4.mp4",
+          "frames": 661,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-5.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-6.mp4",
+          "frames": 595,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-7.mp4",
+          "frames": 539,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-8.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-9.mp4",
+          "frames": 642,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-10.mp4",
+          "frames": 618,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-11.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-12.mp4",
+          "frames": 582,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-13.mp4",
+          "frames": 568,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-14.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-15.mp4",
+          "frames": 588,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-16.mp4",
+          "frames": 465,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-17.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-18.mp4",
+          "frames": 571,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-19.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-20.mp4",
+          "frames": 637,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-21.mp4",
+          "frames": 569,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-22.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-23.mp4",
+          "frames": 561,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-24.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-25.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-26.mp4",
+          "frames": 665,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-27.mp4",
+          "frames": 709,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-28.mp4",
+          "frames": 570,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-29.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-30.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-31.mp4",
+          "frames": 596,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-32.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-33.mp4",
+          "frames": 605,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-34.mp4",
+          "frames": 600,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-35.mp4",
+          "frames": 548,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-36.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-37.mp4",
+          "frames": 381,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-38.mp4",
+          "frames": 613,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-39.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-40.mp4",
+          "frames": 589,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-41.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-42.mp4",
+          "frames": 569,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-43.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-44.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-45.mp4",
+          "frames": 692,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-46.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-47.mp4",
+          "frames": 761,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-48.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-49.mp4",
+          "frames": 638,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-50.mp4",
+          "frames": 587,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-51.mp4",
+          "frames": 657,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-52.mp4",
+          "frames": 559,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-53.mp4",
+          "frames": 668,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-54.mp4",
+          "frames": 546,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-55.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-56.mp4",
+          "frames": 628,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-57.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-58.mp4",
+          "frames": 625,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-59.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-60.mp4",
+          "frames": 556,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-61.mp4",
+          "frames": 570,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-62.mp4",
+          "frames": 699,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-63.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-64.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-65.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-66.mp4",
+          "frames": 622,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-67.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-68.mp4",
+          "frames": 661,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-69.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-70.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-71.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-72.mp4",
+          "frames": 684,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-73.mp4",
+          "frames": 663,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-74.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-75.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-76.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-77.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-78.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-79.mp4",
+          "frames": 644,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-80.mp4",
+          "frames": 638,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-81.mp4",
+          "frames": 560,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-82.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-83.mp4",
+          "frames": 570,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-84.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-85.mp4",
+          "frames": 628,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-86.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-87.mp4",
+          "frames": 518,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-88.mp4",
+          "frames": 546,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-89.mp4",
+          "frames": 620,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-90.mp4",
+          "frames": 490,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-91.mp4",
+          "frames": 594,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-92.mp4",
+          "frames": 732,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-93.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-94.mp4",
+          "frames": 639,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-95.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-96.mp4",
+          "frames": 660,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-97.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-98.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-99.mp4",
+          "frames": 800,
+          "fps": 20.0
+        }
+      ],
+      "checkpoint_association": "execution_history; not embedded in MP4"
+    },
+    {
+      "id": "new_rule_20_retest",
+      "source_folder": "videos/agibot_bc_mimic_new_rule_retest",
+      "video_count": 100,
+      "shorter_than_800_frames": 56,
+      "exactly_800_frames": 44,
+      "policy_success_rate": null,
+      "videos": [
+        {
+          "file": "rollout-episode-0.mp4",
+          "frames": 656,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-1.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-2.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-3.mp4",
+          "frames": 608,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-4.mp4",
+          "frames": 661,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-5.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-6.mp4",
+          "frames": 595,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-7.mp4",
+          "frames": 539,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-8.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-9.mp4",
+          "frames": 642,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-10.mp4",
+          "frames": 618,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-11.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-12.mp4",
+          "frames": 582,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-13.mp4",
+          "frames": 568,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-14.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-15.mp4",
+          "frames": 588,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-16.mp4",
+          "frames": 465,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-17.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-18.mp4",
+          "frames": 571,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-19.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-20.mp4",
+          "frames": 637,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-21.mp4",
+          "frames": 569,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-22.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-23.mp4",
+          "frames": 561,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-24.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-25.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-26.mp4",
+          "frames": 665,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-27.mp4",
+          "frames": 709,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-28.mp4",
+          "frames": 570,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-29.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-30.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-31.mp4",
+          "frames": 596,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-32.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-33.mp4",
+          "frames": 605,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-34.mp4",
+          "frames": 600,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-35.mp4",
+          "frames": 548,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-36.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-37.mp4",
+          "frames": 381,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-38.mp4",
+          "frames": 613,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-39.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-40.mp4",
+          "frames": 589,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-41.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-42.mp4",
+          "frames": 569,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-43.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-44.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-45.mp4",
+          "frames": 692,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-46.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-47.mp4",
+          "frames": 761,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-48.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-49.mp4",
+          "frames": 638,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-50.mp4",
+          "frames": 587,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-51.mp4",
+          "frames": 657,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-52.mp4",
+          "frames": 559,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-53.mp4",
+          "frames": 668,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-54.mp4",
+          "frames": 546,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-55.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-56.mp4",
+          "frames": 628,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-57.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-58.mp4",
+          "frames": 625,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-59.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-60.mp4",
+          "frames": 556,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-61.mp4",
+          "frames": 570,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-62.mp4",
+          "frames": 699,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-63.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-64.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-65.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-66.mp4",
+          "frames": 622,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-67.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-68.mp4",
+          "frames": 661,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-69.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-70.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-71.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-72.mp4",
+          "frames": 684,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-73.mp4",
+          "frames": 663,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-74.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-75.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-76.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-77.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-78.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-79.mp4",
+          "frames": 644,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-80.mp4",
+          "frames": 638,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-81.mp4",
+          "frames": 560,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-82.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-83.mp4",
+          "frames": 570,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-84.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-85.mp4",
+          "frames": 628,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-86.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-87.mp4",
+          "frames": 518,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-88.mp4",
+          "frames": 546,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-89.mp4",
+          "frames": 620,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-90.mp4",
+          "frames": 490,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-91.mp4",
+          "frames": 594,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-92.mp4",
+          "frames": 732,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-93.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-94.mp4",
+          "frames": 639,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-95.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-96.mp4",
+          "frames": 660,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-97.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-98.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-99.mp4",
+          "frames": 800,
+          "fps": 20.0
+        }
+      ],
+      "checkpoint_association": "execution_history; not embedded in MP4"
+    },
+    {
+      "id": "multi_operator_100",
+      "source_folder": "videos/agibot_bc_mimic/multi_operator",
+      "video_count": 100,
+      "shorter_than_800_frames": 32,
+      "exactly_800_frames": 68,
+      "policy_success_rate": null,
+      "videos": [
+        {
+          "file": "rollout-episode-0.mp4",
+          "frames": 777,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-1.mp4",
+          "frames": 769,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-2.mp4",
+          "frames": 508,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-3.mp4",
+          "frames": 543,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-4.mp4",
+          "frames": 581,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-5.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-6.mp4",
+          "frames": 491,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-7.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-8.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-9.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-10.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-11.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-12.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-13.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-14.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-15.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-16.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-17.mp4",
+          "frames": 522,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-18.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-19.mp4",
+          "frames": 699,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-20.mp4",
+          "frames": 663,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-21.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-22.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-23.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-24.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-25.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-26.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-27.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-28.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-29.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-30.mp4",
+          "frames": 397,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-31.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-32.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-33.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-34.mp4",
+          "frames": 740,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-35.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-36.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-37.mp4",
+          "frames": 532,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-38.mp4",
+          "frames": 680,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-39.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-40.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-41.mp4",
+          "frames": 716,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-42.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-43.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-44.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-45.mp4",
+          "frames": 762,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-46.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-47.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-48.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-49.mp4",
+          "frames": 655,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-50.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-51.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-52.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-53.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-54.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-55.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-56.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-57.mp4",
+          "frames": 751,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-58.mp4",
+          "frames": 775,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-59.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-60.mp4",
+          "frames": 658,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-61.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-62.mp4",
+          "frames": 767,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-63.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-64.mp4",
+          "frames": 663,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-65.mp4",
+          "frames": 758,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-66.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-67.mp4",
+          "frames": 670,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-68.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-69.mp4",
+          "frames": 635,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-70.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-71.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-72.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-73.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-74.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-75.mp4",
+          "frames": 479,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-76.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-77.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-78.mp4",
+          "frames": 759,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-79.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-80.mp4",
+          "frames": 605,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-81.mp4",
+          "frames": 639,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-82.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-83.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-84.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-85.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-86.mp4",
+          "frames": 739,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-87.mp4",
+          "frames": 658,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-88.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-89.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-90.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-91.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-92.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-93.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-94.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-95.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-96.mp4",
+          "frames": 672,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-97.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-98.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-99.mp4",
+          "frames": 473,
+          "fps": 20.0
+        }
+      ],
+      "checkpoint_association": "execution_history; not embedded in MP4"
+    },
+    {
+      "id": "new_rule_100",
+      "source_folder": "videos/agibot_bc_mimic_new_rule_100_1",
+      "video_count": 100,
+      "shorter_than_800_frames": 68,
+      "exactly_800_frames": 32,
+      "policy_success_rate": null,
+      "videos": [
+        {
+          "file": "rollout-episode-0.mp4",
+          "frames": 729,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-1.mp4",
+          "frames": 380,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-2.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-3.mp4",
+          "frames": 559,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-4.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-5.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-6.mp4",
+          "frames": 645,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-7.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-8.mp4",
+          "frames": 586,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-9.mp4",
+          "frames": 600,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-10.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-11.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-12.mp4",
+          "frames": 608,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-13.mp4",
+          "frames": 580,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-14.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-15.mp4",
+          "frames": 543,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-16.mp4",
+          "frames": 537,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-17.mp4",
+          "frames": 538,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-18.mp4",
+          "frames": 600,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-19.mp4",
+          "frames": 620,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-20.mp4",
+          "frames": 650,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-21.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-22.mp4",
+          "frames": 593,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-23.mp4",
+          "frames": 606,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-24.mp4",
+          "frames": 731,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-25.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-26.mp4",
+          "frames": 696,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-27.mp4",
+          "frames": 793,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-28.mp4",
+          "frames": 580,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-29.mp4",
+          "frames": 669,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-30.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-31.mp4",
+          "frames": 603,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-32.mp4",
+          "frames": 519,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-33.mp4",
+          "frames": 573,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-34.mp4",
+          "frames": 601,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-35.mp4",
+          "frames": 712,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-36.mp4",
+          "frames": 722,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-37.mp4",
+          "frames": 744,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-38.mp4",
+          "frames": 633,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-39.mp4",
+          "frames": 728,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-40.mp4",
+          "frames": 673,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-41.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-42.mp4",
+          "frames": 628,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-43.mp4",
+          "frames": 702,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-44.mp4",
+          "frames": 612,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-45.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-46.mp4",
+          "frames": 469,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-47.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-48.mp4",
+          "frames": 661,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-49.mp4",
+          "frames": 631,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-50.mp4",
+          "frames": 674,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-51.mp4",
+          "frames": 615,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-52.mp4",
+          "frames": 685,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-53.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-54.mp4",
+          "frames": 725,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-55.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-56.mp4",
+          "frames": 758,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-57.mp4",
+          "frames": 699,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-58.mp4",
+          "frames": 658,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-59.mp4",
+          "frames": 619,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-60.mp4",
+          "frames": 785,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-61.mp4",
+          "frames": 565,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-62.mp4",
+          "frames": 554,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-63.mp4",
+          "frames": 625,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-64.mp4",
+          "frames": 520,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-65.mp4",
+          "frames": 684,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-66.mp4",
+          "frames": 613,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-67.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-68.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-69.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-70.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-71.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-72.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-73.mp4",
+          "frames": 547,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-74.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-75.mp4",
+          "frames": 660,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-76.mp4",
+          "frames": 623,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-77.mp4",
+          "frames": 571,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-78.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-79.mp4",
+          "frames": 559,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-80.mp4",
+          "frames": 658,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-81.mp4",
+          "frames": 611,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-82.mp4",
+          "frames": 679,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-83.mp4",
+          "frames": 529,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-84.mp4",
+          "frames": 621,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-85.mp4",
+          "frames": 674,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-86.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-87.mp4",
+          "frames": 603,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-88.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-89.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-90.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-91.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-92.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-93.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-94.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-95.mp4",
+          "frames": 756,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-96.mp4",
+          "frames": 602,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-97.mp4",
+          "frames": 579,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-98.mp4",
+          "frames": 696,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-99.mp4",
+          "frames": 800,
+          "fps": 20.0
+        }
+      ],
+      "checkpoint_association": "execution_history; not embedded in MP4"
+    },
+    {
+      "id": "unattributed_reused_folder",
+      "source_folder": "videos/agibot_bc_mimic",
+      "video_count": 100,
+      "shorter_than_800_frames": 24,
+      "exactly_800_frames": 76,
+      "policy_success_rate": null,
+      "videos": [
+        {
+          "file": "rollout-episode-0.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-1.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-2.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-3.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-4.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-5.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-6.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-7.mp4",
+          "frames": 796,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-8.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-9.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-10.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-11.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-12.mp4",
+          "frames": 780,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-13.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-14.mp4",
+          "frames": 729,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-15.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-16.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-17.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-18.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-19.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-20.mp4",
+          "frames": 733,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-21.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-22.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-23.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-24.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-25.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-26.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-27.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-28.mp4",
+          "frames": 697,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-29.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-30.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-31.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-32.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-33.mp4",
+          "frames": 661,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-34.mp4",
+          "frames": 737,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-35.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-36.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-37.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-38.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-39.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-40.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-41.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-42.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-43.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-44.mp4",
+          "frames": 748,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-45.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-46.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-47.mp4",
+          "frames": 513,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-48.mp4",
+          "frames": 784,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-49.mp4",
+          "frames": 612,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-50.mp4",
+          "frames": 790,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-51.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-52.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-53.mp4",
+          "frames": 652,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-54.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-55.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-56.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-57.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-58.mp4",
+          "frames": 673,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-59.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-60.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-61.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-62.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-63.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-64.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-65.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-66.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-67.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-68.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-69.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-70.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-71.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-72.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-73.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-74.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-75.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-76.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-77.mp4",
+          "frames": 765,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-78.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-79.mp4",
+          "frames": 792,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-80.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-81.mp4",
+          "frames": 689,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-82.mp4",
+          "frames": 597,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-83.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-84.mp4",
+          "frames": 788,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-85.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-86.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-87.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-88.mp4",
+          "frames": 687,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-89.mp4",
+          "frames": 677,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-90.mp4",
+          "frames": 653,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-91.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-92.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-93.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-94.mp4",
+          "frames": 765,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-95.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-96.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-97.mp4",
+          "frames": 691,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-98.mp4",
+          "frames": 800,
+          "fps": 20.0
+        },
+        {
+          "file": "rollout-episode-99.mp4",
+          "frames": 800,
+          "fps": 20.0
+        }
+      ],
+      "checkpoint_association": "unverified_reused_output_directory"
+    }
+  ]
+}

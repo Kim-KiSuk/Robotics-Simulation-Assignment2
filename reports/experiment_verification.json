@@ -1,0 +1,272 @@
+{
+  "snapshot_date": "2026-11-01",
+  "local_markdown_links": "passed",
+  "json_parsing": "passed",
+  "offline_tests": {
+    "command": "python -m pytest -q tools/collection/test tools/test",
+    "passed": 229
+  },
+  "new_media_checked": 14,
+  "media_checks": [
+    "SHA256",
+    "declared_frame_count",
+    "first_middle_last_frames_decode",
+    "middle_and_last_frames_nonblack"
+  ],
+  "video_checks": [
+    {
+      "file": "videos/experiments/new_rule_20/rollout-episode-0.mp4",
+      "sampled_frames": [
+        0,
+        328,
+        655
+      ],
+      "mean_intensities": [
+        0.0,
+        100.22107494212963,
+        100.29328486689815
+      ],
+      "initial_frame_black": true
+    },
+    {
+      "file": "videos/experiments/new_rule_20/rollout-episode-1.mp4",
+      "sampled_frames": [
+        0,
+        400,
+        799
+      ],
+      "mean_intensities": [
+        99.84182761863426,
+        100.28393192997684,
+        99.73317853009259
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/multi_operator_100/rollout-episode-0.mp4",
+      "sampled_frames": [
+        0,
+        388,
+        776
+      ],
+      "mean_intensities": [
+        0.0,
+        99.651826171875,
+        100.30166847511575
+      ],
+      "initial_frame_black": true
+    },
+    {
+      "file": "videos/experiments/multi_operator_100/rollout-episode-1.mp4",
+      "sampled_frames": [
+        0,
+        384,
+        768
+      ],
+      "mean_intensities": [
+        99.76093171296296,
+        100.24963794849538,
+        100.32408347800926
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/new_rule_100/rollout-episode-0.mp4",
+      "sampled_frames": [
+        0,
+        364,
+        728
+      ],
+      "mean_intensities": [
+        0.0,
+        100.17037000868055,
+        100.6464890769676
+      ],
+      "initial_frame_black": true
+    },
+    {
+      "file": "videos/experiments/new_rule_100/rollout-episode-1.mp4",
+      "sampled_frames": [
+        0,
+        190,
+        379
+      ],
+      "mean_intensities": [
+        100.10016493055555,
+        99.51012405960648,
+        99.88862666377315
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/new_rule_20_replay/demo_0.mp4",
+      "sampled_frames": [
+        0,
+        296,
+        592
+      ],
+      "mean_intensities": [
+        98.81492926954732,
+        101.30131622942388,
+        102.23215020576131
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/new_rule_20_replay/demo_19.mp4",
+      "sampled_frames": [
+        0,
+        307,
+        614
+      ],
+      "mean_intensities": [
+        101.14700231481481,
+        102.11119212962963,
+        102.11603716563786
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/new_rule_100_replay/demo_0.mp4",
+      "sampled_frames": [
+        0,
+        296,
+        592
+      ],
+      "mean_intensities": [
+        98.77272440843622,
+        101.30104166666666,
+        102.23157793209876
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/new_rule_100_replay/demo_99.mp4",
+      "sampled_frames": [
+        0,
+        286,
+        571
+      ],
+      "mean_intensities": [
+        101.15638052983539,
+        101.83143647119341,
+        102.18978523662551
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/multi_operator_100_replay/demo_0.mp4",
+      "sampled_frames": [
+        0,
+        219,
+        438
+      ],
+      "mean_intensities": [
+        98.66041152263375,
+        101.08063464506174,
+        101.40620949074074
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/multi_operator_100_replay/demo_99.mp4",
+      "sampled_frames": [
+        0,
+        323,
+        646
+      ],
+      "mean_intensities": [
+        100.60351530349794,
+        101.6625932355967,
+        102.0895267489712
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/xy_first_20_replay/demo_0.mp4",
+      "sampled_frames": [
+        0,
+        280,
+        559
+      ],
+      "mean_intensities": [
+        99.00941358024691,
+        101.5839782664609,
+        101.9415078446502
+      ],
+      "initial_frame_black": false
+    },
+    {
+      "file": "videos/experiments/xy_first_20_replay/demo_19.mp4",
+      "sampled_frames": [
+        0,
+        449,
+        897
+      ],
+      "mean_intensities": [
+        100.49656057098765,
+        101.41152584876544,
+        102.09832497427983
+      ],
+      "initial_frame_black": false
+    }
+  ],
+  "release_assets": [
+    {
+      "asset": "toy2box_baseline_n100_epoch2000.pth",
+      "bytes": 7985670,
+      "sha256": "7c78338436d51f674f8dd7446fb7590b9f46f3521fd60a6ad5183b93fa16be91"
+    },
+    {
+      "asset": "toy2box_multi_operator_100.hdf5",
+      "bytes": 49191989,
+      "sha256": "b03e6ef5367321b203eeaf98fafb04cf22ffcd62672fa4e99c189c475bd7bdbb"
+    },
+    {
+      "asset": "toy2box_multi_operator_100_epoch2000.pth",
+      "bytes": 7985734,
+      "sha256": "43fe39004bcd9324bf66a313298032236b0dd1167aafc00372afd80587cb6aec"
+    },
+    {
+      "asset": "toy2box_new_rule_100.hdf5",
+      "bytes": 47739682,
+      "sha256": "5b479f35aea9794d7edd547526e1700d309acc510099fcb2c52cb2b9c57d8785"
+    },
+    {
+      "asset": "toy2box_new_rule_100_epoch2000.pth",
+      "bytes": 7985734,
+      "sha256": "63f14187fb0ece33a3a6137f5249cf361fe49a925c4892ecbb7a6bc18447215e"
+    },
+    {
+      "asset": "toy2box_new_rule_20.hdf5",
+      "bytes": 9679789,
+      "sha256": "f609efd05fad98465d32d4a1bc14ad44738b46fb6853e5a79eab148afc4e4370"
+    },
+    {
+      "asset": "toy2box_new_rule_20_epoch2000.pth",
+      "bytes": 7985734,
+      "sha256": "ac51a0c665a1edfacb72db69987746a60b96d5544a0b5504f93043f8b56c0c13"
+    },
+    {
+      "asset": "toy2box_xy_first_20.hdf5",
+      "bytes": 10521484,
+      "sha256": "f6e5b80753cba34530c674f87fab22687c3488f85002ba31ff73e545a8d0379b"
+    },
+    {
+      "asset": "toy2box_xy_first_20_epoch2000.pth",
+      "bytes": 7985734,
+      "sha256": "6d9e52db2a3ce48c2fa46056630c6551d737e34b77ea487caf06d1328daa03c9"
+    }
+  ],
+  "existing_final_model_sha256": "10669f7c24bd04e39a8ed6417721877c01527c7f1797f58481314b8e6e8268bc",
+  "policy_reevaluation_performed": false,
+  "policy_success_rates_confirmed": false,
+  "merge_validation": {
+    "synthetic_inputs": 5,
+    "episodes_per_input": 20,
+    "merged_episodes": 100,
+    "merged_steps": 200,
+    "sources_unchanged": true,
+    "existing_output_protected": true
+  }
+}

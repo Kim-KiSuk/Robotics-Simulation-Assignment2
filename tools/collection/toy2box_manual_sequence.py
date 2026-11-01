@@ -12,6 +12,7 @@ automatically executed actions. The operator can correct it using both views.
 from __future__ import annotations
 
 import math
+import warnings
 from dataclasses import asdict, dataclass
 
 import numpy as np
@@ -31,7 +32,7 @@ class SequenceStep:
     target_quat: list[float]
 
 
-def build_sequence(state, grasp_pos, grasp_rot, cfg, pos_step, rot_step, order="rotation_xy_z"):
+def build_sequence(state, grasp_pos, grasp_rot, cfg, pos_step, rot_step, order="rotation_xy_z", strategy="reference"):
     """Plan quantized movements, carrying rounding forward into subsequent rows."""
     steps = []
     pos, rot = state["eef_pos"].copy(), rotation(state["eef_quat"])
@@ -53,7 +54,11 @@ def build_sequence(state, grasp_pos, grasp_rot, cfg, pos_step, rot_step, order="
 
     def orient():
         nonlocal rot
-        angles = (grasp_rot * rot.inv()).as_euler("XYZ")
+        # At pitch +/-90 degrees the Euler triple is non-unique. SciPy's
+        # chosen zero third angle still represents the exact desired rotation.
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", message="Gimbal lock detected", category=UserWarning)
+            angles = (grasp_rot * rot.inv()).as_euler("XYZ")
         keys = []
         # Left-multiplying yaw, pitch, then roll realizes intrinsic XYZ Euler
         # increments. Listing roll first would generate the wrong final pose.
@@ -65,41 +70,79 @@ def build_sequence(state, grasp_pos, grasp_rot, cfg, pos_step, rot_step, order="
                 delta = np.zeros(3)
                 delta[axis] = (1 if angles[axis] > 0 else -1) * count * rot_step
                 rot = Rotation.from_euler("XYZ", delta) * rot
-        add("Align gripper rotation", keys, "Rotate at the safe height; keep XYZ fixed.")
+        note = ("Keep the approach axis horizontal; send rotation keys only and check TCP drift."
+                if strategy in ("horizontal_descend_first", "horizontal_xy_first") else
+                "Point the gripper downward; rotate in place, keeping XYZ fixed.")
+        add("Align gripper rotation", keys, note)
 
-    safe_z = max(float(pos[2]), float(grasp_pos[2] + cfg.approach_height),
-                 float(state["box_top_z"] + cfg.transport_clearance + 0.08))
-    safe = pos.copy()
-    safe[2] = safe_z
-    translate("Raise to safe height", safe, (2,), "Check height in LEFT view; no XY movement.", round_up=True)
-    hover = np.array([grasp_pos[0], grasp_pos[1], pos[2]])
-    if order == "rotation_xy_z":
+    if strategy == "vertical_descend_first":
+        staging = cfg.clearance_staging(state, grasp_pos)
+        translate("Move XY clear of box", staging, (0, 1), "Keep the initial height; clear arm and camera housing.")
+        translate("Descend to grasp height", grasp_pos, (2,), "Lower in place before rotation and XY.")
         orient()
-        translate("Move XY above truck", hover, (0, 1), "Use TOP view; keep height and rotation fixed.")
-    elif order == "xy_rotation_z":
-        translate("Move XY above truck", hover, (0, 1), "Use TOP view; keep the safe height.")
+        target = np.array([grasp_pos[0], grasp_pos[1], pos[2]])
+        translate("Move XY to truck", target, (0, 1), "Keep the attained height and downward gripper pose.")
+    elif strategy == "vertical_xy_first":
+        target = np.array([grasp_pos[0], grasp_pos[1], pos[2]])
+        translate("Move XY above truck", target, (0, 1), "Keep the initial height and rotation.")
         orient()
+        translate("Descend to grasp", grasp_pos, (2,), "Lower vertically above the truck.")
+    elif strategy == "horizontal_descend_first":
+        translate("Descend to side-grasp height", grasp_pos, (2,), "Lower in place before rotation and XY.")
+        orient()
+        target = np.array([grasp_pos[0], grasp_pos[1], pos[2]])
+        translate("Move XY to side grasp", target, (0, 1), "Keep the attained height and horizontal gripper pose.")
+    elif strategy == "horizontal_xy_first":
+        target = np.array([grasp_pos[0], grasp_pos[1], pos[2]])
+        translate("Move XY above side grasp", target, (0, 1), "Keep the initial height and rotation.")
+        orient()
+        translate("Descend to side-grasp height", grasp_pos, (2,), "Lower vertically beside the truck.")
     else:
-        raise ValueError(f"Unknown sequence order: {order}")
-    translate("Descend to grasp", grasp_pos, (2,), "Use LEFT view; keep XY and rotation fixed.")
+        if strategy == "vertical_first":
+            orient()
+            safe_z = max(float(pos[2]), float(grasp_pos[2] + cfg.approach_height))
+        elif strategy == "reference":
+            safe_z = max(float(pos[2]), float(grasp_pos[2] + cfg.approach_height),
+                         float(state["box_top_z"] + cfg.transport_clearance + 0.08))
+        else:
+            raise ValueError(f"Unknown strategy: {strategy}")
+        safe = pos.copy()
+        safe[2] = safe_z
+        if strategy == "reference" or safe_z > pos[2] + 1e-8:
+            translate("Raise to safe height", safe, (2,), "Check LEFT view; no XY movement.", round_up=True)
+        hover = np.array([grasp_pos[0], grasp_pos[1], pos[2]])
+        if strategy == "vertical_first":
+            translate("Move XY above truck", hover, (0, 1), "Use TOP view; keep height and rotation fixed.")
+        elif order == "rotation_xy_z":
+            orient()
+            translate("Move XY above truck", hover, (0, 1), "Use TOP view; keep height and rotation fixed.")
+        elif order == "xy_rotation_z":
+            translate("Move XY above truck", hover, (0, 1), "Use TOP view; keep the safe height.")
+            orient()
+        else:
+            raise ValueError(f"Unknown sequence order: {order}")
+        translate("Descend to grasp", grasp_pos, (2,), "Use LEFT view; keep XY and rotation fixed.")
     add("Close gripper", [("K", 1)], f"Tap once; wait at least {cfg.grip_seconds:g} s and check the grip.")
     # Predict object-to-gripper translation using the quantized grasp pose.
     offset = pos - truck
     bottom_offset = float(state["truck_bottom_z"] - truck[2])
     transport_z = max(float(truck[2] + cfg.lift_height),
-                      float(state["box_top_z"] + cfg.transport_clearance - bottom_offset))
+                      float(state["box_top_z"] + cfg.transport_clearance - bottom_offset
+                            + (cfg.transfer_height_reserve if strategy != "reference" else 0.0)))
     lifted = pos.copy()
     lifted[2] = transport_z + offset[2]
     translate("Lift above box rim", lifted, (2,), "Verify truck BOTTOM clears the rim in LEFT view.", round_up=True)
     above_box = np.array([box[0] + offset[0], box[1] + offset[1], pos[2]])
     translate("Move XY above box", above_box, (0, 1), "Use TOP view; keep height and rotation fixed.")
-    release = pos.copy()
-    release[2] = state["box_top_z"] + cfg.release_clearance - bottom_offset + offset[2]
-    translate("Lower to release height", release, (2,), "Use LEFT view; stop just ABOVE the rim.")
+    if strategy == "reference":
+        release = pos.copy()
+        release[2] = state["box_top_z"] + cfg.release_clearance - bottom_offset + offset[2]
+        translate("Lower to release height", release, (2,), "Use LEFT view; stop just ABOVE the rim.")
     add("Open gripper", [("K", 1)], f"Tap once; wait at least {cfg.release_seconds:g} s for the truck to fall in.")
-    retreat = pos.copy()
-    retreat[2] += 0.10
-    translate("Retreat upward", retreat, (2,), "Check that the truck stays in the box.", round_up=True)
+    if strategy == "reference":
+        retreat = pos.copy()
+        retreat[2] += 0.10
+        translate("Retreat upward", retreat, (2,), "Check that the truck stays in the box.", round_up=True)
     add("Wait for success / reset", [], "Success is saved and counted automatically. R discards a failed attempt.")
     return steps, transport_z
 

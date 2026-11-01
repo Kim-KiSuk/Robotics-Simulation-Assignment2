@@ -37,7 +37,10 @@ def limited(vector, maximum):
 
 
 class MotionVariation:
-    MOVING_PHASES = {"approach", "descend", "lift", "transfer", "lower", "retreat"}
+    MOVING_PHASES = {
+        "orient", "clear_box", "pre_descend", "pre_xy", "safe_raise", "approach_xy", "approach", "descend",
+        "lift", "transfer", "lower", "retreat"
+    }
 
     def __init__(self, seed: int, cfg: MotionVariationConfig | None = None):
         self.seed = int(seed)
@@ -134,6 +137,8 @@ class MotionVariation:
                 limited(controller_cfg.gain * rotation_error, controller_cfg.max_rotation),
             ]
         distance = float(np.linalg.norm(position_error))
+        if phase == "orient":
+            distance = 0.05 * float(np.linalg.norm(rotation_error))
         self.distance = distance
         if phase != self.phase:
             self.begin(phase, distance)
