@@ -1,78 +1,67 @@
-# 설치·다운로드·평가 재현
+# 설치·데이터·학습 재현
 
-## 실행 환경
+## 환경과 코드 적용
 
-Isaac Sim, Toy2Box 로봇·물체 자산과 IsaacLab_RS가 설치된 `lerobot-arena` 환경을 사용한다. 이 저장소는 과업 코드·수집 도구·모델·배포 자료를 포함한다. Isaac Sim 엔진과 전체 IsaacLab 설치를 압축해 제공하는 저장소는 아니다.
-
-기반 commit과 과업 코드 해시는 [source manifest](../isaaclab_project/source_manifest.json), 확인한 Python 패키지 버전은 [software versions](../configs/software_versions.json)에 있다.
-
-## 처음 실행
+Isaac Sim, Toy2Box 자산과 IsaacLab_RS가 설치된 `lerobot-arena` 환경을 사용한다. 포함 코드의 적용은 기존 파일을 백업한다.
 
 ```bash
 conda activate lerobot-arena
 git clone https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2.git
 cd Robotics-Simulation-Assignmnet2
-
-python tools/install_project_overlay.py \
-  --isaaclab_root "$HOME/IsaacLab_RS"
-python tools/install_project_overlay.py \
-  --isaaclab_root "$HOME/IsaacLab_RS" --apply
-
-python tools/evaluate_experiment.py \
-  --isaaclab_root "$HOME/IsaacLab_RS" \
-  --experiment new_rule_100 \
-  --num_rollouts 100 --horizon 800 --seed 42 \
-  --output_root ./results/evaluations \
-  --headless --video
+python tools/install_project_overlay.py --isaaclab_root "$HOME/IsaacLab_RS"
+python tools/install_project_overlay.py --isaaclab_root "$HOME/IsaacLab_RS" --apply
 ```
 
-첫 overlay 명령은 파일 검사와 적용 계획만 보여 준다. `--apply`는 변경할 원본을 백업하고 포함 코드를 복사한다. 이미 clone했거나 ZIP을 푼 경우 저장소 폴더로 이동해 실행한다. 설치 경로가 다르면 `--isaaclab_root`를 바꾼다.
+이미 내려받았다면 실제 저장소 폴더로 이동한다. 아래 경로는 `/home/kisuk/IsaacLab_RS` 기준이며 설치 위치에 맞게 조정한다.
 
-기본 모델은 `models/final_model.pth`이며 별도 다운로드 없이 들어 있다. 파일 해시는 New rule 100의 Release 모델과 같다. 화면을 보려면 `--headless`를 뺀다.
-
-## 원본 HDF5와 비교 모델 다운로드
-
-GitHub CLI가 있으면 저장소 루트에서 실행한다. 없는 경우 [Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01) 화면에서 같은 파일을 받는다.
+## 원본 다운로드
 
 ```bash
-mkdir -p data models/experiments
-gh release download experiments-2026-11-01 \
+gh release download keyboard-study-2026-11-02 \
   --repo Kim-KiSuk/Robotics-Simulation-Assignmnet2 \
   --pattern '*.hdf5' --pattern SHA256SUMS --dir data
-gh release download experiments-2026-11-01 \
-  --repo Kim-KiSuk/Robotics-Simulation-Assignmnet2 \
-  --pattern '*.pth' --dir models/experiments
+cd data
+sha256sum -c SHA256SUMS
 ```
 
-원본은 n100 (스크립트 테스트용) 100개, New rule 20개·100개, Multi operator 100개다. annotation·Mimic 파일은 포함하지 않는다. [데이터 안내](../artifacts/datasets/README.md) · [모델 안내](../artifacts/checkpoints/README.md)
+New rule 20개와 Multi operator 100개의 증강 전 원본이다. 학습 입력은 원본을 annotation한 뒤 생성한 Mimic 성공 시범이다. 이번 두 조건은 각 1,000개를 사용한다. 공개 파일의 내용과 해시는 [데이터 기록](../results/keyboard_study_20261102.json)에 있다.
 
-## 모델별 평가
+## 시드 101 학습
 
-같은 평가 seed·horizon·rollout 수를 사용하고 순서대로 완료한다.
+해당 Mimic 파일이 로컬에 준비된 상태에서 실행한다.
 
 ```bash
-python tools/evaluate_experiment.py \
-  --isaaclab_root "$HOME/IsaacLab_RS" \
-  --experiment new_rule_20 --num_rollouts 100 --horizon 800 --seed 42 \
-  --output_root ./results/evaluations --headless
+cd /home/kisuk/IsaacLab_RS
+REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
+./isaaclab.sh -p "$REPO/isaaclab_project/scripts/imitation_learning/robomimic/train.py" \
+  --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
+  --algo bc \
+  --config "$REPO/configs/keyboard/bc_rnn_seed101.json" \
+  --dataset ./datasets/toy2box_agibot_mimic_new_rule_keyboard_100.hdf5 \
+  --name new_rule_keyboard_seed101
 ```
 
-`--experiment`는 `baseline_n100`, `new_rule_20`, `new_rule_100`, `multi_operator_100` 중 하나다. 보유한 checkpoint를 지정하려면 `--checkpoint /absolute/path/model_epoch_2000.pth`를 추가한다. 해당 실험의 해시와 일치해야 한다.
+## 시드 100 비교 학습
 
-`results/evaluations/<실험ID>_<시각>/`에 `metadata.json`, `evaluation.log`, `results.json`과 선택한 경우 영상이 저장된다. `complete: true`인 검증 결과만 최종 성공률로 사용한다. 기존 로그 분석과 중단 처리 상세는 [평가 도구 안내](evaluation.md)에 있다.
-
-## 데이터 준비·학습
-
-기존 원본을 합치는 방법은 [데이터 병합](dataset_merge.md)을 따른다. 병합에는 Python과 h5py가 필요하다. annotation·Mimic 생성과 학습에는 해당 IsaacLab_RS 환경을 사용한다.
-
-공개 원본을 그대로 학습한 모델이 아니라 annotation 후 Mimic 성공 시범으로 학습한 모델이다. New rule 100은 100 → 98 → 1,000개를 사용했다. 학습 명령과 실제 config는 [기존 재현 상세](reproduction.md#학습-코드)에 있다. 재생성한 Mimic이 과거 학습 파일과 바이트 단위로 같다고 보장하지 않는다.
-
-## 그림·영상·배포 검사
+별도 터미널에서 실행할 수 있다. 두 프로세스가 같은 GPU와 시스템 메모리를 함께 사용하므로 여유가 부족하면 순서대로 실행한다.
 
 ```bash
-python scripts/build_figures.py
-python scripts/build_previews.py
-python scripts/verify_publication.py
+cd /home/kisuk/IsaacLab_RS
+REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
+./isaaclab.sh -p "$REPO/isaaclab_project/scripts/imitation_learning/robomimic/train.py" \
+  --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
+  --algo bc \
+  --config "$REPO/configs/keyboard/bc_rnn_seed100.json" \
+  --dataset ./datasets/toy2box_agibot_mimic_new_rule_keyboard_100.hdf5 \
+  --name new_rule_keyboard_seed100
 ```
 
-그림은 manifest, GIF는 저장소의 실제 MP4를 사용한다. 모델 rollout을 다시 실행하거나 새 성공률을 생성하는 명령이 아니다. 상세 제출용 명령은 [evaluation_command.txt](../submission/evaluation_command.txt), 이미 준비된 환경의 평가 명령은 [evaluation_only.txt](../submission/evaluation_only.txt)에 있다.
+두 명령의 데이터·모델 설정은 같고 학습 시드와 저장 이름을 다르게 지정한다. 실제 시드는 JSON의 `train.seed`다. `--name`에 숫자를 적는 것만으로 시드가 바뀌지 않는다. 저장소에 포함한 `bc_rnn_low_dim_2.json`도 알고리즘 `bc`, 시드 `100`이다.
+
+Multi operator 학습은 데이터 경로를 `./datasets/toy2box_agibot_mimic_multi_operator_keyboard_100.hdf5`로 바꾸고 조건·시드별 이름을 분리한다. 이 명령을 제공한 것만으로 해당 학습이 실행·완료됐다는 의미는 아니다.
+
+## 평가
+
+이번 조건의 rollout·영상·성공률은 평가 대기다. 평가 모델이 정해지면 같은 평가 seed·100회·800 step으로 실행하고 trial별 성공 판정, checkpoint 해시와 로그를 보존한다. 평가 전 checkpoint를 최종 모델로 지정하지 않는다.
+
+[준비 현황](RESULTS.md) · [평가 로그 형식](evaluation.md) · [이전 조건 재현](reproduction.md)

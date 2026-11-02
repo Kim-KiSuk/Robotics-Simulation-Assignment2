@@ -1,5 +1,7 @@
 # 설치·학습·평가·데이터 재현
 
+> 이전 조건의 기록이다. 2026-11-01~02 keyboard 조건은 [현재 진행 현황](RESULTS.md)을 참조한다.
+
 ## 환경
 
 실행에는 Agibot Toy2Box task와 자산이 설치된 IsaacLab_RS, Isaac Sim, NVIDIA GPU, `lerobot-arena` Python 환경이 필요하다. 이 저장소는 task·로봇·controller·BC 학습·평가 코드를 `isaaclab_project/`에 포함한다. IsaacLab core와 시뮬레이터 자산은 별도 dependency다.
@@ -52,7 +54,7 @@ LD_LIBRARY_PATH=/home/kisuk/miniforge3/envs/lerobot-arena/lib \
   --epochs 2000 --name final_bc_rnn
 ```
 
-이 학습 스크립트는 task에 등록된 BC config를 읽는다. `--config` 옵션을 받지 않는다. 과거 실행의 전체 설정은 `configs/final_train_config.json`으로 확인한다. seed나 설정을 바꾸는 실험은 해당 task config와 실제 저장된 학습 config를 함께 관리한다.
+이 학습 프로그램는 task에 등록된 BC config를 읽는다. `--config` 옵션을 받지 않는다. 과거 실행의 전체 설정은 `configs/final_train_config.json`으로 확인한다. seed나 설정을 바꾸는 실험은 해당 task config와 실제 저장된 학습 config를 함께 관리한다.
 
 ## 원본 다운로드
 

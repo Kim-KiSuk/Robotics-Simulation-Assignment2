@@ -1,0 +1,15 @@
+Experiment: bc_rnn_low_dim_agibot_toy2box
+Training seed: 101
+Dataset: toy2box_agibot_mimic_new_rule_keyboard_100.hdf5
+Last logged epoch: 2000
+Completed: True
+Latest checkpoint epoch: 2000
+Latest checkpoint SHA256: 11df00e59419f94bf4c400309ca505dcb13364f6b733539462d3aa6abeef8e81
+
+Experiment: new_rule_keyboard_seed101
+Training seed: 101
+Dataset: toy2box_agibot_mimic_new_rule_keyboard_100.hdf5
+Last logged epoch: 1477
+Completed: False
+Latest checkpoint epoch: 1400
+Latest checkpoint SHA256: d6f181b1f64aa244d6d02013c08f9187aaf0c1e4a291dbded69040acc321673d

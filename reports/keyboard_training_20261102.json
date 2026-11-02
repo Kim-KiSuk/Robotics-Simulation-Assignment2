@@ -1,0 +1,32 @@
+{
+  "verified_at_kst": "2026-11-02T13:12:47+09:00",
+  "runs": [
+    {
+      "name": "bc_rnn_low_dim_agibot_toy2box",
+      "training_seed": 101,
+      "training_dataset": "toy2box_agibot_mimic_new_rule_keyboard_100.hdf5",
+      "target_epochs": 2000,
+      "last_logged_epoch": 2000,
+      "completed": true,
+      "config_sha256": "7efe5e64aab988790c44abc7ba79c69709dc1194c44238d586b56f0f7763adc0",
+      "latest_checkpoint_epoch": 2000,
+      "latest_checkpoint_sha256": "11df00e59419f94bf4c400309ca505dcb13364f6b733539462d3aa6abeef8e81",
+      "rollout_status": "pending"
+    },
+    {
+      "name": "new_rule_keyboard_seed101",
+      "training_seed": 101,
+      "training_dataset": "toy2box_agibot_mimic_new_rule_keyboard_100.hdf5",
+      "target_epochs": 2000,
+      "last_logged_epoch": 1477,
+      "completed": false,
+      "config_sha256": "e8f0b81f3db0925af88a115bf536cd56da9413fea412b6d953e239754781a9b2",
+      "latest_checkpoint_epoch": 1400,
+      "latest_checkpoint_sha256": "d6f181b1f64aa244d6d02013c08f9187aaf0c1e4a291dbded69040acc321673d",
+      "rollout_status": "pending"
+    }
+  ],
+  "seed100_status": "configuration_prepared_execution_unconfirmed",
+  "multi_operator_status": "completed_training_unconfirmed",
+  "rollout_status": "pending"
+}

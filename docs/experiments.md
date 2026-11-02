@@ -1,5 +1,7 @@
 # 시범 구성과 동작 순서 비교
 
+> 이전 조건의 기록이다. 2026-11-01~02 keyboard 조건은 [현재 진행 현황](RESULTS.md)을 참조한다.
+
 정리한 본문은 [Method](METHOD.md)와 [Results](RESULTS.md), 실행 방법은 [Reproduce](REPRODUCE.md)에서 볼 수 있다. 아래 상세 기록은 근거 자료로 보존한다.
 
 ## 실험 목적
@@ -14,7 +16,7 @@
 
 | 실험 ID | 원본 시범 | annotation | 학습 시범 | 평균 원본 시간 | 원본 idle 평균 |
 |---|---:|---:|---:|---:|---:|
-| `baseline_n100` (스크립트 테스트용) | 100 | 99 | 500 | 14.61초 | 0.70% |
+| `baseline_n100` (확인 실험용) | 100 | 99 | 500 | 14.61초 | 0.70% |
 | `new_rule_20` | 20 | 19 | 1,000 | 32.81초 | 20.23% |
 | `new_rule_100` | 100 | 98 | 1,000 | 32.20초 | 20.08% |
 | `multi_operator_100` | 100 | 93 | 1,000 | 34.16초 | 27.41% |
@@ -54,11 +56,11 @@
 
 동작 순서의 일관성이 학습을 도왔을 가능성을 검토하고 있다. 다만 여러 원본 파일에는 동작 순서·정지 시간·접근 경로 등의 차이도 들어가므로 조작자 수 하나의 효과로 해석할 수 없다. 정책의 정확한 성공률과 우열은 [결과 저장 도구](evaluation.md)로 재평가해 확인한다.
 
-## n100 스크립트 테스트
+## n100 확인 실험
 
-`baseline_n100`은 원본 100개 → annotation 99개 → Mimic 500개로 수집·증강·학습·rollout 파이프라인의 동작을 확인한 스크립트 테스트용 조건이다. New rule과 Multi operator의 연구 결과 비교와 구분한다.
+`baseline_n100`은 원본 100개 → annotation 99개 → Mimic 500개로 수집·증강·학습·rollout 파이프라인의 동작을 확인한 확인 조건이다. New rule과 Multi operator의 연구 결과 비교와 구분한다.
 
-기존 공용 영상 폴더는 다른 checkpoint 평가에도 사용돼 해당 폴더의 조기 종료 횟수를 스크립트 테스트 모델의 성공 횟수로 연결하지 않는다. 정확한 성공률은 고유한 출력 폴더와 모델 해시를 남긴 평가 로그로 확인한다.
+기존 공용 영상 폴더는 다른 checkpoint 평가에도 사용돼 해당 폴더의 조기 종료 횟수를 확인 모델의 성공 횟수로 연결하지 않는다. 정확한 성공률은 고유한 출력 폴더와 모델 해시를 남긴 평가 로그로 확인한다.
 
 ## 저장 시범의 재생 검증
 
@@ -80,4 +82,4 @@
 - 같은 평가 seed와 horizon에서 성공 여부를 rollout별로 저장한다.
 - 학습 seed 101·111을 각각 평가하고 접근·파지·운반·배치 실패를 구분한다.
 
-[Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)에 4개 공개 조건의 수집 원본 HDF5와 rollout에 사용한 epoch 2000 모델을 한 쌍씩 제공한다. `new_rule_20`은 원본 20개, `new_rule_100`·n100 (스크립트 테스트용)·multi operator는 원본 100개다. annotation·Mimic HDF5와 중간 epoch 가중치는 포함하지 않는다. 기본 선택 모델 `models/final_model.pth`는 `new_rule_100`의 Release 가중치와 같다.
+[Release](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/experiments-2026-11-01)에 4개 공개 조건의 수집 원본 HDF5와 rollout에 사용한 epoch 2000 모델을 한 쌍씩 제공한다. `new_rule_20`은 원본 20개, `new_rule_100`·n100·multi operator는 원본 100개다. annotation·Mimic HDF5와 중간 epoch 가중치는 포함하지 않는다. 기본 선택 모델 `models/final_model.pth`는 `new_rule_100`의 Release 가중치와 같다.

@@ -1,5 +1,7 @@
 # 실험 요약과 원자료
 
+2026-11-01~02 keyboard 조건: [현재 JSON](keyboard_study_20261102.json) · [현재 CSV](keyboard_study_20261102.csv). 정책 결과는 평가 대기다. 아래 기존 요약은 이전 조건의 기록이다.
+
 | 파일 | 내용 |
 | --- | --- |
 | [experiment_summary.csv](experiment_summary.csv) | 4개 공개 조건의 원본·annotation·학습 수, 시간, idle, 재생 판정 |

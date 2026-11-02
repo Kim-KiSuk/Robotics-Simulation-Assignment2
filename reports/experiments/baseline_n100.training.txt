@@ -1,4 +1,4 @@
-Source: logs/robomimic/Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-auto/bc_rnn_low_dim_agibot_toy2box/20261027100809/logs/log.txt
+Experiment: baseline_n100
 
 SequenceDataset (
 	path=./datasets/toy2box_agibot_mimic_n100_500.hdf5

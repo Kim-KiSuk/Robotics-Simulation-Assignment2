@@ -1,58 +1,22 @@
-# 선택 모델과 학습 기록
+# 학습 확인 범위
 
-## 최종 모델
+## 2026-11-02 확인
 
-| 항목 | 값 |
-|---|---|
-| 파일 | `models/final_model.pth` |
-| 데이터 계열 | 수집 원본 100개 → annotation 98개 → Mimic 성공 생성 1,000개 |
-| 배포 checkpoint | `models/final_model.pth` |
-| 선택 기준 | 사용자 지정, 고정 epoch 2000 |
-| 학습 seed | 101 |
-| 정책 | BC-RNN, LSTM hidden 400·2 layers, GMM 5 modes |
-| batch / sequence length | 100 / 10 |
-| optimizer | Adam, 학습률 0.001 |
-| epoch당 학습 step 설정 | 100 |
-| 배포 구성 | 저장소 기본 모델 1개, Release에 4개 공개 조건의 최종 epoch 모델 각각 1개 |
+| 조건 | 시드 | 확인된 상태 |
+| --- | ---: | --- |
+| New rule keyboard | 101 | epoch 2000 저장·정상 종료 확인 |
+| New rule keyboard · 별도 실행 | 101 | 학습 진행 기록 확인; 위 실행과 같은 시드 |
+| New rule keyboard | 100 | 비교 JSON 준비; 실행·완료 기록 미확인 |
+| Multi operator keyboard | — | 이번 데이터로 학습한 완료 모델 미확인 |
 
-모델 내부 config가 `toy2box_agibot_mimic_new_rule_1000.hdf5`를 학습 입력으로 사용했음을 확인했다. 학습 시범은 1,000개다. 원본 HDF5 100개와 증강 학습 데이터 1,000개를 구분한다. [모델 manifest](../models/model_manifest.json)와 [학습 config](../configs/final_train_config.json)를 제공한다.
+진행 상태는 아래 근거 파일의 확인 시각 기준이다. 이후 로컬에서 학습이 계속되면 상태가 달라질 수 있다.
 
-기본 선택 모델은 `new_rule_100`이다. Release의 동일 실험 모델과 SHA256이 같다. 이전 n20 모델의 선택 정보와 7회 부분 실행은 [이력 폴더](../reports/history)에 보관하며 현재 선택 모델의 평가 결과로 사용하지 않는다.
+[학습 확인 JSON](../reports/keyboard_training_20261102.json) · [학습 로그 발췌](../reports/keyboard_training_20261102.txt)
 
-## 실제 입력
+두 JSON의 알고리즘은 모두 `bc`이고, 실제 시드는 `train.seed`다. 시드 101 설정과 시드 100 설정만으로 두 학습 시드의 결과 평균을 계산하지 않는다. 별도 이름의 동일 시드 학습 역시 독립 시드 실험이 아니다.
 
-```text
-eef_pos                  3
-eef_quat                 4
-gripper_pos              2
-toy_truck_positions      3
-toy_truck_orientations   4
-box_positions            3
-box_orientations         4
-총 입력                 23차원
-```
+## 모델 배포
 
-HDF5 전체 관측과 실제 policy 입력을 구분한다. 저장된 관절 상태는 이 config의 입력 목록에 없다.
+이번 모델은 rollout 평가 전이므로 최종 배포 가중치를 지정하지 않았다. 현재 저장소에 남아 있는 `models/final_model.pth`와 기존 Release 정보는 [이전 조건](experiments.md)에 해당한다. 이번 keyboard 조건의 모델·영상·성공률로 사용하지 않는다.
 
-## 평가와 분석
-
-선택 모델의 CPU 로드·내부 config·파일 해시를 확인했다. 기존 rollout 명령 이력과 영상 100개를 [근거 기록](../submission/model_smoke_check.json)으로 연결했다. 정확한 성공 여부 출력은 확보되지 않아 정식 100회 성공률이나 학습 seed 2개의 평균·표준편차로 사용하지 않는다. 이번 배포 수정에서 시뮬레이터 재평가는 실행하지 않았다.
-
-[평가 명령어](../submission/evaluate.txt)는 `--num_rollouts 100 --horizon 800 --seed 42`를 따른다. 이 검증 seed와 조교의 비공개 평가 seed를 구분한다.
-
-추가 확인 항목은 학습 seed 111, 접근·파지·운반·배치 실패 분류, 진단한 원인 하나에 대한 통제 실험이다. 저장 action 재생과 정책 독립 평가를 구분한다.
-
-## 비교 실험 모델
-
-아래 4개 공개 조건은 모두 seed 101, epoch 2000이며, 각각 수집 원본 HDF5와 rollout 모델을 한 쌍씩 Release에 제공한다. `new_rule_100`은 기본 선택 모델과 같은 가중치다.
-
-| 실험 ID | 학습 시범 수 |
-| --- | ---: |
-| `baseline_n100` (스크립트 테스트용) | 500 |
-| `new_rule_20` | 1,000 |
-| `multi_operator_100` | 1,000 |
-| `new_rule_100` | 1,000 |
-
-`new_rule_20`과 `new_rule_100`의 config에는 같은 HDF5 경로가 기록돼 있지만 생성 원본과 학습 실행은 다르다. 당시 학습 입력의 해시를 기록하지 않았으므로 현재 파일을 두 모델의 동일한 입력이었다고 간주하지 않는다.
-
-[실험 구성과 확인 범위](experiments.md) · [체크포인트 manifest](../models/experiment_manifest.json) · [평가·결과 저장](evaluation.md)
+[재현 명령](REPRODUCE.md) · [평가 대기](RESULTS.md)

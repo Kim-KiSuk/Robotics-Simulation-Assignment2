@@ -37,6 +37,7 @@ Args:
     task: Name of the environment.
     name: If provided, override the experiment name defined in the config.
     dataset: If provided, override the dataset path defined in the config.
+    config: If provided, load this JSON instead of the task's registered config.
     log_dir: Directory to save logs.
     normalize_training_actions: Whether to normalize actions in the training data.
 
@@ -354,7 +355,12 @@ def main(args: argparse.Namespace):
         args: Command line arguments.
     """
     # load config
-    if args.task is not None:
+    if args.task is None:
+        raise ValueError("Please provide a task name through CLI arguments.")
+
+    if args.config is not None:
+        config_file = os.path.abspath(os.path.expanduser(args.config))
+    else:
         # obtain the configuration entry point
         cfg_entry_point_key = f"robomimic_{args.algo}_cfg_entry_point"
         task_name = args.task.split(":")[-1]
@@ -362,7 +368,7 @@ def main(args: argparse.Namespace):
         print(f"Loading configuration for task: {task_name}")
         print(gym.envs.registry.keys())
         print(" ")
-        cfg_entry_point_file = gym.spec(task_name).kwargs.pop(cfg_entry_point_key)
+        cfg_entry_point_file = gym.spec(task_name).kwargs.get(cfg_entry_point_key)
 
         if cfg_entry_point_file is None:
             raise ValueError(
@@ -383,15 +389,17 @@ def main(args: argparse.Namespace):
         else:
             config_file = cfg_entry_point_file
 
-        with open(config_file) as f:
-            ext_cfg = json.load(f)
-            config = config_factory(ext_cfg["algo_name"])
-        # update config with external json - this will throw errors if
-        # the external config has keys not present in the base algo config
-        with config.values_unlocked():
-            config.update(ext_cfg)
-    else:
-        raise ValueError("Please provide a task name through CLI arguments.")
+    print(f"Loading training JSON: {config_file}")
+    with open(config_file) as f:
+        ext_cfg = json.load(f)
+    if args.algo is not None and args.algo != ext_cfg["algo_name"]:
+        raise ValueError(
+            f"Algorithm '{args.algo}' does not match JSON algo_name '{ext_cfg['algo_name']}'."
+        )
+    config = config_factory(ext_cfg["algo_name"])
+    # Validate the JSON keys against the algorithm's base config.
+    with config.values_unlocked():
+        config.update(ext_cfg)
 
     if args.dataset is not None:
         config.train.data = args.dataset
@@ -445,6 +453,12 @@ if __name__ == "__main__":
 
     parser.add_argument("--task", type=str, default=None, help="Name of the task.")
     parser.add_argument("--algo", type=str, default=None, help="Name of the algorithm.")
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=None,
+        help="Optional training JSON path; overrides the task's registered algorithm config.",
+    )
     parser.add_argument("--log_dir", type=str, default="robomimic", help="Path to log directory")
     parser.add_argument("--normalize_training_actions", action="store_true", default=False, help="Normalize actions")
     parser.add_argument(

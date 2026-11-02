@@ -1,0 +1,100 @@
+{
+  "verified_at_kst": "2026-11-02T13:12:47+09:00",
+  "release_tag": "keyboard-study-2026-11-02",
+  "release_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/tag/keyboard-study-2026-11-02",
+  "datasets": [
+    {
+      "id": "new_rule_keyboard_20",
+      "raw_file": "toy2box_agibot_new_rule_20_keyboard.hdf5",
+      "raw": {
+        "episodes": 20,
+        "saved_successes": 20,
+        "total_steps": 11276,
+        "mean_seconds": 28.189999999999998,
+        "mean_idle_percent": 30.967942478164606,
+        "sha256": "5c8219e4bc63322f075e8db34f85ec11e73df7e8d0d326c9852ce776e3227174",
+        "bytes": 8339715
+      },
+      "annotation": {
+        "episodes": 17,
+        "saved_successes": 17,
+        "total_steps": 9606,
+        "mean_seconds": 28.252941176470586,
+        "mean_idle_percent": 31.561005300968347,
+        "sha256": "35dbafb089d75a48fcefdd7be1b395da2e1b12b93d5a82df9d6006c689ffeb7a",
+        "bytes": 8705223
+      },
+      "mimic_success": {
+        "episodes": 1000,
+        "saved_successes": 1000,
+        "total_steps": 591080,
+        "mean_seconds": 29.554000000000002,
+        "mean_idle_percent": 0.0,
+        "sha256": "336cd63d24a2b05daf8028541ee1185759c6489c97dbefc2692ecd200ccf9828",
+        "bytes": 485639601
+      },
+      "mimic_failed": {
+        "episodes": 2616,
+        "saved_successes": 0,
+        "total_steps": 1574775,
+        "mean_seconds": 30.098910550458715,
+        "mean_idle_percent": 0.0,
+        "sha256": "629f2b24d1192469c35065df76f101072abfd9c56af2a88913636b2295d7f549",
+        "bytes": 1279495882
+      },
+      "release_file": "toy2box_keyboard_new_rule_20.hdf5",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study-2026-11-02/toy2box_keyboard_new_rule_20.hdf5",
+      "policy_success_rate": null,
+      "rollout_status": "pending"
+    },
+    {
+      "id": "multi_operator_keyboard_100",
+      "raw_file": "multi_operator_keyboard_100.hdf5",
+      "raw": {
+        "episodes": 100,
+        "saved_successes": 100,
+        "total_steps": 60892,
+        "mean_seconds": 30.445999999999998,
+        "mean_idle_percent": 31.435580217083853,
+        "sha256": "e165d9086086b40b2c4f80b83ea093d167b16133623cfbe02d1a58f416501c99",
+        "bytes": 43800615
+      },
+      "annotation": {
+        "episodes": 91,
+        "saved_successes": 91,
+        "total_steps": 54724,
+        "mean_seconds": 30.068131868131868,
+        "mean_idle_percent": 30.9345862163737,
+        "sha256": "44b4a9af1d569ef88b308550e53b24bab4e890737b265b2a379086ae8e2ef153",
+        "bytes": 48482541
+      },
+      "mimic_success": {
+        "episodes": 1000,
+        "saved_successes": 1000,
+        "total_steps": 618211,
+        "mean_seconds": 30.91055,
+        "mean_idle_percent": 0.0,
+        "sha256": "eb7258b35ec4977bb665ffef1401da53cdfe8f8bced5200cb021b100b5603fa0",
+        "bytes": 501763134
+      },
+      "mimic_failed": {
+        "episodes": 2169,
+        "saved_successes": 0,
+        "total_steps": 1350941,
+        "mean_seconds": 31.14202397418165,
+        "mean_idle_percent": 0.0,
+        "sha256": "0e99284205b15b09ad36052b4f7c0a82fa6f70257232032cef9d49fe0267b488",
+        "bytes": 1087333187
+      },
+      "release_file": "toy2box_keyboard_multi_operator_100.hdf5",
+      "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study-2026-11-02/toy2box_keyboard_multi_operator_100.hdf5",
+      "policy_success_rate": null,
+      "rollout_status": "pending"
+    }
+  ],
+  "notes": [
+    "success attributes describe stored episodes, not policy rollout results",
+    "idle is averaged per episode from exact zeros in the first six action components",
+    "raw release files are byte-identical copies; HDF5 contents were preserved"
+  ]
+}

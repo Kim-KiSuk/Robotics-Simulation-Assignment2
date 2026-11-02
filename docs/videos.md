@@ -1,5 +1,7 @@
 # 재생 영상
 
+> 이전 조건의 기록이다. 2026-11-01~02 keyboard 조건은 [현재 진행 현황](RESULTS.md)을 참조한다.
+
 README의 실제 rollout GIF와 정책별 전체 영상은 [Media](MEDIA.md)에 정리했다. 아래에는 원본 action 재생과 기존 영상 검사 기록을 보존한다.
 
 ## Dataset A / Dataset B 시범 재생
