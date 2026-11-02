@@ -75,55 +75,44 @@ Multi operator는 **New rule 20개 + 무규칙 키보드 수집 20개 + XY 우�
 
 성공률은 전달받은 평가 종료 집계값이다. 공개 영상과 배포 모델은 해당 평가의 checkpoint로 맞췄다. Multi operator와의 성능 비교 결과는 아니다.
 
-## 6. 원본 데이터와 평가 모델
+## 6. 수집 원본과 평가 모델
 
-| 조건 | 다운로드 |
-| --- | --- |
-| New rule 원본 20개 | [HDF5](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_20.hdf5) |
-| Multi operator 원본 100개 | [HDF5](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_multi_operator_100.hdf5) |
-| Multi operator 평가 모델 · epoch 2000 | [가중치](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_multi_operator_epoch2000_seed101.pth) |
-| 원본 기반 전체 프로젝트 | [IsaacLab_RS_Toy2Box.tar.gz](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/IsaacLab_RS_Toy2Box.tar.gz) |
-| New rule 평가 모델 · epoch 2000 · seed 101 | [가중치](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_epoch2000_seed101.pth) |
+저장소의 프로젝트 코드·데이터·모델·영상은 아래 경로에 직접 포함돼 있다.
 
-배포본에서는 로컬 출처 경로를 익명 식별자로 바꿨으며, 초기 상태·관측·행동 배열과 시범 수는 유지했다. Annotation·Mimic 전체 파일과 평가 전 가중치는 배포에 포함하지 않는다.
+| 조건 | 원본 데이터 | 평가 모델 |
+| --- | --- | --- |
+| New rule | [20개 HDF5](datasets/toy2box_agibot_new_rule_20_keyboard.hdf5) | [epoch 2000](models/new_rule/model_epoch_2000.pth) |
+| Multi operator | [100개 HDF5](datasets/multi_operator_keyboard_100.hdf5) | [epoch 2000](models/multi_operator/model_epoch_2000.pth) |
 
-```bash
-gh release download keyboard-study \
-  --repo Kim-KiSuk/Robotics-Simulation-Assignmnet2 \
-  --pattern '*.hdf5' --pattern '*.pth' --pattern SHA256SUMS --dir data
-cd data
-sha256sum -c SHA256SUMS
-```
+배포본에서는 로컬 출처 경로를 익명 식별자로 바꿨으며, 초기 상태·관측·행동 배열과 시범 수는 유지했다. Annotation·Mimic 전체 파일은 포함하지 않는다. 실제 학습 입력은 원본을 annotation한 뒤 생성한 Mimic 성공 시범이다.
 
 ## 7. 실행 방법
 
-전체 프로젝트 압축본은 IsaacLab_RS 원본에 실제 실험에 사용한 학습·병합·RMPFlow 파일을 반영한 구성이다. New rule·Multi operator 원본과 평가 모델이 함께 들어 있다.
-
-```bash
-gh release download keyboard-study \
-  --repo Kim-KiSuk/Robotics-Simulation-Assignmnet2 \
-  --pattern IsaacLab_RS_Toy2Box.tar.gz --dir .
-tar -xzf IsaacLab_RS_Toy2Box.tar.gz
-```
-
-압축을 풀면 `IsaacLab_RS-main/`이 생긴다. 프로젝트 루트의 `README_Toy2Box.md`에 포함 파일과 두 조건의 실행 명령을 정리했다. 아래 명령의 설치 경로는 본인의 수업용 IsaacLab_RS 위치에 맞춘다.
-
-Isaac Sim, Toy2Box 자산과 IsaacLab_RS가 설치된 `lerobot-arena` 환경이 필요하다. 저장소는 필요한 과업 코드만 포함하며 시뮬레이터 엔진과 외부 자산은 별도 설치한다.
+Isaac Sim과 Toy2Box 자산이 설치된 수업용 `lerobot-arena` 환경을 사용한다. 이 저장소 자체가 IsaacLab_RS 프로젝트이며 `source/`, `scripts/`, `isaaclab.sh`, `datasets/`, `models/`, `videos/`를 포함한다. Isaac Sim 엔진과 외부 자산은 별도 설치한다.
 
 ```bash
 conda activate lerobot-arena
-git clone https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2.git
-cd Robotics-Simulation-Assignmnet2
+cd ~
+git clone https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2.git IsaacLab_RS_Toy2Box
+cd ~/IsaacLab_RS_Toy2Box
 ```
 
-아래 명령은 Toy2Box 과업이 등록된 수업용 IsaacLab_RS에서 실행한다. `isaaclab_project/`에는 주요 변경 코드와 과업 설정을 보관했다. 전체 실행 프로젝트는 압축본을 사용한다.
+수업 환경에 설치된 의존성을 유지하면서 현재 프로젝트의 Python 패키지 경로를 등록한다.
+
+```bash
+./isaaclab.sh -p -m pip install --no-deps \
+    -e source/isaaclab \
+    -e source/isaaclab_assets \
+    -e source/isaaclab_tasks \
+    -e source/isaaclab_mimic
+```
 
 학습 입력은 원본 HDF5가 아니라 annotation 후 생성한 Mimic 성공 시범 파일이다. 해당 파일이 로컬에 준비된 상태에서 실행한다.
 
 **학습 명령어**
 
 ```bash
-cd ~/IsaacLab_RS
+cd ~/IsaacLab_RS_Toy2Box
 
 ./isaaclab.sh -p scripts/imitation_learning/robomimic/train.py \
     --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
@@ -145,14 +134,14 @@ Multi operator를 학습할 때는 `--dataset`만 아래 파일로 바꾼다.
 
 **Play 명령어**
 
-배포 모델을 내려받은 뒤 실행한다. 다른 모델은 `--checkpoint`를 해당 가중치 경로로 바꾼다.
+저장소에 포함된 모델로 실행한다. Multi operator는 `--checkpoint ./models/multi_operator/model_epoch_2000.pth`, `--video_folder ./videos/toy2box_multi_operator`로 바꾼다.
 
 ```bash
-cd ~/IsaacLab_RS
+cd ~/IsaacLab_RS_Toy2Box
 
 ./isaaclab.sh -p scripts/imitation_learning/robomimic/play.py \
     --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
-    --checkpoint ./Robotics-Simulation-Assignmnet2/data/toy2box_keyboard_new_rule_epoch2000_seed101.pth \
+    --checkpoint ./models/new_rule/model_epoch_2000.pth \
     --num_rollouts 100 \
     --horizon 800 \
     --video \
@@ -169,11 +158,15 @@ cd ~/IsaacLab_RS
 
 | 경로 | 내용 |
 | --- | --- |
-| `isaaclab_project/` | 과업·로봇·학습·평가 코드와 파일 해시 |
-| `tools/` | 원본 병합·평가 로그 집계 |
-| `results/dataset_summary.json` | 데이터 개수·통계·배포 파일 해시 |
-| `artifacts/media/manifest.json` | 영상·미리보기·모델 대응 정보 |
-| `videos/` | 선별한 전체 MP4 |
+| `source/` | IsaacLab·과업·로봇·Mimic 코드와 설정 |
+| `scripts/` | 학습·평가·증강·데이터 도구 |
+| `isaaclab.sh` | 프로젝트 실행 |
+| `datasets/` | New rule 20개·Multi operator 100개 수집 원본 |
+| `models/` | 두 조건의 epoch 2000 평가 모델 |
+| `videos/` | 선별한 New rule 전체 MP4 |
+| `artifacts/media/` | 실제 영상의 GIF 미리보기 |
+| `tools/` | 원본 프로젝트 도구와 데이터 병합·평가 집계 |
+| `results/dataset_summary.json` | 실험 데이터 개수·통계·파일 해시 |
 
 ## 참고
 

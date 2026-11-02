@@ -16,7 +16,9 @@
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_20.hdf5",
       "policy_success_rate": 0.36,
       "checkpoint_epoch": 2000,
-      "checkpoint_sha256": "11df00e59419f94bf4c400309ca505dcb13364f6b733539462d3aa6abeef8e81"
+      "checkpoint_sha256": "11df00e59419f94bf4c400309ca505dcb13364f6b733539462d3aa6abeef8e81",
+      "repository_dataset": "datasets/toy2box_agibot_new_rule_20_keyboard.hdf5",
+      "repository_model": "models/new_rule/model_epoch_2000.pth"
     },
     {
       "id": "multi_operator_keyboard_100",
@@ -36,7 +38,9 @@
       "checkpoint_epoch": 2000,
       "checkpoint_sha256": "117475943e47e90a549fded20647ae9434b31de53d595cb4a8d5ba42555198f0",
       "training_status": "completed",
-      "evaluation_status": "in_progress"
+      "evaluation_status": "in_progress",
+      "repository_dataset": "datasets/multi_operator_keyboard_100.hdf5",
+      "repository_model": "models/multi_operator/model_epoch_2000.pth"
     }
   ],
   "release_tag": "keyboard-study",

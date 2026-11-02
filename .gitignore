@@ -6,3 +6,8 @@ data/*.part
 *.pth
 *.ckpt
 *.log
+datasets/*
+!datasets/toy2box_agibot_new_rule_20_keyboard.hdf5
+!datasets/multi_operator_keyboard_100.hdf5
+!models/new_rule/model_epoch_2000.pth
+!models/multi_operator/model_epoch_2000.pth
