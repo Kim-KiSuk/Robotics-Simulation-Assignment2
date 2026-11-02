@@ -18,7 +18,15 @@
       "checkpoint_epoch": 2000,
       "checkpoint_sha256": "11df00e59419f94bf4c400309ca505dcb13364f6b733539462d3aa6abeef8e81",
       "repository_dataset": "datasets/toy2box_agibot_new_rule_20_keyboard.hdf5",
-      "repository_model": "models/new_rule/model_epoch_2000.pth"
+      "repository_model": "models/new_rule/model_epoch_2000.pth",
+      "successes": 36,
+      "evaluation_trials": 100,
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "evaluation_horizon": 800,
+      "training_status": "completed",
+      "evaluation_status": "completed",
+      "aggregate_result_source": "user_reported_final_rollout_summary"
     },
     {
       "id": "multi_operator_keyboard_100",
@@ -34,19 +42,25 @@
       "bytes": 43804711,
       "sha256": "0591047a33ffc5c51e829ad33889c734476fc64767f7b62264b6779b852cedf5",
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_multi_operator_100.hdf5",
-      "policy_success_rate": null,
+      "policy_success_rate": 0.35,
       "checkpoint_epoch": 2000,
       "checkpoint_sha256": "117475943e47e90a549fded20647ae9434b31de53d595cb4a8d5ba42555198f0",
       "training_status": "completed",
-      "evaluation_status": "in_progress",
+      "evaluation_status": "completed",
       "repository_dataset": "datasets/multi_operator_keyboard_100.hdf5",
-      "repository_model": "models/multi_operator/model_epoch_2000.pth"
+      "repository_model": "models/multi_operator/model_epoch_2000.pth",
+      "successes": 35,
+      "evaluation_trials": 100,
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "evaluation_horizon": 800,
+      "aggregate_result_source": "user_reported_final_rollout_summary"
     }
   ],
   "release_tag": "keyboard-study",
   "array_contents_preserved": true,
   "source_paths_anonymized": true,
-  "policy_success_rate_status": "new_rule_user_reported_completed_evaluation; multi_operator_evaluation_in_progress",
+  "policy_success_rate_status": "both_conditions_user_reported_completed_evaluation",
   "project_archive": {
     "file": "IsaacLab_RS_Toy2Box.tar.gz",
     "sha256": "48cd3cc44a0a66ee95ca77db10ee612cdef264d48ce044322fdab8253cce8099",

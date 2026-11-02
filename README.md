@@ -2,7 +2,7 @@
 
 **Agibot 오른팔로 트럭을 집어 상자 안에 놓는 정책**을 학습한다. 연구 축은 **조작자 1명 vs 다수**이며, 시범 구성과 동작 순서가 정책 성능에 어떤 차이를 만드는지 살펴본다.
 
-New rule 원본 **20개**, Multi operator 원본 **100개**를 준비하고, annotation 후 각 조건의 Mimic 성공 시범을 **1,000개씩** 확보했다. New rule의 학습 모델은 시드 **101**, epoch **2000**이며, **100회 평가 성공률은 36% (36/100)**다.
+New rule 원본 **20개**, Multi operator 원본 **100개**를 준비하고, annotation 후 각 조건의 Mimic 성공 시범을 **1,000개씩** 확보했다. 두 모델 모두 학습 시드 **101**, epoch **2000**이며, **100회 평가 성공률은 New rule 36% (36/100), Multi operator 35% (35/100)**다.
 
 ## 1. 정책 동작 예시
 
@@ -11,7 +11,12 @@ New rule 원본 **20개**, Multi operator 원본 **100개**를 준비하고, ann
 | [![New rule 상자 투입 예시 1](artifacts/media/new_rule_success_60.gif)](videos/new_rule_success_60.mp4) | [![New rule 상자 투입 예시 2](artifacts/media/new_rule_success_99.gif)](videos/new_rule_success_99.mp4) |
 | **Trial 60 · 전체 21.65초** | **Trial 99 · 전체 20.50초** |
 
-파지·운반·상자 투입·릴리즈가 영상에서 확인되는 예시를 골랐다. 미리보기는 실제 영상의 마지막 6초를 원래 속도로 보여주며, 클릭하면 전체 MP4로 이동한다. 두 영상 모두 **New rule 모델**이다. 선별한 예시만으로 전체 성공률을 계산하지 않는다.
+| Multi operator · 예시 1 | Multi operator · 예시 2 |
+| --- | --- |
+| [![Multi operator 상자 투입 예시 1](artifacts/media/multi_operator_success_1.gif)](videos/multi_operator_success_1.mp4) | [![Multi operator 상자 투입 예시 2](artifacts/media/multi_operator_success_13.gif)](videos/multi_operator_success_13.mp4) |
+| **Trial 1 · 전체 17.75초** | **Trial 13 · 전체 16.70초** |
+
+파지·운반·상자 투입·릴리즈가 영상에서 확인되는 예시를 골랐다. 미리보기는 실제 영상의 마지막 6초를 원래 속도로 보여주며, 클릭하면 전체 MP4로 이동한다. 각 행은 해당 조건의 모델로 재생한 영상이다. 선별한 예시만으로 전체 성공률을 계산하지 않는다.
 
 ## 2. 무엇을 확인하려 하는가?
 
@@ -29,7 +34,7 @@ flowchart LR
     A["원본 시범<br/>20개 / 100개"] --> B["Annotation<br/>17개 / 91개"]
     B --> C["Mimic 성공 시범<br/>각 1,000개"]
     C --> D["BC-RNN / GMM"]
-    D --> E["정책 평가<br/>New rule 36% · Multi operator 평가 중"]
+    D --> E["정책 평가<br/>New rule 36% · Multi operator 35%"]
 ```
 
 | 조건 | 원본 | Annotation | Mimic 성공 시범 | 원본 평균 시간 | 원본 평균 idle |
@@ -66,14 +71,14 @@ Multi operator는 **New rule 20개 + 무규칙 키보드 수집 20개 + XY 우�
 
 관측은 EE 위치·자세, 그리퍼 상태, 트럭 위치·자세, 박스 위치·자세로 구성한다. 행동은 상대 이동 3축·회전 3축·그리퍼 1개이며 팔 명령은 RMPFlow에 전달한다.
 
-**확인된 상태:** New rule 시드 101·epoch 2000 모델을 100회 평가해 **36회 성공(36%)**했다. 평가 seed는 42, 한도는 800 step이다. Multi operator도 학습을 완료했으며 현재 정책 평가를 진행 중이다.
+**평가 완료:** 두 조건 모두 학습 시드 101·epoch 2000 모델을 평가했다. 평가 seed는 42, 각 100회, 한도는 800 step이다. New rule은 **36회 성공(36%)**, Multi operator는 **35회 성공(35%)**했다.
 
 | 조건 | 학습 시드 | 평가 seed | 평가 횟수 / 한도 | 성공률 |
 | --- | ---: | ---: | --- | --- |
 | New rule keyboard | 101 | 42 | 100회 / 800 step | **36% (36/100)** |
-| Multi operator keyboard | — | — | 평가 진행 중 | — |
+| Multi operator keyboard | 101 | 42 | 100회 / 800 step | **35% (35/100)** |
 
-성공률은 전달받은 평가 종료 집계값이다. 공개 영상과 배포 모델은 해당 평가의 checkpoint로 맞췄다. Multi operator와의 성능 비교 결과는 아니다.
+성공률은 전달받은 평가 종료 집계값이다. 공개 영상과 모델은 각 평가의 checkpoint로 맞췄다. 두 조건의 차이는 **1%p**이며, 원본 수와 동작 구성도 달라 조작자 수의 효과로 단정하지 않는다.
 
 ## 6. 수집 원본과 평가 모델
 
@@ -150,7 +155,7 @@ cd ~/IsaacLab_RS_Toy2Box
     --headless
 ```
 
-평가 시드는 조교님이 지정하는 값으로 실행한다. 위 표의 학습·평가 시드는 게시한 36% 결과의 기록이다. 재학습·평가 시 사용할 시드를 지정하는 안내와 구분한다.
+평가 시드는 조교님이 지정하는 값으로 실행한다. 위 표의 학습·평가 시드는 게시한 36%·35% 결과의 기록이다. 재학습·평가 시 사용할 시드를 지정하는 안내와 구분한다.
 
 원본 병합에는 `tools/merge_hdf5_datasets.py`를 사용한다. 기존 출력 파일은 덮어쓰지 않는다.
 
@@ -163,7 +168,7 @@ cd ~/IsaacLab_RS_Toy2Box
 | `isaaclab.sh` | 프로젝트 실행 |
 | `datasets/` | New rule 20개·Multi operator 100개 수집 원본 |
 | `models/` | 두 조건의 epoch 2000 평가 모델 |
-| `videos/` | 선별한 New rule 전체 MP4 |
+| `videos/` | 두 조건에서 선별한 성공 예시 전체 MP4 |
 | `artifacts/media/` | 실제 영상의 GIF 미리보기 |
 | `tools/` | 원본 프로젝트 도구와 데이터 병합·평가 집계 |
 | `results/dataset_summary.json` | 실험 데이터 개수·통계·파일 해시 |

@@ -43,11 +43,55 @@
       "environment_trial_success_log_available": false,
       "aggregate_success_rate": 0.36,
       "aggregate_result_source": "user_reported_final_rollout_summary"
+    },
+    {
+      "condition": "multi_operator_keyboard_100",
+      "trial": 1,
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "horizon": 800,
+      "checkpoint_sha256": "117475943e47e90a549fded20647ae9434b31de53d595cb4a8d5ba42555198f0",
+      "video": "videos/multi_operator_success_1.mp4",
+      "video_sha256": "82cd96f53317cc7fccd6c03a6f7a54d230e7bfb760fe2082a4a3674bc222c957",
+      "frames": 355,
+      "fps": 20.0,
+      "duration_seconds": 17.75,
+      "preview": "artifacts/media/multi_operator_success_1.gif",
+      "preview_sha256": "77827cdeb6009916086c6c63ac05200622b7f23c65169f8e4bd0d5b4f6753c5e",
+      "preview_start_seconds": 11.75,
+      "preview_duration_seconds": 6,
+      "playback_speed": 1,
+      "visually_confirmed_placement": true,
+      "environment_trial_success_log_available": false,
+      "aggregate_success_rate": 0.35,
+      "aggregate_result_source": "user_reported_final_rollout_summary"
+    },
+    {
+      "condition": "multi_operator_keyboard_100",
+      "trial": 13,
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "horizon": 800,
+      "checkpoint_sha256": "117475943e47e90a549fded20647ae9434b31de53d595cb4a8d5ba42555198f0",
+      "video": "videos/multi_operator_success_13.mp4",
+      "video_sha256": "a9f51833fe85a378b59186ac11af6a7f09156ad0f05c4bb942a844598344f1e9",
+      "frames": 334,
+      "fps": 20.0,
+      "duration_seconds": 16.7,
+      "preview": "artifacts/media/multi_operator_success_13.gif",
+      "preview_sha256": "253ebd3b74588b4154e532ec4f802e8b4324ffe9dc044fcbb6c62359157692ee",
+      "preview_start_seconds": 10.7,
+      "preview_duration_seconds": 6,
+      "playback_speed": 1,
+      "visually_confirmed_placement": true,
+      "environment_trial_success_log_available": false,
+      "aggregate_success_rate": 0.35,
+      "aggregate_result_source": "user_reported_final_rollout_summary"
     }
   ],
   "notes": [
-    "checkpoint training config identifies New rule; folder labels are not used to infer the dataset",
+    "checkpoint configs identify each training dataset",
     "representative successful placements were selected by visual review",
-    "aggregate result is the user-reported final rollout summary"
+    "aggregate results are user-reported final rollout summaries"
   ]
 }
