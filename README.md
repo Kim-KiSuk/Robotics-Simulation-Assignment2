@@ -159,8 +159,6 @@ cd ~/IsaacLab_RS
 | `isaaclab_project/` | 과업·로봇·학습·평가 코드와 파일 해시 |
 | `tools/` | 원본 병합·평가 로그 집계 |
 | `results/dataset_summary.json` | 데이터 개수·통계·배포 파일 해시 |
-| `reports/training_status.json` | 확인된 학습 상태와 모델 해시 |
-| `reports/policy_evaluation.json` | 평가 조건·36/100 집계·모델 해시 |
 | `artifacts/media/manifest.json` | 영상·미리보기·모델 대응 정보 |
 | `videos/` | 선별한 전체 MP4 |
 
