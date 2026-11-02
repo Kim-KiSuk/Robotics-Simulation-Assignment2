@@ -1,5 +1,0 @@
-Selected model: new_rule_100 / epoch 2000
-Raw demos: 100; annotation: 98; Mimic training demos: 1000
-Existing rollout videos: 100; exact success log: unavailable
-No simulation reevaluation was performed in this update.
-Historical n20 partial result: reports/history/n20_model_smoke_check.json

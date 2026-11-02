@@ -1,3 +1,0 @@
-condition,raw_demos,annotated_demos,mimic_successes,mimic_failures,raw_mean_seconds,raw_mean_idle_percent,policy_success_rate,rollout_status
-new_rule_keyboard_20,20,17,1000,2616,28.19,30.9679,,pending
-multi_operator_keyboard_100,100,91,1000,2169,30.446,31.4356,,pending

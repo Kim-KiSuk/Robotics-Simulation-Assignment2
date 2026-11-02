@@ -4,6 +4,5 @@ __pycache__/
 data/*.hdf5
 data/*.part
 *.pth
-!models/final_model.pth
 *.ckpt
 *.log

@@ -1,7 +1,5 @@
 # Third-party code
 
-`tools/replay_video.py`, `tools/test/test_replay_video.py`, and `tools/replay_dataset_video.py` contain Isaac Lab project code or adaptations. Their copyright and SPDX headers are preserved. The Isaac Lab BSD-3-Clause license is reproduced in [third_party/IsaacLab_LICENSE.txt](third_party/IsaacLab_LICENSE.txt).
+The code in `isaaclab_project/` and `tools/merge_hdf5_datasets.py` is based on IsaacLab_RS / Isaac Lab. Original copyright and SPDX headers are retained. The BSD-3-Clause license is reproduced in [third_party/IsaacLab_LICENSE.txt](third_party/IsaacLab_LICENSE.txt).
 
-The repository depends on a separately installed IsaacLab_RS / Isaac Sim environment and Agibot assets. Those packages and simulation assets are not bundled here.
-
-The source files in `isaaclab_project/` are copied from IsaacLab_RS with their original license headers. The training script also retains the Stanford Vision and Learning Lab MIT license notice.
+The training code also retains the Stanford Vision and Learning Lab MIT license notice. Isaac Sim, IsaacLab_RS dependencies and Agibot simulation assets are separately installed.
