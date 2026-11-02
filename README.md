@@ -29,7 +29,7 @@ flowchart LR
     A["원본 시범<br/>20개 / 100개"] --> B["Annotation<br/>17개 / 91개"]
     B --> C["Mimic 성공 시범<br/>각 1,000개"]
     C --> D["BC-RNN / GMM"]
-    D --> E["정책 평가<br/>New rule 36% · Multi operator 대기"]
+    D --> E["정책 평가<br/>New rule 36% · Multi operator 평가 중"]
 ```
 
 | 조건 | 원본 | Annotation | Mimic 성공 시범 | 원본 평균 시간 | 원본 평균 idle |
@@ -66,12 +66,12 @@ Multi operator는 **New rule 20개 + 무규칙 키보드 수집 20개 + XY 우�
 
 관측은 EE 위치·자세, 그리퍼 상태, 트럭 위치·자세, 박스 위치·자세로 구성한다. 행동은 상대 이동 3축·회전 3축·그리퍼 1개이며 팔 명령은 RMPFlow에 전달한다.
 
-**확인된 상태:** New rule 시드 101·epoch 2000 모델을 100회 평가해 **36회 성공(36%)**했다. 평가 seed는 42, 한도는 800 step이다. Multi operator는 증강 완료 상태이며 학습 완료 기록은 미확인이다.
+**확인된 상태:** New rule 시드 101·epoch 2000 모델을 100회 평가해 **36회 성공(36%)**했다. 평가 seed는 42, 한도는 800 step이다. Multi operator도 학습을 완료했으며 현재 정책 평가를 진행 중이다.
 
 | 조건 | 학습 시드 | 평가 seed | 평가 횟수 / 한도 | 성공률 |
 | --- | ---: | ---: | --- | --- |
 | New rule keyboard | 101 | 42 | 100회 / 800 step | **36% (36/100)** |
-| Multi operator keyboard | — | — | 학습 완료 기록 미확인 | — |
+| Multi operator keyboard | — | — | 평가 진행 중 | — |
 
 성공률은 전달받은 평가 종료 집계값이다. 공개 영상과 배포 모델은 해당 평가의 checkpoint로 맞췄다. Multi operator와의 성능 비교 결과는 아니다.
 
@@ -81,6 +81,8 @@ Multi operator는 **New rule 20개 + 무규칙 키보드 수집 20개 + XY 우�
 | --- | --- |
 | New rule 원본 20개 | [HDF5](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_20.hdf5) |
 | Multi operator 원본 100개 | [HDF5](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_multi_operator_100.hdf5) |
+| Multi operator 평가 모델 · epoch 2000 | [가중치](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_multi_operator_epoch2000_seed101.pth) |
+| 원본 기반 전체 프로젝트 | [IsaacLab_RS_Toy2Box.tar.gz](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/IsaacLab_RS_Toy2Box.tar.gz) |
 | New rule 평가 모델 · epoch 2000 · seed 101 | [가중치](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_epoch2000_seed101.pth) |
 
 배포본에서는 로컬 출처 경로를 익명 식별자로 바꿨으며, 초기 상태·관측·행동 배열과 시범 수는 유지했다. Annotation·Mimic 전체 파일과 평가 전 가중치는 배포에 포함하지 않는다.
@@ -95,6 +97,17 @@ sha256sum -c SHA256SUMS
 
 ## 7. 실행 방법
 
+전체 프로젝트 압축본은 IsaacLab_RS 원본에 실제 실험에 사용한 학습·병합·RMPFlow 파일을 반영한 구성이다. New rule·Multi operator 원본과 평가 모델이 함께 들어 있다.
+
+```bash
+gh release download keyboard-study \
+  --repo Kim-KiSuk/Robotics-Simulation-Assignmnet2 \
+  --pattern IsaacLab_RS_Toy2Box.tar.gz --dir .
+tar -xzf IsaacLab_RS_Toy2Box.tar.gz
+```
+
+압축을 풀면 `IsaacLab_RS-main/`이 생긴다. 프로젝트 루트의 `README_Toy2Box.md`에 포함 파일과 두 조건의 실행 명령을 정리했다. 아래 명령의 설치 경로는 본인의 수업용 IsaacLab_RS 위치에 맞춘다.
+
 Isaac Sim, Toy2Box 자산과 IsaacLab_RS가 설치된 `lerobot-arena` 환경이 필요하다. 저장소는 필요한 과업 코드만 포함하며 시뮬레이터 엔진과 외부 자산은 별도 설치한다.
 
 ```bash
@@ -103,7 +116,7 @@ git clone https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2.git
 cd Robotics-Simulation-Assignmnet2
 ```
 
-아래 명령은 Toy2Box 과업이 등록된 수업용 IsaacLab_RS에서 실행한다. `isaaclab_project/`에는 실험에 사용한 과업·학습·평가 코드를 보관했다.
+아래 명령은 Toy2Box 과업이 등록된 수업용 IsaacLab_RS에서 실행한다. `isaaclab_project/`에는 주요 변경 코드와 과업 설정을 보관했다. 전체 실행 프로젝트는 압축본을 사용한다.
 
 학습 입력은 원본 HDF5가 아니라 annotation 후 생성한 Mimic 성공 시범 파일이다. 해당 파일이 로컬에 준비된 상태에서 실행한다.
 
