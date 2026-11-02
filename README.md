@@ -101,8 +101,9 @@ Isaac Sim, Toy2Box 자산과 IsaacLab_RS가 설치된 `lerobot-arena` 환경이 
 conda activate lerobot-arena
 git clone https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2.git
 cd Robotics-Simulation-Assignmnet2
-python tools/install_project_overlay.py --isaaclab_root "$HOME/IsaacLab_RS" --apply
 ```
+
+아래 명령은 Toy2Box 과업이 등록된 수업용 IsaacLab_RS에서 실행한다. `isaaclab_project/`에는 실험에 사용한 과업·학습·평가 코드를 보관했다.
 
 학습 입력은 원본 HDF5가 아니라 annotation 후 생성한 Mimic 성공 시범 파일이다. 해당 파일이 로컬에 준비된 상태에서 실행한다.
 
@@ -156,7 +157,7 @@ cd ~/IsaacLab_RS
 | 경로 | 내용 |
 | --- | --- |
 | `isaaclab_project/` | 과업·로봇·학습·평가 코드와 파일 해시 |
-| `tools/` | 코드 적용·원본 병합·평가 로그 집계 |
+| `tools/` | 원본 병합·평가 로그 집계 |
 | `results/dataset_summary.json` | 데이터 개수·통계·배포 파일 해시 |
 | `reports/training_status.json` | 확인된 학습 상태와 모델 해시 |
 | `reports/policy_evaluation.json` | 평가 조건·36/100 집계·모델 해시 |
@@ -165,4 +166,4 @@ cd ~/IsaacLab_RS
 
 ## 참고
 
-[IsaacLab_RS](https://github.com/cailab-hy/IsaacLab_RS)와 [Isaac Lab](https://github.com/isaac-sim/IsaacLab)을 기반으로 한다. [출처·라이선스](THIRD_PARTY_NOTICES.md)
+[IsaacLab_RS](https://github.com/cailab-hy/IsaacLab_RS)와 [Isaac Lab](https://github.com/isaac-sim/IsaacLab)을 기반으로 한다. [라이선스](LICENSE)
