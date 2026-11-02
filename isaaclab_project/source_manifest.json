@@ -39,10 +39,6 @@
       "sha256": "1c6afe4440eaad1836e26c66a26420817db23f31fe0c9333ed9056b167409392"
     },
     {
-      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/place/config/agibot/agents/robomimic/bc_rnn_low_dim_2.json",
-      "sha256": "b6e4a931e1739d4feea56d9cb845e76c9571c52cec367625ddfbe0bc6f788b0c"
-    },
-    {
       "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/place/config/agibot/place_toy2box_rmp_rel_env_cfg.py",
       "sha256": "bc01d693edd412e84f675713991de930004e3edf7e661a4e8749aafd2940d19e"
     },

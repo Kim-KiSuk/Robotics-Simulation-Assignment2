@@ -19,7 +19,6 @@ New rule 원본 **20개**, Multi operator 원본 **100개**를 준비하고, ann
 | --- | --- | --- |
 | 한 명과 여러 조작자의 시범으로 학습하면 성능이 달라지는가? | 단일 수집 구성과 여러 출처의 혼합 구성 | 수집자 정보·원본 수·동작 규칙·정지 비율 |
 | 다른 동작 순서의 시범을 섞으면 학습에 어떤 영향을 주는가? | 회전 후 접근과 접근 후 회전 | 동일한 학습 시범 수·모델·평가 조건 |
-| 학습 초기화에 따라 결과가 달라지는가? | 시드 101과 100 | 동일 데이터·epoch·평가 조건 |
 
 현재 원본 수는 **20개와 100개**로 다르고 혼합 구성에는 동작 규칙 차이도 있다. 따라서 성능 차이가 생겨도 조작자 수 하나의 효과로 단정하지 않는다. 시범 파일 5개가 곧 조작자 5명을 뜻하는 것도 아니다.
 
@@ -38,7 +37,7 @@ flowchart LR
 | New rule keyboard | 20 | 17 | 1,000 | 28.19초 | 30.97% |
 | Multi operator keyboard | 100 | 91 | 1,000 | 30.45초 | 31.44% |
 
-Multi operator는 **New rule 20개 + 기본 수집 20개 + XY 우선 수집 20개 + 팀원 제공 시범 20개 + 조교님 시범 20개**를 합친 구성이다.
+Multi operator는 **New rule 20개 + 추가 키보드 시범 20개 + XY 우선 수집 20개 + 팀원 제공 시범 20개 + 조교님 시범 20개**를 합친 구성이다. 추가 키보드 시범은 별도로 수집한 12개와 8개를 합친 자료다.
 
 제어 간격은 0.05초다. idle은 episode마다 이동·회전 action 6개가 모두 정확히 0인 프레임 비율을 구한 뒤 평균했다. 그리퍼 값은 제외한다. 저장된 시범의 성공 속성과 학습 정책의 성공률은 구분한다.
 
@@ -63,18 +62,17 @@ Multi operator는 **New rule 20개 + 기본 수집 20개 + XY 우선 수집 20�
 | 관측 / 행동 | 23차원 / 7차원 |
 | Sequence / batch | 10 / 100 |
 | 학습률 / epoch | 0.001 / 2000 |
-| 비교용 학습 시드 | 101 / 100 |
 
 관측은 EE 위치·자세, 그리퍼 상태, 트럭 위치·자세, 박스 위치·자세로 구성한다. 행동은 상대 이동 3축·회전 3축·그리퍼 1개이며 팔 명령은 RMPFlow에 전달한다.
 
-**확인된 상태:** New rule 시드 101·epoch 2000 모델을 100회 평가해 **36회 성공(36%)**했다. 평가 seed는 42, 한도는 800 step이다. 시드 100은 비교 설정만 준비됐고, Multi operator는 증강 완료 상태이며 학습 완료 기록은 미확인이다. 서로 다른 이름으로 학습한 시드 101 모델을 독립 시드 결과로 세지 않는다.
+**확인된 상태:** New rule 시드 101·epoch 2000 모델을 100회 평가해 **36회 성공(36%)**했다. 평가 seed는 42, 한도는 800 step이다. Multi operator는 증강 완료 상태이며 학습 완료 기록은 미확인이다.
 
 | 조건 | 학습 시드 | 평가 seed | 평가 횟수 / 한도 | 성공률 |
 | --- | ---: | ---: | --- | --- |
 | New rule keyboard | 101 | 42 | 100회 / 800 step | **36% (36/100)** |
 | Multi operator keyboard | — | — | 학습 완료 기록 미확인 | — |
 
-성공률은 전달받은 평가 종료 집계값이다. 공개 영상과 배포 모델은 해당 평가의 checkpoint로 맞췄다. 시드 2개의 평균이나 Multi operator와의 성능 비교 결과는 아니다.
+성공률은 전달받은 평가 종료 집계값이다. 공개 영상과 배포 모델은 해당 평가의 checkpoint로 맞췄다. Multi operator와의 성능 비교 결과는 아니다.
 
 ## 6. 원본 데이터와 평가 모델
 
@@ -105,43 +103,57 @@ cd Robotics-Simulation-Assignmnet2
 python tools/install_project_overlay.py --isaaclab_root "$HOME/IsaacLab_RS" --apply
 ```
 
-아래 학습은 해당 Mimic 성공 시범 파일이 로컬에 준비된 상태에서 실행한다.
+학습 입력은 원본 HDF5가 아니라 annotation 후 생성한 Mimic 성공 시범 파일이다. 해당 파일이 로컬에 준비된 상태에서 실행한다.
 
-**시드 101**
-
-```bash
-cd /home/kisuk/IsaacLab_RS
-REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
-./isaaclab.sh -p "$REPO/isaaclab_project/scripts/imitation_learning/robomimic/train.py" \
-  --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
-  --algo bc \
-  --config "$REPO/configs/keyboard/bc_rnn_seed101.json" \
-  --dataset ./datasets/toy2box_agibot_mimic_new_rule_keyboard_100.hdf5 \
-  --name new_rule_keyboard_seed101
-```
-
-**시드 100**
+**학습 명령어**
 
 ```bash
-cd /home/kisuk/IsaacLab_RS
-REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
-./isaaclab.sh -p "$REPO/isaaclab_project/scripts/imitation_learning/robomimic/train.py" \
-  --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
-  --algo bc \
-  --config "$REPO/configs/keyboard/bc_rnn_seed100.json" \
-  --dataset ./datasets/toy2box_agibot_mimic_new_rule_keyboard_100.hdf5 \
-  --name new_rule_keyboard_seed100
+cd ~/IsaacLab_RS
+
+./isaaclab.sh -p scripts/imitation_learning/robomimic/train.py \
+    --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
+    --algo bc \
+    --dataset ./datasets/toy2box_agibot_mimic_new_rule_keyboard_100.hdf5
 ```
 
-실제 시드는 JSON의 `train.seed`로 결정된다. `--name`은 저장 이름이다. 두 명령을 동시에 실행하면 GPU·시스템 메모리를 함께 사용한다. Multi operator는 데이터 경로를 `./datasets/toy2box_agibot_mimic_multi_operator_keyboard_100.hdf5`로 바꾸고 저장 이름을 분리한다.
+학습 시드는 조교님이 과업 설정의 `train.seed`에서 지정한다. 학습 명령은 과업에 등록된 설정을 읽는다.
 
-원본 병합은 `tools/merge_hdf5_datasets.py`를 사용한다. 기존 출력 파일은 덮어쓰지 않는다. 정책 평가는 포함된 `play.py`로 실행하며, 평가 seed·checkpoint·100회 trial 결과와 로그를 함께 보존한다.
+```text
+source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/place/config/agibot/agents/robomimic/bc_rnn_low_dim.json
+```
+
+Multi operator를 학습할 때는 `--dataset`만 아래 파일로 바꾼다.
+
+```text
+./datasets/toy2box_agibot_mimic_multi_operator_keyboard_100.hdf5
+```
+
+**Play 명령어**
+
+배포 모델을 내려받은 뒤 실행한다. 다른 모델은 `--checkpoint`를 해당 가중치 경로로 바꾼다.
+
+```bash
+cd ~/IsaacLab_RS
+
+./isaaclab.sh -p scripts/imitation_learning/robomimic/play.py \
+    --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
+    --checkpoint ./Robotics-Simulation-Assignmnet2/data/toy2box_keyboard_new_rule_epoch2000_seed101.pth \
+    --num_rollouts 100 \
+    --horizon 800 \
+    --video \
+    --video_length 1000 \
+    --video_folder ./videos/toy2box_new_rule \
+    --headless
+```
+
+평가 시드는 조교님이 지정하는 값으로 실행한다. 위 표의 학습·평가 시드는 게시한 36% 결과의 기록이다. 재학습·평가 시 사용할 시드를 지정하는 안내와 구분한다.
+
+원본 병합에는 `tools/merge_hdf5_datasets.py`를 사용한다. 기존 출력 파일은 덮어쓰지 않는다.
 
 ## 8. 저장소 구성
 
 | 경로 | 내용 |
 | --- | --- |
-| `configs/keyboard/` | 시드 101·100 학습 설정 |
 | `isaaclab_project/` | 과업·로봇·학습·평가 코드와 파일 해시 |
 | `tools/` | 코드 적용·원본 병합·평가 로그 집계 |
 | `results/dataset_summary.json` | 데이터 개수·통계·배포 파일 해시 |
