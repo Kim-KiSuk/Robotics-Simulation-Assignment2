@@ -2,14 +2,14 @@
 
 **Agibot 오른팔로 트럭을 집어 상자 안에 놓는 정책**을 학습한다. 연구 축은 **조작자 1명 vs 다수**이며, 시범 구성과 동작 순서가 정책 성능에 어떤 차이를 만드는지 살펴본다.
 
-New rule 원본 **20개**, Multi operator 원본 **100개**를 준비하고, annotation 후 각 조건의 Mimic 성공 시범을 **1,000개씩** 확보했다. New rule의 학습 모델은 시드 **101**, epoch **2000**이며, 전체 정책 성공률은 평가 집계 대기다.
+New rule 원본 **20개**, Multi operator 원본 **100개**를 준비하고, annotation 후 각 조건의 Mimic 성공 시범을 **1,000개씩** 확보했다. New rule의 학습 모델은 시드 **101**, epoch **2000**이며, **100회 평가 성공률은 36% (36/100)**다.
 
 ## 1. 정책 동작 예시
 
 | New rule · 예시 1 | New rule · 예시 2 |
 | --- | --- |
-| [![New rule 상자 투입 예시 1](artifacts/media/new_rule_success_12.gif)](videos/new_rule_success_12.mp4) | [![New rule 상자 투입 예시 2](artifacts/media/new_rule_success_15.gif)](videos/new_rule_success_15.mp4) |
-| **Trial 12 · 전체 27.85초** | **Trial 15 · 전체 26.90초** |
+| [![New rule 상자 투입 예시 1](artifacts/media/new_rule_success_60.gif)](videos/new_rule_success_60.mp4) | [![New rule 상자 투입 예시 2](artifacts/media/new_rule_success_99.gif)](videos/new_rule_success_99.mp4) |
+| **Trial 60 · 전체 21.65초** | **Trial 99 · 전체 20.50초** |
 
 파지·운반·상자 투입·릴리즈가 영상에서 확인되는 예시를 골랐다. 미리보기는 실제 영상의 마지막 6초를 원래 속도로 보여주며, 클릭하면 전체 MP4로 이동한다. 두 영상 모두 **New rule 모델**이다. 선별한 예시만으로 전체 성공률을 계산하지 않는다.
 
@@ -30,7 +30,7 @@ flowchart LR
     A["원본 시범<br/>20개 / 100개"] --> B["Annotation<br/>17개 / 91개"]
     B --> C["Mimic 성공 시범<br/>각 1,000개"]
     C --> D["BC-RNN / GMM"]
-    D --> E["정책 평가<br/>전체 결과 집계 대기"]
+    D --> E["정책 평가<br/>New rule 36% · Multi operator 대기"]
 ```
 
 | 조건 | 원본 | Annotation | Mimic 성공 시범 | 원본 평균 시간 | 원본 평균 idle |
@@ -67,23 +67,29 @@ Multi operator는 **New rule 20개 + 기본 수집 20개 + XY 우선 수집 20�
 
 관측은 EE 위치·자세, 그리퍼 상태, 트럭 위치·자세, 박스 위치·자세로 구성한다. 행동은 상대 이동 3축·회전 3축·그리퍼 1개이며 팔 명령은 RMPFlow에 전달한다.
 
-**확인된 상태:** New rule 시드 101 학습 완료 모델이 있으며 정책 재생을 진행했다. 시드 100은 비교 설정만 준비됐고 실행·완료는 확인되지 않았다. 이번 Multi operator 데이터의 학습 완료 모델은 아직 확인되지 않았다. 서로 다른 이름으로 학습한 시드 101 모델을 독립 시드 결과로 세지 않는다.
+**확인된 상태:** New rule 시드 101·epoch 2000 모델을 100회 평가해 **36회 성공(36%)**했다. 평가 seed는 42, 한도는 800 step이다. 시드 100은 비교 설정만 준비됐고, Multi operator는 증강 완료 상태이며 학습 완료 기록은 미확인이다. 서로 다른 이름으로 학습한 시드 101 모델을 독립 시드 결과로 세지 않는다.
 
-영상 폴더 이름과 실제 학습 모델은 구분한다. 공개한 영상은 checkpoint 설정에서 New rule 학습 입력을 확인한 모델에 해당한다. 전체 100회 성공률·시드 평균·조건 간 우열은 평가 로그가 준비된 뒤 추가한다.
+| 조건 | 학습 시드 | 평가 seed | 평가 횟수 / 한도 | 성공률 |
+| --- | ---: | ---: | --- | --- |
+| New rule keyboard | 101 | 42 | 100회 / 800 step | **36% (36/100)** |
+| Multi operator keyboard | — | — | 학습 완료 기록 미확인 | — |
 
-## 6. 원본 데이터
+성공률은 전달받은 평가 종료 집계값이다. 공개 영상과 배포 모델은 해당 평가의 checkpoint로 맞췄다. 시드 2개의 평균이나 Multi operator와의 성능 비교 결과는 아니다.
+
+## 6. 원본 데이터와 평가 모델
 
 | 조건 | 다운로드 |
 | --- | --- |
 | New rule 원본 20개 | [HDF5](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_20.hdf5) |
 | Multi operator 원본 100개 | [HDF5](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_multi_operator_100.hdf5) |
+| New rule 평가 모델 · epoch 2000 · seed 101 | [가중치](https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_epoch2000_seed101.pth) |
 
 배포본에서는 로컬 출처 경로를 익명 식별자로 바꿨으며, 초기 상태·관측·행동 배열과 시범 수는 유지했다. Annotation·Mimic 전체 파일과 평가 전 가중치는 배포에 포함하지 않는다.
 
 ```bash
 gh release download keyboard-study \
   --repo Kim-KiSuk/Robotics-Simulation-Assignmnet2 \
-  --pattern '*.hdf5' --pattern SHA256SUMS --dir data
+  --pattern '*.hdf5' --pattern '*.pth' --pattern SHA256SUMS --dir data
 cd data
 sha256sum -c SHA256SUMS
 ```
@@ -140,6 +146,7 @@ REPO=/home/kisuk/IsaacLab_RS/Robotics-Simulation-Assignmnet2
 | `tools/` | 코드 적용·원본 병합·평가 로그 집계 |
 | `results/dataset_summary.json` | 데이터 개수·통계·배포 파일 해시 |
 | `reports/training_status.json` | 확인된 학습 상태와 모델 해시 |
+| `reports/policy_evaluation.json` | 평가 조건·36/100 집계·모델 해시 |
 | `artifacts/media/manifest.json` | 영상·미리보기·모델 대응 정보 |
 | `videos/` | 선별한 전체 MP4 |
 

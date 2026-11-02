@@ -14,7 +14,8 @@
       "bytes": 8339779,
       "sha256": "6296ec7ab75295dd0f61817d3b77c77600fe938a0376cc7d8bb2db2864c31ba6",
       "download_url": "https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2/releases/download/keyboard-study/toy2box_keyboard_new_rule_20.hdf5",
-      "policy_success_rate": null
+      "policy_success_rate": 0.36,
+      "policy_evaluation_report": "reports/policy_evaluation.json"
     },
     {
       "id": "multi_operator_keyboard_100",
@@ -36,5 +37,5 @@
   "release_tag": "keyboard-study",
   "array_contents_preserved": true,
   "source_paths_anonymized": true,
-  "policy_success_rate_status": "awaiting_complete_evaluation"
+  "policy_success_rate_status": "new_rule_user_reported_completed_evaluation; multi_operator_training_completion_unconfirmed"
 }

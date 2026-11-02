@@ -1,0 +1,16 @@
+{
+  "condition": "new_rule_keyboard_20",
+  "successes": 36,
+  "trials": 100,
+  "success_rate": 0.36,
+  "training_seed": 101,
+  "checkpoint_epoch": 2000,
+  "evaluation_seed": 42,
+  "horizon": 800,
+  "checkpoint_sha256": "11df00e59419f94bf4c400309ca505dcb13364f6b733539462d3aa6abeef8e81",
+  "checkpoint_file": "toy2box_keyboard_new_rule_epoch2000_seed101.pth",
+  "result_source": "user_reported_final_rollout_summary",
+  "per_trial_success_log_available": false,
+  "video_count": 100,
+  "multi_operator_training_status": "training_completion_unconfirmed"
+}

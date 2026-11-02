@@ -21,5 +21,6 @@
   ],
   "seed100_status": "configuration_prepared_execution_unconfirmed",
   "multi_operator_completed_training_confirmed": false,
-  "aggregate_policy_evaluation": "pending"
+  "aggregate_policy_evaluation": "new_rule_36_of_100_user_reported",
+  "evaluated_checkpoint_sha256": "11df00e59419f94bf4c400309ca505dcb13364f6b733539462d3aa6abeef8e81"
 }
