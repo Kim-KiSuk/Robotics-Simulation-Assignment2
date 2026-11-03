@@ -187,6 +187,5 @@
     "training_configuration_and_500_demo_log_entries": "checked for all eight models",
     "evaluation_seed_rollout_count_and_horizon_launch_records": "checked",
     "aggregate_success_counts": "provided by the experimenter; no independent per-trial log recount"
-  },
-  "artifact_scope": "existing public datasets, models and videos belong to the preliminary 1000-Mimic study; not to these four conditions"
+  }
 }
