@@ -133,7 +133,21 @@ seed별 결과와 계산값은 `results/experiment_results.json`에 저장했다
 
 HDF5는 수집 원본이며, 학습에는 원본을 annotation한 뒤 생성한 Mimic 500개를 사용했다. 공개 원본은 로컬 출처 경로만 익명 식별자로 바꾸고 관측·행동·초기 상태 배열은 유지했다. 모델 파일은 평가한 checkpoint 그대로다. 파일 크기와 SHA-256은 `results/experiment_results.json`에 기록했다.
 
-## 7. 프로젝트 실행
+## 7. 정책 성공 예시
+
+상자 투입과 그리퍼 릴리즈가 영상에서 확인되는 예시를 **조건별 한 개씩** 골랐다. 모두 **학습 seed 101·평가 seed 42** 모델의 영상이다. GIF는 마지막 6초를 원래 속도로 보여주며, 클릭하면 전체 MP4로 이동한다. 성공률은 선별 영상이 아닌 전체 100회 평가 집계값을 사용한다.
+
+| ① 단일 사용자·단일 실험 | ② 단일 사용자·혼합 실험 |
+| --- | --- |
+| [![조건 1 성공 예시](artifacts/media/toy2box_agibot_c1_success.gif)](videos/toy2box_agibot_c1_success.mp4) | [![조건 2 성공 예시](artifacts/media/toy2box_agibot_c2_success.gif)](videos/toy2box_agibot_c2_success.mp4) |
+| **Trial 17 · 전체 19.90초 · 평가 seed 42** | **Trial 35 · 전체 15.00초 · 평가 seed 42** |
+
+| ③ 다수 사용자·단일 실험 | ④ 다수 사용자·혼합 실험 |
+| --- | --- |
+| [![조건 3 성공 예시](artifacts/media/toy2box_agibot_c3_success.gif)](videos/toy2box_agibot_c3_success.mp4) | [![조건 4 성공 예시](artifacts/media/toy2box_agibot_c4_success.gif)](videos/toy2box_agibot_c4_success.mp4) |
+| **Trial 99 · 전체 23.45초 · 평가 seed 42** | **Trial 29 · 전체 14.85초 · 평가 seed 42** |
+
+## 8. 프로젝트 실행
 
 Isaac Sim과 Toy2Box 자산이 설치된 수업용 `lerobot-arena` 환경을 사용한다. 이 저장소 자체가 IsaacLab_RS 프로젝트이며 `source/`, `scripts/`, `isaaclab.sh`, `datasets/`, `models/`, `videos/`를 포함한다. Isaac Sim 엔진과 외부 자산은 별도 설치한다.
 

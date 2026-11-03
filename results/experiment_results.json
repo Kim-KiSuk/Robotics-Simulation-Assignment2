@@ -82,7 +82,9 @@
             "bytes": 7985670,
             "sha256": "e2c6d83f37ac522c7076ca3f74434e930bfe941585dae36c1ec1b20de88dd661"
           }
-        }
+        },
+        "representative_video": "videos/toy2box_agibot_c1_success.mp4",
+        "representative_preview": "artifacts/media/toy2box_agibot_c1_success.gif"
       }
     },
     {
@@ -141,7 +143,9 @@
             "bytes": 7985670,
             "sha256": "c8fd3113933ab629a7436fc9052338ea45dde4d776442f7ab66d1772397a7b24"
           }
-        }
+        },
+        "representative_video": "videos/toy2box_agibot_c2_success.mp4",
+        "representative_preview": "artifacts/media/toy2box_agibot_c2_success.gif"
       }
     },
     {
@@ -200,7 +204,9 @@
             "bytes": 7985734,
             "sha256": "6ff4e3ae4c4d0e6297790b272048258bbe8d32247735424919ae48e6f0479b24"
           }
-        }
+        },
+        "representative_video": "videos/toy2box_agibot_c3_success.mp4",
+        "representative_preview": "artifacts/media/toy2box_agibot_c3_success.gif"
       }
     },
     {
@@ -259,7 +265,9 @@
             "bytes": 7985734,
             "sha256": "80c6ae3b5e3bb04dfb80391da3e9b52593b5d27decd9e98bda576c33166c75a6"
           }
-        }
+        },
+        "representative_video": "videos/toy2box_agibot_c4_success.mp4",
+        "representative_preview": "artifacts/media/toy2box_agibot_c4_success.gif"
       }
     }
   ],
@@ -371,6 +379,8 @@
     "model_epoch": 2000,
     "model_files_unmodified": true,
     "dataset_arrays_unmodified": true,
-    "local_source_paths_anonymized": true
+    "local_source_paths_anonymized": true,
+    "representative_videos": 4,
+    "gif_previews": 4
   }
 }
