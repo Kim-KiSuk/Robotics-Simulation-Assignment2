@@ -11,3 +11,15 @@ datasets/*
 !datasets/multi_operator_keyboard_100.hdf5
 !models/new_rule/model_epoch_2000.pth
 !models/multi_operator/model_epoch_2000.pth
+!datasets/toy2box_agibot_c1.hdf5
+!datasets/toy2box_agibot_c2.hdf5
+!datasets/toy2box_agibot_c3.hdf5
+!datasets/toy2box_agibot_c4.hdf5
+!models/toy2box_agibot_c1_seed101.pth
+!models/toy2box_agibot_c1_seed111.pth
+!models/toy2box_agibot_c2_seed101.pth
+!models/toy2box_agibot_c2_seed111.pth
+!models/toy2box_agibot_c3_seed101.pth
+!models/toy2box_agibot_c3_seed111.pth
+!models/toy2box_agibot_c4_seed101.pth
+!models/toy2box_agibot_c4_seed111.pth

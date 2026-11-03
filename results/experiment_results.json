@@ -42,17 +42,48 @@
           "training_seed": 101,
           "successes": 30,
           "trials": 100,
-          "success_rate_percent": 30.0
+          "success_rate_percent": 30.0,
+          "evaluation_seed": 42
         },
         {
           "training_seed": 111,
           "successes": 31,
           "trials": 100,
-          "success_rate_percent": 31.0
+          "success_rate_percent": 31.0,
+          "evaluation_seed": 42
         }
       ],
       "mean_success_rate_percent": 30.5,
-      "sample_standard_deviation_percentage_points": 0.7071067811865476
+      "sample_standard_deviation_percentage_points": 0.7071067811865476,
+      "published_artifacts": {
+        "source_dataset": {
+          "file": "datasets/toy2box_agibot_c1.hdf5",
+          "episodes": 20,
+          "total_steps": 11276,
+          "bytes": 8339779,
+          "sha256": "461eedbb751c26fad247a87d7284b61b3261fcb14ac4f63f93de8a32517d1cc9",
+          "array_contents_preserved": true,
+          "local_source_paths_anonymized": true
+        },
+        "models": {
+          "101": {
+            "file": "models/toy2box_agibot_c1_seed101.pth",
+            "training_seed": 101,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985670,
+            "sha256": "3e53e75d1b14efc0f6c9e7ab8714afc07973f7f33a5630ef948f2c03464373c1"
+          },
+          "111": {
+            "file": "models/toy2box_agibot_c1_seed111.pth",
+            "training_seed": 111,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985670,
+            "sha256": "e2c6d83f37ac522c7076ca3f74434e930bfe941585dae36c1ec1b20de88dd661"
+          }
+        }
+      }
     },
     {
       "id": "c2",
@@ -70,17 +101,48 @@
           "training_seed": 101,
           "successes": 43,
           "trials": 100,
-          "success_rate_percent": 43.0
+          "success_rate_percent": 43.0,
+          "evaluation_seed": 42
         },
         {
           "training_seed": 111,
           "successes": 44,
           "trials": 100,
-          "success_rate_percent": 44.0
+          "success_rate_percent": 44.0,
+          "evaluation_seed": 42
         }
       ],
       "mean_success_rate_percent": 43.5,
-      "sample_standard_deviation_percentage_points": 0.7071067811865476
+      "sample_standard_deviation_percentage_points": 0.7071067811865476,
+      "published_artifacts": {
+        "source_dataset": {
+          "file": "datasets/toy2box_agibot_c2.hdf5",
+          "episodes": 20,
+          "total_steps": 9999,
+          "bytes": 7645031,
+          "sha256": "e515347ec452b9fe48efe63a0f0e4d95e81e72918b4fe61e8c24382457c902d7",
+          "array_contents_preserved": true,
+          "local_source_paths_anonymized": true
+        },
+        "models": {
+          "101": {
+            "file": "models/toy2box_agibot_c2_seed101.pth",
+            "training_seed": 101,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985670,
+            "sha256": "370b344371dd37eb720a490ae0b7b5531d3047ad4d68f554f04d3814b2dbccbe"
+          },
+          "111": {
+            "file": "models/toy2box_agibot_c2_seed111.pth",
+            "training_seed": 111,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985670,
+            "sha256": "c8fd3113933ab629a7436fc9052338ea45dde4d776442f7ab66d1772397a7b24"
+          }
+        }
+      }
     },
     {
       "id": "c3",
@@ -98,17 +160,48 @@
           "training_seed": 101,
           "successes": 32,
           "trials": 100,
-          "success_rate_percent": 32.0
+          "success_rate_percent": 32.0,
+          "evaluation_seed": 42
         },
         {
           "training_seed": 111,
           "successes": 28,
           "trials": 100,
-          "success_rate_percent": 28.0
+          "success_rate_percent": 28.0,
+          "evaluation_seed": 42
         }
       ],
       "mean_success_rate_percent": 30,
-      "sample_standard_deviation_percentage_points": 2.8284271247461903
+      "sample_standard_deviation_percentage_points": 2.8284271247461903,
+      "published_artifacts": {
+        "source_dataset": {
+          "file": "datasets/toy2box_agibot_c3.hdf5",
+          "episodes": 20,
+          "total_steps": 11377,
+          "bytes": 8315081,
+          "sha256": "29ffae09e8a4d06b45e8f5073c82849d03d86368d24d0d74c8713e8753ac7014",
+          "array_contents_preserved": true,
+          "local_source_paths_anonymized": true
+        },
+        "models": {
+          "101": {
+            "file": "models/toy2box_agibot_c3_seed101.pth",
+            "training_seed": 101,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985734,
+            "sha256": "aea5df3e863b33f429013a41beb5d96feb22e7728dca199a51c525673d5b16f2"
+          },
+          "111": {
+            "file": "models/toy2box_agibot_c3_seed111.pth",
+            "training_seed": 111,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985734,
+            "sha256": "6ff4e3ae4c4d0e6297790b272048258bbe8d32247735424919ae48e6f0479b24"
+          }
+        }
+      }
     },
     {
       "id": "c4",
@@ -126,17 +219,48 @@
           "training_seed": 101,
           "successes": 32,
           "trials": 100,
-          "success_rate_percent": 32.0
+          "success_rate_percent": 32.0,
+          "evaluation_seed": 42
         },
         {
           "training_seed": 111,
           "successes": 44,
           "trials": 100,
-          "success_rate_percent": 44.0
+          "success_rate_percent": 44.0,
+          "evaluation_seed": 42
         }
       ],
       "mean_success_rate_percent": 38,
-      "sample_standard_deviation_percentage_points": 8.48528137423857
+      "sample_standard_deviation_percentage_points": 8.48528137423857,
+      "published_artifacts": {
+        "source_dataset": {
+          "file": "datasets/toy2box_agibot_c4.hdf5",
+          "episodes": 20,
+          "total_steps": 9472,
+          "bytes": 7309998,
+          "sha256": "58ae0416a12836bc72c54c3daa387939575297332388b671913fb873197a1e8d",
+          "array_contents_preserved": true,
+          "local_source_paths_anonymized": true
+        },
+        "models": {
+          "101": {
+            "file": "models/toy2box_agibot_c4_seed101.pth",
+            "training_seed": 101,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985734,
+            "sha256": "343d6a0b6d30f478aeac8032544d50524ee86e61de282d77ea09726e935de251"
+          },
+          "111": {
+            "file": "models/toy2box_agibot_c4_seed111.pth",
+            "training_seed": 111,
+            "epoch": 2000,
+            "evaluation_seed": 42,
+            "bytes": 7985734,
+            "sha256": "80c6ae3b5e3bb04dfb80391da3e9b52593b5d27decd9e98bda576c33166c75a6"
+          }
+        }
+      }
     }
   ],
   "comparisons": [
@@ -181,11 +305,72 @@
     "fixed_pattern_outperforms_mixture_hypothesis": "not supported by the observed mean success rates",
     "single_operator_superiority": "not established; observed advantages are 0.5 and 5.5 percentage points",
     "mechanism": "not established; state coverage and demonstration quality are possible explanations",
-    "generalization_limit": "two training seeds and one group of operators; no statistical significance claim"
+    "generalization_limit": "two training seeds and one group of operators; no statistical significance claim",
+    "revised_hypothesis": {
+      "formulated_after_observing_results": true,
+      "source_demonstration_count": 20,
+      "mimic_success_demonstration_count": 500,
+      "statement": "Even with 20 original demonstrations, mixing demonstration types may be more helpful for policy learning than repeating a single consistent action pattern.",
+      "diversity_definition": "balanced mixture of S1 and S2 demonstration types, not operator count",
+      "observations": {
+        "single_operator_mean_gain_percentage_points": 13.0,
+        "multiple_operator_mean_gain_percentage_points": 8.0
+      },
+      "limitations": "Two training seeds; no direct measurement of state diversity or causal mechanism; larger variation in the multiple-operator mixture."
+    }
   },
   "verification": {
     "training_configuration_and_500_demo_log_entries": "checked for all eight models",
     "evaluation_seed_rollout_count_and_horizon_launch_records": "checked",
     "aggregate_success_counts": "provided by the experimenter; no independent per-trial log recount"
+  },
+  "teaching_assistant_comparison": {
+    "role": "external reference and planned matched reproduction; not a fifth cell of the operator-composition experiment",
+    "published_reference": {
+      "source": "course-provided Toy2Box task walkthrough",
+      "source_demos": 20,
+      "mimic_demos": 500,
+      "successes": 26,
+      "evaluation_trials": 100,
+      "success_rate_percent": 26.0,
+      "evaluation_seed": 42,
+      "horizon_steps": 800,
+      "checkpoint_epoch": 2000,
+      "aggregation": "one published model evaluation; not an average across training seeds 101 and 111",
+      "training_seed_specific_results_available": false
+    },
+    "matched_reproduction": {
+      "status": "pending_training_and_evaluation",
+      "source_demos": 20,
+      "mimic_success_demos": 500,
+      "generation_settings": "match the four experimental conditions",
+      "training_seeds": [
+        101,
+        111
+      ],
+      "reuse_same_mimic_dataset_across_training_seeds": true,
+      "epoch": 2000,
+      "batch_size": 100,
+      "sequence_length": 10,
+      "evaluation_seed": 42,
+      "rollouts_per_model": 100,
+      "horizon_steps": 800,
+      "seed_results": {
+        "101": null,
+        "111": null
+      },
+      "mean_success_rate_percent": null,
+      "sample_standard_deviation_percentage_points": null
+    },
+    "interpretation": "The four observed means exceed the published 26 percent reference numerically; matched reproduction is needed before attributing an improvement to demonstration data."
+  },
+  "artifact_publication": {
+    "dataset_kind": "original demonstration datasets, 20 per condition",
+    "datasets": 4,
+    "models": 8,
+    "model_epoch": 2000,
+    "model_files_unmodified": true,
+    "dataset_arrays_unmodified": true,
+    "local_source_paths_anonymized": true
   }
 }
