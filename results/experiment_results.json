@@ -65,24 +65,7 @@
           "array_contents_preserved": true,
           "local_source_paths_anonymized": true
         },
-        "models": {
-          "101": {
-            "file": "models/toy2box_agibot_c1_seed101.pth",
-            "training_seed": 101,
-            "epoch": 2000,
-            "evaluation_seed": 42,
-            "bytes": 7985670,
-            "sha256": "3e53e75d1b14efc0f6c9e7ab8714afc07973f7f33a5630ef948f2c03464373c1"
-          },
-          "111": {
-            "file": "models/toy2box_agibot_c1_seed111.pth",
-            "training_seed": 111,
-            "epoch": 2000,
-            "evaluation_seed": 42,
-            "bytes": 7985670,
-            "sha256": "e2c6d83f37ac522c7076ca3f74434e930bfe941585dae36c1ec1b20de88dd661"
-          }
-        },
+        "models": {},
         "representative_video": "videos/toy2box_agibot_c1_success.mp4",
         "representative_preview": "artifacts/media/toy2box_agibot_c1_success.gif"
       }
@@ -187,24 +170,7 @@
           "array_contents_preserved": true,
           "local_source_paths_anonymized": true
         },
-        "models": {
-          "101": {
-            "file": "models/toy2box_agibot_c3_seed101.pth",
-            "training_seed": 101,
-            "epoch": 2000,
-            "evaluation_seed": 42,
-            "bytes": 7985734,
-            "sha256": "aea5df3e863b33f429013a41beb5d96feb22e7728dca199a51c525673d5b16f2"
-          },
-          "111": {
-            "file": "models/toy2box_agibot_c3_seed111.pth",
-            "training_seed": 111,
-            "epoch": 2000,
-            "evaluation_seed": 42,
-            "bytes": 7985734,
-            "sha256": "6ff4e3ae4c4d0e6297790b272048258bbe8d32247735424919ae48e6f0479b24"
-          }
-        },
+        "models": {},
         "representative_video": "videos/toy2box_agibot_c3_success.mp4",
         "representative_preview": "artifacts/media/toy2box_agibot_c3_success.gif"
       }
@@ -248,24 +214,7 @@
           "array_contents_preserved": true,
           "local_source_paths_anonymized": true
         },
-        "models": {
-          "101": {
-            "file": "models/toy2box_agibot_c4_seed101.pth",
-            "training_seed": 101,
-            "epoch": 2000,
-            "evaluation_seed": 42,
-            "bytes": 7985734,
-            "sha256": "343d6a0b6d30f478aeac8032544d50524ee86e61de282d77ea09726e935de251"
-          },
-          "111": {
-            "file": "models/toy2box_agibot_c4_seed111.pth",
-            "training_seed": 111,
-            "epoch": 2000,
-            "evaluation_seed": 42,
-            "bytes": 7985734,
-            "sha256": "80c6ae3b5e3bb04dfb80391da3e9b52593b5d27decd9e98bda576c33166c75a6"
-          }
-        },
+        "models": {},
         "representative_video": "videos/toy2box_agibot_c4_success.mp4",
         "representative_preview": "artifacts/media/toy2box_agibot_c4_success.gif"
       }
@@ -408,13 +357,20 @@
   "artifact_publication": {
     "dataset_kind": "original demonstration datasets, 20 per condition",
     "datasets": 4,
-    "models": 8,
+    "models": 2,
     "model_epoch": 2000,
     "model_files_unmodified": true,
     "dataset_arrays_unmodified": true,
     "local_source_paths_anonymized": true,
     "representative_videos": 4,
-    "gif_previews": 4
+    "gif_previews": 4,
+    "model_conditions": [
+      "c2"
+    ],
+    "model_training_seeds": [
+      101,
+      111
+    ]
   },
   "failure_analysis": {
     "labels": "results/rollout_failure_labels.csv",

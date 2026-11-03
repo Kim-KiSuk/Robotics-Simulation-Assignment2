@@ -7,7 +7,6 @@
       "evaluation_seed": 42,
       "horizon": 800,
       "mimic_success_demos": 500,
-      "checkpoint": "models/toy2box_agibot_c1_seed101.pth",
       "checkpoint_sha256": "3e53e75d1b14efc0f6c9e7ab8714afc07973f7f33a5630ef948f2c03464373c1",
       "video": "videos/toy2box_agibot_c1_success.mp4",
       "video_sha256": "bd55a8fb65cf5f2dd388282d8dc5d19ea8fda9aa84d6f968936ae859d3809b1c",
@@ -22,7 +21,8 @@
       "visually_confirmed_placement": true,
       "environment_trial_success_log_available": false,
       "aggregate_success_rate": 0.3,
-      "aggregate_result_source": "experimenter_reported_rollout_aggregates"
+      "aggregate_result_source": "experimenter_reported_rollout_aggregates",
+      "checkpoint_in_repository": false
     },
     {
       "condition": "c2",
@@ -46,7 +46,8 @@
       "visually_confirmed_placement": true,
       "environment_trial_success_log_available": false,
       "aggregate_success_rate": 0.43,
-      "aggregate_result_source": "experimenter_reported_rollout_aggregates"
+      "aggregate_result_source": "experimenter_reported_rollout_aggregates",
+      "checkpoint_in_repository": true
     },
     {
       "condition": "c3",
@@ -55,7 +56,6 @@
       "evaluation_seed": 42,
       "horizon": 800,
       "mimic_success_demos": 500,
-      "checkpoint": "models/toy2box_agibot_c3_seed101.pth",
       "checkpoint_sha256": "aea5df3e863b33f429013a41beb5d96feb22e7728dca199a51c525673d5b16f2",
       "video": "videos/toy2box_agibot_c3_success.mp4",
       "video_sha256": "e7391d2ac600a712d46da8679e6d799bfe8dfc368b201c855237e14604b87070",
@@ -70,7 +70,8 @@
       "visually_confirmed_placement": true,
       "environment_trial_success_log_available": false,
       "aggregate_success_rate": 0.32,
-      "aggregate_result_source": "experimenter_reported_rollout_aggregates"
+      "aggregate_result_source": "experimenter_reported_rollout_aggregates",
+      "checkpoint_in_repository": false
     },
     {
       "condition": "c4",
@@ -79,7 +80,6 @@
       "evaluation_seed": 42,
       "horizon": 800,
       "mimic_success_demos": 500,
-      "checkpoint": "models/toy2box_agibot_c4_seed101.pth",
       "checkpoint_sha256": "343d6a0b6d30f478aeac8032544d50524ee86e61de282d77ea09726e935de251",
       "video": "videos/toy2box_agibot_c4_success.mp4",
       "video_sha256": "12638cf73d65230d68c03f7374dbfc4f0a05a0e194ba5af689a518a2746c344c",
@@ -94,7 +94,8 @@
       "visually_confirmed_placement": true,
       "environment_trial_success_log_available": false,
       "aggregate_success_rate": 0.32,
-      "aggregate_result_source": "experimenter_reported_rollout_aggregates"
+      "aggregate_result_source": "experimenter_reported_rollout_aggregates",
+      "checkpoint_in_repository": false
     }
   ],
   "notes": [

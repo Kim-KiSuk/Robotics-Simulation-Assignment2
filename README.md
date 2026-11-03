@@ -168,29 +168,29 @@ Mimic 데이터는 한 번 준비해 두 학습에 함께 사용한다. 제공�
 | ③ | `toy2box_agibot_mimic_c3_20_500.hdf5` |
 | ④ | `toy2box_agibot_mimic_c4_20_500.hdf5` |
 
-각 파일이 로컬에 준비된 상태에서 아래 명령의 `--dataset`만 해당 조건으로 바꾼다. 학습 seed는 과업 설정 JSON의 `train.seed`에서 지정한다.
+위 Mimic 500개 파일은 별도로 준비하는 학습 입력이며, 저장소의 원본 시범 20개 HDF5와 구분한다. 아래는 평균 성공률이 가장 높은 **② 단일 사용자·혼합 실험**을 학습하는 예시다. 학습 seed는 과업 설정 JSON의 `train.seed`에서 지정한다.
 
 ```bash
 ./isaaclab.sh -p scripts/imitation_learning/robomimic/train.py \
     --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
     --algo bc \
-    --dataset ./datasets/toy2box_agibot_mimic_new_rule_500.hdf5
+    --dataset ./datasets/toy2box_agibot_mimic_c2_20_500.hdf5
 ```
 
 seed별 결과와 계산값은 `results/experiment_results.json`에 저장했다.
 
 ## 6. 최종 데이터셋과 모델
 
-조건별 원본 시범 20개와, 위 성공률을 평가한 **epoch 2000 모델 8개**를 저장소에 직접 포함했다. 모델 파일명에는 조건 번호와 학습 seed를 표시했다.
+조건별 원본 시범 20개와 **② 단일 사용자·혼합 실험의 최종 모델 2개**를 저장소에 포함했다. 제공 모델은 **epoch 2000 · 학습 seed 101·111**이며, 파일명에 조건 번호와 학습 seed를 표시했다.
 
 | 조건 | 원본 데이터셋 · 각 20개 | 학습 seed 101 모델 | 학습 seed 111 모델 |
 | --- | --- | --- | --- |
-| ① 단일 사용자·단일 실험 | [toy2box_agibot_c1.hdf5](datasets/toy2box_agibot_c1.hdf5) | [c1 · seed 101](models/toy2box_agibot_c1_seed101.pth) | [c1 · seed 111](models/toy2box_agibot_c1_seed111.pth) |
+| ① 단일 사용자·단일 실험 | [toy2box_agibot_c1.hdf5](datasets/toy2box_agibot_c1.hdf5) | — | — |
 | ② 단일 사용자·혼합 실험 | [toy2box_agibot_c2.hdf5](datasets/toy2box_agibot_c2.hdf5) | [c2 · seed 101](models/toy2box_agibot_c2_seed101.pth) | [c2 · seed 111](models/toy2box_agibot_c2_seed111.pth) |
-| ③ 다수 사용자·단일 실험 | [toy2box_agibot_c3.hdf5](datasets/toy2box_agibot_c3.hdf5) | [c3 · seed 101](models/toy2box_agibot_c3_seed101.pth) | [c3 · seed 111](models/toy2box_agibot_c3_seed111.pth) |
-| ④ 다수 사용자·혼합 실험 | [toy2box_agibot_c4.hdf5](datasets/toy2box_agibot_c4.hdf5) | [c4 · seed 101](models/toy2box_agibot_c4_seed101.pth) | [c4 · seed 111](models/toy2box_agibot_c4_seed111.pth) |
+| ③ 다수 사용자·단일 실험 | [toy2box_agibot_c3.hdf5](datasets/toy2box_agibot_c3.hdf5) | — | — |
+| ④ 다수 사용자·혼합 실험 | [toy2box_agibot_c4.hdf5](datasets/toy2box_agibot_c4.hdf5) | — | — |
 
-HDF5는 수집 원본이며, 학습에는 원본을 annotation한 뒤 생성한 Mimic 500개를 사용했다. 공개 원본은 로컬 출처 경로만 익명 식별자로 바꾸고 관측·행동·초기 상태 배열은 유지했다. 모델 파일은 평가한 checkpoint 그대로다. 파일 크기와 SHA-256은 `results/experiment_results.json`에 기록했다.
+HDF5는 수집 원본이며, 학습에는 원본을 annotation한 뒤 생성한 Mimic 500개를 사용했다. 공개 원본은 로컬 출처 경로만 익명 식별자로 바꾸고 관측·행동·초기 상태 배열은 유지했다. 제공하는 두 모델은 평가한 checkpoint 그대로다. 파일 크기와 SHA-256은 `results/experiment_results.json`에 기록했다.
 
 ## 7. 정책 성공 예시
 
@@ -215,8 +215,8 @@ Isaac Sim과 Toy2Box 자산이 설치된 수업용 `lerobot-arena` 환경을 사
 ```bash
 conda activate lerobot-arena
 cd ~
-git clone https://github.com/Kim-KiSuk/Robotics-Simulation-Assignmnet2.git IsaacLab_RS_Toy2Box
-cd ~/IsaacLab_RS_Toy2Box
+git clone https://github.com/Kim-KiSuk/Robotics-Simulation_Assignment2.git
+cd ~/Robotics-Simulation_Assignment2
 ```
 
 수업 환경에 설치된 의존성을 유지하면서 현재 프로젝트의 Python 패키지 경로를 등록한다.

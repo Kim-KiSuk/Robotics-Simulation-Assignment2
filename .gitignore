@@ -11,11 +11,5 @@ datasets/*
 !datasets/toy2box_agibot_c2.hdf5
 !datasets/toy2box_agibot_c3.hdf5
 !datasets/toy2box_agibot_c4.hdf5
-!models/toy2box_agibot_c1_seed101.pth
-!models/toy2box_agibot_c1_seed111.pth
 !models/toy2box_agibot_c2_seed101.pth
 !models/toy2box_agibot_c2_seed111.pth
-!models/toy2box_agibot_c3_seed101.pth
-!models/toy2box_agibot_c3_seed111.pth
-!models/toy2box_agibot_c4_seed101.pth
-!models/toy2box_agibot_c4_seed111.pth
