@@ -208,6 +208,8 @@ HDF5는 수집 원본이며, 학습에는 원본을 annotation한 뒤 생성한 
 
 ## 8. 프로젝트 실행
 
+실행 기준은 네 조건 중 평균 성공률이 가장 높은 **② 단일 사용자·혼합 실험(43.5% ± 0.71%p)**이다. 원본 데이터셋은 `datasets/toy2box_agibot_c2.hdf5`이며, 아래에 해당 조건의 학습 seed **101·111 최종 모델** 평가 명령을 각각 제시한다.
+
 Isaac Sim과 Toy2Box 자산이 설치된 수업용 `lerobot-arena` 환경을 사용한다. 이 저장소 자체가 IsaacLab_RS 프로젝트이며 `source/`, `scripts/`, `isaaclab.sh`, `datasets/`, `models/`, `videos/`를 포함한다. Isaac Sim 엔진과 외부 자산은 별도 설치한다.
 
 ```bash
@@ -233,20 +235,39 @@ cd ~/IsaacLab_RS_Toy2Box
 source/isaaclab_tasks/isaaclab_tasks/manager_based/manipulation/place/config/agibot/agents/robomimic/bc_rnn_low_dim.json
 ```
 
-**정책 평가 예시:** 조건 ①의 학습 seed 101 모델을 평가 seed 42로 실행한다. 다른 조건은 `--checkpoint`의 파일명과 영상 저장 폴더를 바꾼다.
+**정책 평가:** 두 모델 모두 epoch **2000** 최종본이다. 평가 조건은 seed **42**·100회 rollout·horizon **800**으로 동일하게 맞춘다.
+
+**학습 seed 101 모델 — 성공률 43% (43/100)**
 
 ```bash
 ./isaaclab.sh -p scripts/imitation_learning/robomimic/play.py \
     --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
-    --checkpoint ./models/toy2box_agibot_c1_seed101.pth \
+    --checkpoint ./models/toy2box_agibot_c2_seed101.pth \
     --num_rollouts 100 \
     --horizon 800 \
     --seed 42 \
     --video \
     --video_length 1000 \
-    --video_folder ./videos/toy2box_agibot_c1_seed101 \
+    --video_folder ./videos/toy2box_agibot_c2_seed101 \
     --headless
 ```
+
+**학습 seed 111 모델 — 성공률 44% (44/100)**
+
+```bash
+./isaaclab.sh -p scripts/imitation_learning/robomimic/play.py \
+    --task Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0 \
+    --checkpoint ./models/toy2box_agibot_c2_seed111.pth \
+    --num_rollouts 100 \
+    --horizon 800 \
+    --seed 42 \
+    --video \
+    --video_length 1000 \
+    --video_folder ./videos/toy2box_agibot_c2_seed111 \
+    --headless
+```
+
+두 명령의 `--seed 42`는 **평가 seed**다. 학습 seed 101·111은 각각의 checkpoint로 구분하며, 영상 저장 폴더도 별도로 사용한다.
 
 ## 참고
 
