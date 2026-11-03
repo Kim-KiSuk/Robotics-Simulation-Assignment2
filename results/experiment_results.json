@@ -307,6 +307,28 @@
         "101": 11.0,
         "111": 0.0
       }
+    },
+    {
+      "comparison": "combined_configuration_c4_vs_c1",
+      "difference": "c4 - c1",
+      "mean_difference_percentage_points": 7.5,
+      "seedwise_differences_percentage_points": {
+        "101": 2.0,
+        "111": 13.0
+      },
+      "comparison_scope": "overall configuration; operator composition and demonstration mixture both change",
+      "isolates_single_factor": false
+    },
+    {
+      "comparison": "combined_configuration_c2_vs_c3",
+      "difference": "c2 - c3",
+      "mean_difference_percentage_points": 13.5,
+      "seedwise_differences_percentage_points": {
+        "101": 11.0,
+        "111": 16.0
+      },
+      "comparison_scope": "overall configuration; operator composition and demonstration mixture both change",
+      "isolates_single_factor": false
     }
   ],
   "interpretation": {
@@ -314,17 +336,28 @@
     "single_operator_superiority": "not established; observed advantages are 0.5 and 5.5 percentage points",
     "mechanism": "not established; state coverage and demonstration quality are possible explanations",
     "generalization_limit": "two training seeds and one group of operators; no statistical significance claim",
-    "revised_hypothesis": {
+    "initial_hypotheses": [
+      {
+        "statement": "Single-experiment demonstrations outperform mixed-experiment demonstrations with the same operator composition.",
+        "observed_result": "not supported by the observed means; mixtures are higher by 13 and 8 percentage points"
+      },
+      {
+        "statement": "Single-operator demonstrations outperform multiple-operator demonstrations with the same demonstration composition.",
+        "observed_result": "mean direction agrees, but clear superiority is not established; differences are 0.5 and 5.5 percentage points"
+      }
+    ],
+    "follow_up_hypothesis": {
       "formulated_after_observing_results": true,
       "source_demonstration_count": 20,
       "mimic_success_demonstration_count": 500,
-      "statement": "Even with 20 original demonstrations, mixing demonstration types may be more helpful for policy learning than repeating a single consistent action pattern.",
+      "statement": "Even with 20 original demonstrations, including a balanced mixture of demonstration types may be more helpful for policy learning than repeating a single action pattern.",
       "diversity_definition": "balanced mixture of S1 and S2 demonstration types, not operator count",
       "observations": {
         "single_operator_mean_gain_percentage_points": 13.0,
         "multiple_operator_mean_gain_percentage_points": 8.0
       },
-      "limitations": "Two training seeds; no direct measurement of state diversity or causal mechanism; larger variation in the multiple-operator mixture."
+      "limitations": "Two training seeds; no direct measurement of state diversity or causal mechanism; larger variation in the multiple-operator mixture.",
+      "requires_independent_validation": true
     }
   },
   "verification": {
