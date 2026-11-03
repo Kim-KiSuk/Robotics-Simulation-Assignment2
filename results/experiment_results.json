@@ -415,5 +415,26 @@
     "local_source_paths_anonymized": true,
     "representative_videos": 4,
     "gif_previews": 4
+  },
+  "failure_analysis": {
+    "labels": "results/rollout_failure_labels.csv",
+    "summary": "results/rollout_failure_analysis.json",
+    "classification_source": "experimenter_curated_video_labels",
+    "trials": 800,
+    "success_labeled": 284,
+    "failure_labeled": 516,
+    "failure_stage_counts": {
+      "approach": 75,
+      "grasp": 251,
+      "transport": 43,
+      "placement": 147
+    },
+    "failure_stage_percentages": {
+      "approach": 14.534883720930234,
+      "grasp": 48.643410852713174,
+      "transport": 8.333333333333332,
+      "placement": 28.488372093023255
+    },
+    "native_per_trial_success_labels_available": false
   }
 }

@@ -1,0 +1,449 @@
+{
+  "classification_source": "experimenter_curated_video_labels",
+  "labels_file": "results/rollout_failure_labels.csv",
+  "labels_sha256": "472440fa94266167bbf99a283b02061a94bf5922366f92b151af1a38579022d8",
+  "evaluation_seed": 42,
+  "training_seeds": [
+    101,
+    111
+  ],
+  "classification_categories": [
+    "approach",
+    "grasp",
+    "transport",
+    "placement"
+  ],
+  "definitions": {
+    "approach": "물체까지 접근하지 못하거나 위치가 어긋난 채 머무름.",
+    "grasp": "물체를 잡으려 하지만 안정적으로 들어 올리지 못함.",
+    "transport": "물체를 들어 이동했으나 상자 입구에 도달하지 못하거나 이동 중 놓침.",
+    "placement": "상자 입구까지 가져왔으나 놓지 못하거나 가장자리·바깥에 놓음."
+  },
+  "ratio_definition": "Failure-stage percentages use the number of failure-labeled videos in the corresponding group as denominator.",
+  "success_label_definition": "The CSV success label denotes video-based placement classification, not a recovered native simulator success flag.",
+  "native_per_trial_success_labels_available": false,
+  "totals": {
+    "label": "전체",
+    "trials": 800,
+    "success_labeled": 284,
+    "failure_labeled": 516,
+    "counts": {
+      "approach": 75,
+      "grasp": 251,
+      "transport": 43,
+      "placement": 147
+    },
+    "percent_of_failures": {
+      "approach": 14.534883720930234,
+      "grasp": 48.643410852713174,
+      "transport": 8.333333333333332,
+      "placement": 28.488372093023255
+    },
+    "percent_of_all_rollouts": {
+      "approach": 9.375,
+      "grasp": 31.374999999999996,
+      "transport": 5.375,
+      "placement": 18.375
+    }
+  },
+  "conditions": [
+    {
+      "condition": "c1",
+      "label": "① 단일 사용자·단일 실험",
+      "trials": 200,
+      "success_labeled": 61,
+      "failure_labeled": 139,
+      "counts": {
+        "approach": 22,
+        "grasp": 64,
+        "transport": 17,
+        "placement": 36
+      },
+      "percent_of_failures": {
+        "approach": 15.827338129496402,
+        "grasp": 46.043165467625904,
+        "transport": 12.23021582733813,
+        "placement": 25.899280575539567
+      },
+      "percent_of_all_rollouts": {
+        "approach": 11.0,
+        "grasp": 32.0,
+        "transport": 8.5,
+        "placement": 18.0
+      }
+    },
+    {
+      "condition": "c2",
+      "label": "② 단일 사용자·혼합 실험",
+      "trials": 200,
+      "success_labeled": 87,
+      "failure_labeled": 113,
+      "counts": {
+        "approach": 12,
+        "grasp": 55,
+        "transport": 9,
+        "placement": 37
+      },
+      "percent_of_failures": {
+        "approach": 10.619469026548673,
+        "grasp": 48.67256637168141,
+        "transport": 7.964601769911504,
+        "placement": 32.743362831858406
+      },
+      "percent_of_all_rollouts": {
+        "approach": 6.0,
+        "grasp": 27.500000000000004,
+        "transport": 4.5,
+        "placement": 18.5
+      }
+    },
+    {
+      "condition": "c3",
+      "label": "③ 다수 사용자·단일 실험",
+      "trials": 200,
+      "success_labeled": 60,
+      "failure_labeled": 140,
+      "counts": {
+        "approach": 18,
+        "grasp": 62,
+        "transport": 10,
+        "placement": 50
+      },
+      "percent_of_failures": {
+        "approach": 12.857142857142856,
+        "grasp": 44.285714285714285,
+        "transport": 7.142857142857142,
+        "placement": 35.714285714285715
+      },
+      "percent_of_all_rollouts": {
+        "approach": 9.0,
+        "grasp": 31.0,
+        "transport": 5.0,
+        "placement": 25.0
+      }
+    },
+    {
+      "condition": "c4",
+      "label": "④ 다수 사용자·혼합 실험",
+      "trials": 200,
+      "success_labeled": 76,
+      "failure_labeled": 124,
+      "counts": {
+        "approach": 23,
+        "grasp": 70,
+        "transport": 7,
+        "placement": 24
+      },
+      "percent_of_failures": {
+        "approach": 18.548387096774192,
+        "grasp": 56.451612903225815,
+        "transport": 5.64516129032258,
+        "placement": 19.35483870967742
+      },
+      "percent_of_all_rollouts": {
+        "approach": 11.5,
+        "grasp": 35.0,
+        "transport": 3.5000000000000004,
+        "placement": 12.0
+      }
+    }
+  ],
+  "models": [
+    {
+      "key": "c1_s101",
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 30,
+      "failure_labeled": 70,
+      "counts": {
+        "approach": 11,
+        "grasp": 32,
+        "transport": 13,
+        "placement": 14
+      },
+      "percent_of_failures": {
+        "approach": 15.714285714285714,
+        "grasp": 45.714285714285715,
+        "transport": 18.571428571428573,
+        "placement": 20.0
+      },
+      "percent_of_all_rollouts": {
+        "approach": 11.0,
+        "grasp": 32.0,
+        "transport": 13.0,
+        "placement": 14.000000000000002
+      }
+    },
+    {
+      "key": "c1_s111",
+      "training_seed": 111,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 31,
+      "failure_labeled": 69,
+      "counts": {
+        "approach": 11,
+        "grasp": 32,
+        "transport": 4,
+        "placement": 22
+      },
+      "percent_of_failures": {
+        "approach": 15.942028985507244,
+        "grasp": 46.3768115942029,
+        "transport": 5.797101449275362,
+        "placement": 31.88405797101449
+      },
+      "percent_of_all_rollouts": {
+        "approach": 11.0,
+        "grasp": 32.0,
+        "transport": 4.0,
+        "placement": 22.0
+      }
+    },
+    {
+      "key": "c2_s101",
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 43,
+      "failure_labeled": 57,
+      "counts": {
+        "approach": 8,
+        "grasp": 28,
+        "transport": 3,
+        "placement": 18
+      },
+      "percent_of_failures": {
+        "approach": 14.035087719298245,
+        "grasp": 49.122807017543856,
+        "transport": 5.263157894736842,
+        "placement": 31.57894736842105
+      },
+      "percent_of_all_rollouts": {
+        "approach": 8.0,
+        "grasp": 28.000000000000004,
+        "transport": 3.0,
+        "placement": 18.0
+      }
+    },
+    {
+      "key": "c2_s111",
+      "training_seed": 111,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 44,
+      "failure_labeled": 56,
+      "counts": {
+        "approach": 4,
+        "grasp": 27,
+        "transport": 6,
+        "placement": 19
+      },
+      "percent_of_failures": {
+        "approach": 7.142857142857142,
+        "grasp": 48.214285714285715,
+        "transport": 10.714285714285714,
+        "placement": 33.92857142857143
+      },
+      "percent_of_all_rollouts": {
+        "approach": 4.0,
+        "grasp": 27.0,
+        "transport": 6.0,
+        "placement": 19.0
+      }
+    },
+    {
+      "key": "c3_s101",
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 32,
+      "failure_labeled": 68,
+      "counts": {
+        "approach": 7,
+        "grasp": 31,
+        "transport": 5,
+        "placement": 25
+      },
+      "percent_of_failures": {
+        "approach": 10.294117647058822,
+        "grasp": 45.588235294117645,
+        "transport": 7.352941176470589,
+        "placement": 36.76470588235294
+      },
+      "percent_of_all_rollouts": {
+        "approach": 7.000000000000001,
+        "grasp": 31.0,
+        "transport": 5.0,
+        "placement": 25.0
+      }
+    },
+    {
+      "key": "c3_s111",
+      "training_seed": 111,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 28,
+      "failure_labeled": 72,
+      "counts": {
+        "approach": 11,
+        "grasp": 31,
+        "transport": 5,
+        "placement": 25
+      },
+      "percent_of_failures": {
+        "approach": 15.277777777777779,
+        "grasp": 43.05555555555556,
+        "transport": 6.944444444444445,
+        "placement": 34.72222222222222
+      },
+      "percent_of_all_rollouts": {
+        "approach": 11.0,
+        "grasp": 31.0,
+        "transport": 5.0,
+        "placement": 25.0
+      }
+    },
+    {
+      "key": "c4_s101",
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 32,
+      "failure_labeled": 68,
+      "counts": {
+        "approach": 14,
+        "grasp": 37,
+        "transport": 5,
+        "placement": 12
+      },
+      "percent_of_failures": {
+        "approach": 20.588235294117645,
+        "grasp": 54.41176470588235,
+        "transport": 7.352941176470589,
+        "placement": 17.647058823529413
+      },
+      "percent_of_all_rollouts": {
+        "approach": 14.000000000000002,
+        "grasp": 37.0,
+        "transport": 5.0,
+        "placement": 12.0
+      }
+    },
+    {
+      "key": "c4_s111",
+      "training_seed": 111,
+      "evaluation_seed": 42,
+      "trials": 100,
+      "success_labeled": 44,
+      "failure_labeled": 56,
+      "counts": {
+        "approach": 9,
+        "grasp": 33,
+        "transport": 2,
+        "placement": 12
+      },
+      "percent_of_failures": {
+        "approach": 16.071428571428573,
+        "grasp": 58.92857142857143,
+        "transport": 3.571428571428571,
+        "placement": 21.428571428571427
+      },
+      "percent_of_all_rollouts": {
+        "approach": 9.0,
+        "grasp": 33.0,
+        "transport": 2.0,
+        "placement": 12.0
+      }
+    }
+  ],
+  "representative_previews": [
+    {
+      "stage": "approach",
+      "label": "접근",
+      "key": "c4_s111",
+      "condition": "c4",
+      "training_seed": 111,
+      "evaluation_seed": 42,
+      "trial": 16,
+      "preview": "artifacts/media/toy2box_agibot_failure_approach.gif",
+      "preview_sha256": "959350d80359c03154db0ca658aa47be23f64670f1b73f0cd8fcdebe35d7c57e",
+      "preview_start_seconds": 0,
+      "preview_end_seconds": 10,
+      "preview_duration_seconds": 10.0,
+      "playback_speed": 1,
+      "width": 600,
+      "height": 480,
+      "description": "물체까지 내려가지 못하고 위에서 머묾.",
+      "classification_source": "experimenter_curated_video_labels",
+      "environment_trial_success_log_available": false
+    },
+    {
+      "stage": "grasp",
+      "label": "파지",
+      "key": "c1_s101",
+      "condition": "c1",
+      "training_seed": 101,
+      "evaluation_seed": 42,
+      "trial": 1,
+      "preview": "artifacts/media/toy2box_agibot_failure_grasp.gif",
+      "preview_sha256": "e075f7b2132a3020169ec8665bd30cbf88c67b35d20db2317addf72d2e1fd741",
+      "preview_start_seconds": 9,
+      "preview_end_seconds": 20,
+      "preview_duration_seconds": 11.0,
+      "playback_speed": 1,
+      "width": 600,
+      "height": 480,
+      "description": "물체를 밀고 기울인 뒤 빈손으로 올라감.",
+      "classification_source": "experimenter_curated_video_labels",
+      "environment_trial_success_log_available": false
+    },
+    {
+      "stage": "transport",
+      "label": "운반",
+      "key": "c4_s111",
+      "condition": "c4",
+      "training_seed": 111,
+      "evaluation_seed": 42,
+      "trial": 12,
+      "preview": "artifacts/media/toy2box_agibot_failure_transport.gif",
+      "preview_sha256": "23b070486677bd9b82fe7f9770e3e67cca57e548be01fbc83841f06ae763c3bb",
+      "preview_start_seconds": 23,
+      "preview_end_seconds": 38,
+      "preview_duration_seconds": 15.0,
+      "playback_speed": 1,
+      "width": 600,
+      "height": 480,
+      "description": "들어 올린 물체를 상자 밖에서 놓침.",
+      "classification_source": "experimenter_curated_video_labels",
+      "environment_trial_success_log_available": false
+    },
+    {
+      "stage": "placement",
+      "label": "배치",
+      "key": "c4_s111",
+      "condition": "c4",
+      "training_seed": 111,
+      "evaluation_seed": 42,
+      "trial": 36,
+      "preview": "artifacts/media/toy2box_agibot_failure_placement.gif",
+      "preview_sha256": "62d95f3b90f8dedfa4992d63a0d59cf10121b20c35b32a8285ca35be7556e226",
+      "preview_start_seconds": 12,
+      "preview_end_seconds": 25,
+      "preview_duration_seconds": 13.0,
+      "playback_speed": 1,
+      "width": 600,
+      "height": 480,
+      "description": "상자까지 가져왔지만 계속 잡고 있음.",
+      "classification_source": "experimenter_curated_video_labels",
+      "environment_trial_success_log_available": false
+    }
+  ],
+  "limitations": [
+    "Video-derived stage labels identify observed behavior; they do not establish a physical or causal failure mechanism.",
+    "Occlusion and sampled frames can conceal brief grip or drop events.",
+    "Aggregate success rates remain the original experimenter-reported rollout results; video labels are supplementary analysis.",
+    "Differences in failure-stage proportions alone do not establish an effect of demonstration diversity."
+  ]
+}
