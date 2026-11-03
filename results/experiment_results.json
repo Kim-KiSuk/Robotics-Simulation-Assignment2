@@ -1,0 +1,192 @@
+{
+  "study": "Toy2Box operator composition and demonstration mixing comparison",
+  "result_source": "experimenter_reported_rollout_aggregates",
+  "research_focus": "single versus multiple operators, compared within single and mixed experiments",
+  "settings": {
+    "task": "Isaac-Place-Toy2Box-Agibot-Right-Arm-RmpFlow-v0",
+    "training_seeds": [
+      101,
+      111
+    ],
+    "epoch": 2000,
+    "batch_size": 100,
+    "sequence_length": 10,
+    "policy": "BC-RNN / GMM",
+    "evaluation_seed": 42,
+    "rollouts_per_model": 100,
+    "horizon_steps": 800,
+    "step_seconds": 0.05,
+    "models_evaluated": 8,
+    "total_rollouts": 800
+  },
+  "standard_deviation": {
+    "definition": "sample standard deviation across the two training-seed success rates",
+    "ddof": 1,
+    "unit": "percentage points",
+    "is_confidence_interval": false
+  },
+  "conditions": [
+    {
+      "id": "c1",
+      "label": "단일 사용자·단일 실험",
+      "operator_count": 1,
+      "composition": "single_experiment",
+      "source_demos": 20,
+      "demos_per_operator": 20,
+      "s1_demos": 20,
+      "s2_demos": 0,
+      "mimic_success_demos": 500,
+      "training_dataset": "toy2box_agibot_mimic_new_rule_500.hdf5",
+      "evaluations": [
+        {
+          "training_seed": 101,
+          "successes": 30,
+          "trials": 100,
+          "success_rate_percent": 30.0
+        },
+        {
+          "training_seed": 111,
+          "successes": 31,
+          "trials": 100,
+          "success_rate_percent": 31.0
+        }
+      ],
+      "mean_success_rate_percent": 30.5,
+      "sample_standard_deviation_percentage_points": 0.7071067811865476
+    },
+    {
+      "id": "c2",
+      "label": "단일 사용자·혼합 실험",
+      "operator_count": 1,
+      "composition": "mixed_experiment",
+      "source_demos": 20,
+      "demos_per_operator": 20,
+      "s1_demos": 10,
+      "s2_demos": 10,
+      "mimic_success_demos": 500,
+      "training_dataset": "toy2box_agibot_mimic_single_mixed_500.hdf5",
+      "evaluations": [
+        {
+          "training_seed": 101,
+          "successes": 43,
+          "trials": 100,
+          "success_rate_percent": 43.0
+        },
+        {
+          "training_seed": 111,
+          "successes": 44,
+          "trials": 100,
+          "success_rate_percent": 44.0
+        }
+      ],
+      "mean_success_rate_percent": 43.5,
+      "sample_standard_deviation_percentage_points": 0.7071067811865476
+    },
+    {
+      "id": "c3",
+      "label": "다수 사용자·단일 실험",
+      "operator_count": 5,
+      "composition": "single_experiment",
+      "source_demos": 20,
+      "demos_per_operator": 4,
+      "s1_demos": 20,
+      "s2_demos": 0,
+      "mimic_success_demos": 500,
+      "training_dataset": "toy2box_agibot_mimic_multi_operator_c3_20_500.hdf5",
+      "evaluations": [
+        {
+          "training_seed": 101,
+          "successes": 32,
+          "trials": 100,
+          "success_rate_percent": 32.0
+        },
+        {
+          "training_seed": 111,
+          "successes": 28,
+          "trials": 100,
+          "success_rate_percent": 28.0
+        }
+      ],
+      "mean_success_rate_percent": 30,
+      "sample_standard_deviation_percentage_points": 2.8284271247461903
+    },
+    {
+      "id": "c4",
+      "label": "다수 사용자·혼합 실험",
+      "operator_count": 5,
+      "composition": "mixed_experiment",
+      "source_demos": 20,
+      "demos_per_operator": 4,
+      "s1_demos": 10,
+      "s2_demos": 10,
+      "mimic_success_demos": 500,
+      "training_dataset": "toy2box_agibot_mimic_multi_operator_c4_20_500.hdf5",
+      "evaluations": [
+        {
+          "training_seed": 101,
+          "successes": 32,
+          "trials": 100,
+          "success_rate_percent": 32.0
+        },
+        {
+          "training_seed": 111,
+          "successes": 44,
+          "trials": 100,
+          "success_rate_percent": 44.0
+        }
+      ],
+      "mean_success_rate_percent": 38,
+      "sample_standard_deviation_percentage_points": 8.48528137423857
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison": "single_operator_mixing",
+      "difference": "c2 - c1",
+      "mean_difference_percentage_points": 13.0,
+      "seedwise_differences_percentage_points": {
+        "101": 13.0,
+        "111": 13.0
+      }
+    },
+    {
+      "comparison": "multiple_operator_mixing",
+      "difference": "c4 - c3",
+      "mean_difference_percentage_points": 8,
+      "seedwise_differences_percentage_points": {
+        "101": 0.0,
+        "111": 16.0
+      }
+    },
+    {
+      "comparison": "operator_comparison_single_experiment",
+      "difference": "c1 - c3",
+      "mean_difference_percentage_points": 0.5,
+      "seedwise_differences_percentage_points": {
+        "101": -2.0,
+        "111": 3.0
+      }
+    },
+    {
+      "comparison": "operator_comparison_mixed_experiment",
+      "difference": "c2 - c4",
+      "mean_difference_percentage_points": 5.5,
+      "seedwise_differences_percentage_points": {
+        "101": 11.0,
+        "111": 0.0
+      }
+    }
+  ],
+  "interpretation": {
+    "fixed_pattern_outperforms_mixture_hypothesis": "not supported by the observed mean success rates",
+    "single_operator_superiority": "not established; observed advantages are 0.5 and 5.5 percentage points",
+    "mechanism": "not established; state coverage and demonstration quality are possible explanations",
+    "generalization_limit": "two training seeds and one group of operators; no statistical significance claim"
+  },
+  "verification": {
+    "training_configuration_and_500_demo_log_entries": "checked for all eight models",
+    "evaluation_seed_rollout_count_and_horizon_launch_records": "checked",
+    "aggregate_success_counts": "provided by the experimenter; no independent per-trial log recount"
+  },
+  "artifact_scope": "existing public datasets, models and videos belong to the preliminary 1000-Mimic study; not to these four conditions"
+}

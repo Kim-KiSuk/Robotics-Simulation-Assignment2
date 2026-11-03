@@ -65,5 +65,7 @@
     "file": "IsaacLab_RS_Toy2Box.tar.gz",
     "sha256": "48cd3cc44a0a66ee95ca77db10ee612cdef264d48ce044322fdab8253cce8099",
     "bytes": 92077551
-  }
+  },
+  "experiment_scope": "preliminary_1000_mimic_seed101",
+  "controlled_comparison_results": "results/experiment_results.json"
 }
