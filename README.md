@@ -215,8 +215,8 @@ Isaac Sim과 Toy2Box 자산이 설치된 수업용 `lerobot-arena` 환경을 사
 ```bash
 conda activate lerobot-arena
 cd ~
-git clone https://github.com/Kim-KiSuk/Robotics-Simulation_Assignment2.git
-cd ~/Robotics-Simulation_Assignment2
+git clone https://github.com/Kim-KiSuk/Robotics-Simulation-Assignment2.git
+cd ~/Robotics-Simulation-Assignment2
 ```
 
 수업 환경에 설치된 의존성을 유지하면서 현재 프로젝트의 Python 패키지 경로를 등록한다.
